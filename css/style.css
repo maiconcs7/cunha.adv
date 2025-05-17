@@ -1,0 +1,1679 @@
+/* Esquema de Cores Atualizado (Preto com Toque Esmeralda) */
+:root {
+    --cor-primaria-azul-corporativo: #141414; /* Preto (substituindo Azul Corporativo) */
+    --cor-secundaria-verde-esmeralda: #676127; /* Verde Esmeralda Queimado como cor secundária/destaque */
+    
+    --cor-texto-principal: #495057; /* Cinza Grafite para texto principal */
+    --cor-texto-secundario: #000000; /* Preto (substituindo Azul Corporativo) para textos de destaque, títulos menores */
+    --cor-texto-claro: #F8F9FA;     /* Branco Gelo para texto sobre fundos escuros */
+    
+    --cor-fundo-principal: #FFFFFF;   /* Fundo principal branco */
+    --cor-fundo-secundario: #F8F9FA; /* Branco Gelo para seções levemente destacadas */
+    --cor-fundo-contraste-escuro: #141414; /* Preto (substituindo Azul Corporativo) para seções de contraste (ex: banner) */
+    --cor-fundo-cinza-muito-claro: #eef1f3; /* Mantido para detalhes sutis como fundos de hover */
+
+    --cor-borda: #dee2e6; /* Mantido para bordas gerais */
+    --cor-borda-sutil: #CED4DA; /* Borda um pouco mais escura que a padrão para alguns elementos */
+
+    --fonte-titulos: 'Montserrat', sans-serif; /* Fonte para títulos (tentar JA Jayagiri Sans Rough depois) */
+    --fonte-corpo: 'Open Sans', sans-serif;   /* Fonte para corpo de texto */
+}
+
+/* Reset Básico e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;    {
+      "configurations": [
+        {
+          "type": "pwa-chrome",
+          "request": "launch",
+          "name": "Abrir arquivo HTML no Chrome",
+          "file": "${workspaceFolder}/${input:htmlFile}",
+          "webRoot": "${workspaceFolder}"
+        }
+      ],
+      "inputs": [
+        {
+          "id": "htmlFile",
+          "type": "promptString",
+          "description": "Digite o caminho relativo do arquivo HTML que deseja depurar (ex: index.html ou blog/index.html)"
+        }
+      ]
+    }
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    line-height: 1.7;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-principal);
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-secundaria-verde-esmeralda);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1A653B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+h1 { font-size: 2.8rem; }
+
+/* Header */
+.site-header {
+    background-color: var(--cor-fundo-principal);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo da Logo no Cabeçalho */
+/* A altura é controlada por estilo inline no HTML (ex: style="height: 180px;"). */
+/* O max-height: 60px; foi removido para permitir a logo maior conforme solicitado pelo usuário. */
+.logo-container #logo {
+    width: auto; /* Mantém o ajuste automático da largura */
+    display: block; /* Garante bom comportamento com padding/margin se aplicados */
+}
+
+/* Estilos para o menu principal de navegação */
+.main-nav ul {
+    list-style: none;
+    display: flex; /* Garante que o menu seja exibido em linha por padrão em desktops */
+    align-items: center;
+    margin: 0;
+    opacity: 1; /* Garante que o menu esteja visível */
+    visibility: visible; /* Garante que o menu esteja visível */
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    font-family: var(--fonte-titulos);
+    font-size: 1.05rem;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--cor-secundaria-verde-esmeralda);
+    border-bottom-color: var(--cor-secundaria-verde-esmeralda);
+}
+
+/* Mega Menu Styles */
+.mega-menu-container .dropbtn {
+    cursor: pointer;
+}
+
+.mega-menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-fundo-principal);
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1001;
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
+    min-width: 500px; /* Ajuste a largura conforme necessário */
+    display: flex; /* Para colunas lado a lado */
+}
+
+.mega-menu-container:hover .mega-menu-content {
+    display: flex; /* Alterado de block para flex */
+}
+
+.mega-menu-column {
+    flex: 1; /* Coluna principal dos itens */
+    padding-right: 20px; /* Espaço entre a coluna principal e a sub-coluna */
+    border-right: 1px solid var(--cor-borda-sutil); /* Linha divisória */
+}
+
+/* Estilo para itens principais do mega menu (coluna da esquerda) */
+.mega-menu-column a.mega-menu-main-item {
+    display: block;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto-secundario);
+    border-bottom: 2px solid transparent; /* Adicionado para consistência com menu principal */
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease; /* Adicionada transição para border-bottom */
+}
+
+.mega-menu-column a.mega-menu-main-item:hover,
+.mega-menu-column a.mega-menu-main-item.active-main-item {
+    background-color: var(--cor-fundo-cinza-muito-claro);
+    color: var(--cor-secundaria-verde-esmeralda) !important;
+    border-bottom-color: var(--cor-secundaria-verde-esmeralda); /* Linha embaixo ao passar o mouse/ativo */
+}
+
+.mega-menu-sub-column {
+    flex: 1.5; /* Sub-coluna pode ser um pouco mais larga */
+    padding-left: 25px; /* Aumento da margem esquerda conforme solicitado */
+}
+
+.mega-submenu {
+    display: none; /* Escondido por padrão */
+}
+
+.mega-submenu.active {
+    display: block; /* Mostra o submenu ativo */
+}
+
+/* Estilo para itens do submenu (coluna da direita) */
+.mega-submenu a {
+    display: block;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-principal);
+    border-radius: 3px;
+    border-bottom: 2px solid transparent; /* Adicionado para consistência */
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease; /* Adicionada transição para border-bottom */
+}
+
+.mega-submenu a:hover {
+    background-color: var(--cor-fundo-cinza-muito-claro);
+    color: var(--cor-secundaria-verde-esmeralda);
+    border-bottom-color: var(--cor-secundaria-verde-esmeralda); /* Linha embaixo ao passar o mouse */
+}
+
+/* Fim Mega Menu Styles */
+
+.header-actions .cta-button-header {
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro) !important; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    border-bottom: none !important; 
+}
+
+.header-actions .cta-button-header:hover {
+    background-color: #1A653B;
+    color: var(--cor-texto-claro) !important;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--cor-primaria-azul-corporativo);
+    cursor: pointer;
+}
+
+/* Homepage - Banner Principal */
+.banner-principal-novo {
+    background-color: var(--cor-primaria-azul-corporativo);
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-texto-claro);
+    padding: 80px 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-principal-novo h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--cor-texto-claro);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.banner-principal-novo p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.banner-principal-novo .cta-button {
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro);
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner-principal-novo .cta-button:hover {
+    background-color: #1A653B;
+    transform: translateY(-2px);
+}
+
+/* Homepage - Seção de Soluções/Áreas */
+.areas-atuacao-novo {
+    padding: 60px 0;
+    background-color: var(--cor-fundo-secundario);
+}
+
+.areas-atuacao-novo h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+.cards-container-novo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-novo {
+    background-color: var(--cor-fundo-principal);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-novo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-novo .icone-area {
+    max-width: 60px;
+    margin-bottom: 20px;
+}
+
+.card-novo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor-secundaria-verde-esmeralda);
+}
+
+.card-novo p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    min-height: 50px;
+    color: var(--cor-texto-principal);
+}
+
+.card-novo .saiba-mais-novo {
+    display: inline-block;
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--fonte-titulos);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.card-novo .saiba-mais-novo:hover {
+    background-color: #1A653B;
+}
+
+/* Estilos para as páginas de áreas específicas */
+.pagina-area {
+    padding: 40px 0;
+    background-color: var(--cor-fundo-principal);
+}
+
+.pagina-area h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+.conteudo-area {
+    background-color: var(--cor-fundo-principal);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.conteudo-area h2 {
+    color: var(--cor-secundaria-verde-esmeralda);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.conteudo-area ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.conteudo-area ul li {
+    margin-bottom: 8px;
+}
+
+.cta-area {
+    background-color: var(--cor-fundo-secundario);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cta-area h2 {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+/* Formulários (geral) */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cor-borda-sutil);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto-principal);
+}
+
+form input[type="text"]:focus,
+form input[type="tel"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--cor-secundaria-verde-esmeralda);
+    box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.25);
+}
+
+form button[type="submit"] {
+    background-color: var(--cor-primaria-azul-corporativo);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #071A33;
+}
+
+/* Pop-up e WhatsApp Flutuante */
+#popup-oferta {
+    position: fixed; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(10, 35, 66, 0.7); 
+    display: none; justify-content: center;
+    align-items: center; z-index: 10000;
+}
+.popup-conteudo {
+    background-color: var(--cor-fundo-principal);
+    padding: 35px; 
+    border-radius: 8px;
+    text-align: center; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3); 
+    max-width: 450px;
+    width: 90%; 
+    position: relative;
+}
+.popup-fechar {
+    position: absolute; top: 10px; right: 15px; font-size: 28px;
+    font-weight: bold; cursor: pointer; color: var(--cor-texto-principal);
+}
+.popup-conteudo h2 { 
+    color: var(--cor-primaria-azul-corporativo); 
+    margin-top: 0; margin-bottom:15px; font-size:1.8rem; 
+}
+.popup-conteudo p { margin-bottom:20px; color: var(--cor-texto-principal); }
+
+#whatsapp-flutuante {
+    position: fixed; bottom: 25px; right: 25px; z-index: 9999;
+}
+#whatsapp-flutuante img {
+    width: 60px; height: 60px; border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+}
+#whatsapp-flutuante img:hover { transform: scale(1.1); }
+
+
+/* --- NOVO RODAPÉ (RD STATION INSPIRED) --- */
+.footer-rd-inspired {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-principal);
+    padding: 60px 0 20px; 
+    font-size: 14px;
+    line-height: 1.6;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.footer-rd-inspired .container {
+    max-width: 1140px;
+}
+
+.footer-rd-inspired .footer-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-rd-inspired .bsc-grid-item.column {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+    .footer-rd-inspired .footer-main-content .bsc-grid-item.column {
+        flex-basis: 23%;
+        margin-bottom: 0;
+    }
+    .footer-rd-inspired .footer-main-content .bsc-grid-item.column:first-child {
+        flex-basis: 28%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .footer-rd-inspired .footer-main-content .bsc-grid-item.column {
+        flex-basis: 48%;
+    }
+}
+
+.footer-rd-inspired .logo-and-social-wrapper .footer-logo img {
+    max-height: 40px; 
+    margin-bottom: 20px;
+}
+
+.footer-rd-inspired .social-links .links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+}
+
+.footer-rd-inspired .social-links .social-item {
+    margin-right: 15px;
+}
+
+.footer-rd-inspired .social-links .social-icon .icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--cor-texto-principal);
+    transition: fill 0.3s ease;
+}
+
+.footer-rd-inspired .social-links .social-icon:hover .icon svg {
+    fill: var(--cor-secundaria-verde-esmeralda);
+}
+
+.footer-rd-inspired .contact-info p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-rd-inspired .contact-info .bsc-text.mobile-xs {
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.footer-rd-inspired .footer-accordion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-rd-inspired .bsc-accordion-item {
+    margin-bottom: 10px;
+}
+
+.footer-rd-inspired .bsc-accordion-button {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-texto-secundario);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro);
+}
+
+.footer-rd-inspired .bsc-accordion-button h2 {
+    font-size: 0.9rem; 
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--cor-texto-secundario);
+}
+
+.footer-rd-inspired .bsc-accordion-button .icon svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--cor-texto-secundario);
+    transition: transform 0.3s ease;
+}
+
+.footer-rd-inspired .bsc-accordion-button[aria-expanded="true"] .icon svg {
+    transform: rotate(90deg);
+}
+
+.footer-rd-inspired .bsc-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding-left: 0; 
+}
+
+.footer-rd-inspired .bsc-accordion-content .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-rd-inspired .bsc-accordion-content .links li a {
+    display: block;
+    padding: 8px 0px; 
+    color: var(--cor-texto-principal);
+    font-size: 0.9rem;
+    font-family: var(--fonte-corpo);
+    border-bottom: none !important;
+}
+
+.footer-rd-inspired .bsc-accordion-content .links li a:hover {
+    color: var(--cor-secundaria-verde-esmeralda) !important;
+}
+
+.footer-rd-inspired .footer-bottom-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.85rem;
+}
+
+.footer-rd-inspired .copyright-text {
+    margin-bottom: 10px;
+}
+
+.footer-rd-inspired .footer-bottom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-rd-inspired .footer-bottom-links li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-rd-inspired .footer-bottom-links li:first-child {
+    margin-left: 0;
+}
+
+.footer-rd-inspired .footer-bottom-links a {
+    color: var(--cor-texto-principal);
+}
+
+.footer-rd-inspired .footer-bottom-links a:hover {
+    color: var(--cor-secundaria-verde-esmeralda);
+}
+
+/* --- ESTILOS PARA O BLOG (Listagem e Artigo) --- */
+.blog-container {
+    padding: 40px 0;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-header h1 {
+    font-size: 2.8rem;
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+.blog-header .subtitle {
+    font-size: 1.2rem;
+    color: var(--cor-texto-principal);
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna por padrão */
+    gap: 30px;
+}
+
+.article-card {
+    background-color: var(--cor-fundo-principal);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.article-card .author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.article-card .logo-author {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.article-card .author-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+
+.article-card .article-image-link {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.article-card .article-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Limita altura da imagem no card */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.article-card .article-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.article-card .article-title a {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+.article-card .article-title a:hover {
+    color: var(--cor-secundaria-verde-esmeralda);
+}
+
+.article-card .article-summary {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+.article-card .read-more-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--cor-secundaria-verde-esmeralda);
+    font-size: 0.95rem;
+}
+
+.article-card .read-more-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a página de artigo individual */
+.article-page {
+    max-width: 800px; /* Limita a largura do conteúdo do artigo */
+    margin: 0 auto;
+}
+
+.article-content-wrapper {
+    background-color: var(--cor-fundo-principal);
+    padding: 30px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */ /* Sombra sutil se desejado */
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-body p, .article-body ul, .article-body ol, .article-body blockquote {
+    margin-bottom: 1.5em;
+}
+
+.article-body ul, .article-body ol {
+    padding-left: 1.5em;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--cor-secundaria-verde-esmeralda);
+    padding-left: 1em;
+    margin-left: 0;
+    font-style: italic;
+    color: #555;
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+    font-size: 0.95rem;
+}
+
+.article-body th, .article-body td {
+    border: 1px solid var(--cor-borda);
+    padding: 10px;
+    text-align: left;
+}
+
+.article-body th {
+    background-color: var(--cor-fundo-secundario);
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+
+.article-body .cta-button {
+    display: inline-block;
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.article-body .cta-button:hover {
+    background-color: #1A653B;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 991px) {
+    .main-nav {
+        display: none; /* Esconde nav principal em telas menores */
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-principal);
+        border-top: 1px solid var(--cor-borda);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+        padding: 10px 0;
+    }
+
+    .main-nav.active {
+        display: block; /* Mostra quando o menu toggle é clicado */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+    }
+    .main-nav ul li:last-child a {
+        border-bottom: none !important;
+    }
+
+    .dropdown-content {
+        position: static; /* Dropdown se torna parte do fluxo normal */
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--cor-fundo-cinza-muito-claro);
+        min-width: 100%;
+        padding-left: 15px; /* Indentação para subitens */
+    }
+    .dropdown-content a { padding: 10px 20px; }
+
+    .mega-menu-content {
+        position: static;
+        flex-direction: column;
+        min-width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--cor-fundo-cinza-muito-claro);
+    }
+    .mega-menu-column {
+        border-right: none;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro);
+        padding-right: 0;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .mega-menu-sub-column {
+        padding-left: 15px; /* Mantém indentação para submenus */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de menu */
+    }
+
+    .header-actions {
+        display: none; /* Esconde CTA no header em mobile, pode ser movido para dentro do menu se necessário */
+    }
+    .main-nav.active + .header-actions {
+        display: block; /* Exemplo se quisesse mostrar abaixo do menu */
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid var(--cor-fundo-cinza-muito-claro);
+    }
+    .main-nav.active + .header-actions .cta-button-header {
+        margin-left: 0;
+        display: inline-block;
+    }
+
+    .banner-principal-novo h1 { font-size: 2.5rem; }
+    .banner-principal-novo p { font-size: 1.2rem; }
+
+    .areas-atuacao-novo h2 { font-size: 2rem; }
+
+    .footer-rd-inspired .footer-main-content {
+        flex-direction: column;
+    }
+    .footer-rd-inspired .bsc-grid-item.column {
+        flex-basis: 100% !important; /* Colunas do rodapé empilhadas */
+        margin-bottom: 30px;
+    }
+    .footer-rd-inspired .footer-bottom-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-rd-inspired .footer-bottom-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-rd-inspired .footer-bottom-links li {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-principal-novo h1 { font-size: 2rem; }
+    .banner-principal-novo p { font-size: 1.1rem; }
+    .banner-principal-novo .cta-button { font-size: 1rem; padding: 12px 25px; }
+
+    .cards-container-novo {
+        grid-template-columns: 1fr; /* Uma coluna para cards em telas muito pequenas */
+    }
+
+    .article-card .article-title { font-size: 1.4rem; }
+    .article-header h1 { font-size: 2rem; }
+    .article-body { font-size: 1rem; }
+}
+
+
+
+
+/* --- ESTILOS PARA O MENU MOBILE (HAMBÚRGUER) --- */
+@media (max-width: 991px) { /* Ponto de quebra para tablets e celulares */
+    .main-nav {
+        display: none; /* Esconde o menu principal */
+        flex-direction: column;
+        position: absolute;
+        top: 75px; /* Altura do header, ajuste conforme necessário */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-principal);
+        border-top: 1px solid var(--cor-borda);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro);
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav ul li a {
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+        border-bottom: none !important; /* Remove borda inferior dos links no mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão do menu hambúrguer */
+    }
+
+    .header-actions {
+        display: none; /* Esconde o botão CTA principal no mobile, pode ser adicionado ao menu se desejado */
+    }
+
+    /* Ajustes para o Mega Menu no Mobile */
+    .mega-menu-container:hover .mega-menu-content {
+        display: none; /* Desativa o hover para o mega menu em mobile, será controlado por clique se necessário */
+    }
+    
+    .mega-menu-content {
+        position: static; /* Para que o submenu não flutue */
+        min-width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        display: none; /* Escondido por padrão, controlado por JS */
+        flex-direction: column;
+    }
+
+    .mega-menu-container.open .mega-menu-content {
+        display: flex; /* Mostra quando o item principal é clicado */
+    }
+
+    .mega-menu-column,
+    .mega-menu-sub-column {
+        flex-basis: 100%;
+        border-right: none;
+        padding: 0;
+    }
+
+    .mega-menu-column a.mega-menu-main-item {
+        padding: 15px 25px;
+        text-align: left;
+        background-color: var(--cor-fundo-cinza-muito-claro);
+        font-weight: bold;
+    }
+
+    .mega-submenu {
+        padding-left: 30px; /* Indentação para subitens */
+        background-color: var(--cor-fundo-secundario);
+    }
+
+    .mega-submenu a {
+        padding: 12px 25px;
+        text-align: left;
+    }
+
+    .main-nav .dropdown > a .fa-chevron-down {
+        display: inline-block; /* Garante que a seta seja visível */
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .main-nav .dropdown.open > a .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+}
+
+/* Ajustes finos para celulares menores, se necessário */
+@media (max-width: 767px) {
+    .banner-principal-novo h1 {
+        font-size: 2.5rem;
+    }
+    .banner-principal-novo p {
+        font-size: 1.2rem;
+    }
+    .areas-atuacao-novo h2 {
+        font-size: 2rem;
+    }
+    .blog-header h1 {
+        font-size: 2.2rem;
+    }
+    .article-header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Estilos para comportamento do menu conforme solicitado pelo usuário */
+/* COMENTÁRIO EXPLICATIVO: 
+   1. Menu superior (main-nav ul) deve ficar sempre visível
+   2. Menu secundário (mega-menu-content) deve aparecer apenas ao passar o mouse
+   3. Menu terciário (mega-submenu) deve aparecer apenas ao passar o mouse
+*/
+
+/* Menu principal sempre visível */
+.site-header .main-nav ul {
+    opacity: 1; /* Menu principal sempre visível */
+    visibility: visible; /* Menu principal sempre visível */
+    transition: none; /* Remove transição que poderia causar atraso na exibição */
+}
+
+/* Menu secundário (mega menu) aparece apenas ao passar o mouse */
+.mega-menu-container .mega-menu-content {
+    display: none; /* Escondido por padrão */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente invisível */
+    transition: opacity 0.2s ease, visibility 0.2s ease; /* Transição suave */
+}
+
+.mega-menu-container:hover .mega-menu-content {
+    display: flex; /* Exibe ao passar o mouse */
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Torna visível */
+}
+
+/* Menu terciário (submenu) aparece apenas ao passar o mouse sobre o item do menu secundário */
+.mega-submenu {
+    display: none; /* Escondido por padrão */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente invisível */
+    transition: opacity 0.2s ease, visibility 0.2s ease; /* Transição suave */
+}
+
+.mega-menu-main-item:hover + .mega-submenu,
+.mega-submenu:hover,
+.mega-submenu.active {
+    display: block; /* Exibe ao passar o mouse */
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Torna visível */
+}
+
+/* Ajustes para mobile - comportamento diferente em telas pequenas */
+@media (max-width: 991px) {
+    /* Em mobile, o menu principal é controlado pelo botão de hambúrguer */
+    .main-nav ul {
+        display: none; /* Escondido por padrão em mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-principal);
+        border-top: 1px solid var(--cor-borda);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    .main-nav.active ul {
+        display: flex; /* Mostra quando a classe .active é adicionada */
+    }
+
+    .site-header .main-nav ul li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .site-header .main-nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+    }
+
+    .site-header .main-nav ul li:last-child a {
+        border-bottom: none !important;
+    }
+
+    /* Em mobile, os menus secundário e terciário são controlados por clique, não por hover */
+    .mega-menu-container:hover .mega-menu-content {
+        display: none; /* Em mobile, o hover não ativa o menu */
+    }
+
+    .mega-menu-container.open .mega-menu-content {
+        display: flex !important; /* Força a exibição quando a classe .open está presente */
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+
+/* Estilos do Cabeçalho com Alinhamento Extremo e Responsividade */
+
+/* Container principal do cabeçalho */
+.header-container {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Cria espaço entre os itens: logo à esquerda, menu ao centro, CTA à direita */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding-left: 10px; /* Margem mínima à esquerda para o logo */
+    padding-right: 10px; /* Margem mínima à direita para o CTA */
+}
+
+/* Logo no cabeçalho */
+.logo-container {
+    flex-shrink: 0; /* Impede que o logo encolha */
+    /* A margem esquerda já está no .header-container */
+}
+
+.logo-container #logo {
+    display: block;
+    height: 50px; /* Altura reduzida para melhor encaixe, pode ser ajustada */
+    width: auto;
+    padding: 5px 0; /* Ajuste no padding vertical se necessário */
+}
+
+/* Navegação Principal (Desktop) */
+.main-nav {
+    flex-grow: 1; /* Permite que a navegação ocupe o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza a lista de links (ul) */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0; /* Reset do padding */
+}
+
+.main-nav ul li {
+    margin: 0 15px; /* Espaçamento entre os itens do menu, ajustado de margin-left para margin em ambos os lados */
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    font-family: var(--fonte-titulos);
+    font-size: 1.05rem;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent; /* Aumenta a espessura da borda para melhor feedback */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease; /* Adicionada transição para background-color */
+}
+
+/* Feedback visual ao passar o mouse (hover) e item ativo */
+.main-nav ul li a:hover,
+.main-nav ul li a.active-page-link {
+    color: var(--cor-secundaria-verde-esmeralda); /* Cor de destaque no hover/ativo */
+    border-bottom-color: var(--cor-secundaria-verde-esmeralda); /* Linha indicadora mais visível */
+    /* background-color: var(--cor-fundo-cinza-muito-claro); /* Leve fundo para maior destaque - opcional */
+}
+
+/* Para o item ativo, garantir melhor contraste como solicitado */
+.main-nav ul li a.active-page-link {
+    color: var(--cor-primaria-azul-corporativo); /* Texto mais escuro para contraste no item ativo */
+    font-weight: 700; /* Deixa o item ativo em negrito */
+    border-bottom-color: var(--cor-primaria-azul-corporativo); /* Borda na cor primária para o ativo */
+}
+
+/* Ações do Cabeçalho (CTA) */
+.header-actions {
+    flex-shrink: 0; /* Impede que o CTA encolha */
+    /* A margem direita já está no .header-container */
+}
+
+.header-actions .cta-button-header {
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    margin-left: 0; /* Removida margem esquerda anterior, pois o .header-container controla o espaçamento */
+    border-bottom: none !important;
+}
+
+.header-actions .cta-button-header:hover {
+    background-color: #1A653B;
+    color: var(--cor-texto-claro) !important;
+}
+
+/* Botão de Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--cor-primaria-azul-corporativo);
+    cursor: pointer;
+    padding: 5px; /* Adiciona um pouco de área de clique */
+    margin-left: 15px; /* Espaço se o CTA estiver visível ao lado */
+}
+
+/* --- Responsividade do Cabeçalho --- */
+@media (max-width: 991px) { /* Ponto de quebra para tablets e início do mobile */
+    .header-container {
+        padding-left: 15px; /* Ajuste de margem para mobile */
+        padding-right: 15px;
+    }
+
+    .logo-container #logo {
+        height: 40px; /* Logo menor em mobile */
+    }
+
+    .main-nav {
+        display: none; /* Menu principal escondido, será ativado pelo .menu-toggle */
+        order: 3; /* Muda a ordem para aparecer abaixo do logo e toggle */
+        width: 100%;
+        background-color: var(--cor-fundo-principal);
+        border-top: 1px solid var(--cor-borda);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+        position: absolute; /* Para sobrepor o conteúdo abaixo */
+        top: 100%; /* Posiciona abaixo do header */
+        left: 0;
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: block; /* Mostra o menu quando ativo */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha itens à esquerda no menu dropdown */
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px 20px; /* Mais padding para toque */
+        width: 100%;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+        text-align: left;
+    }
+
+    .main-nav ul li:last-child a {
+        border-bottom: none !important;
+    }
+    
+    /* Estilos para o item ativo no menu mobile */
+    .main-nav ul li a.active-page-link {
+        background-color: var(--cor-fundo-cinza-muito-claro);
+        color: var(--cor-primaria-azul-corporativo); 
+        font-weight: bold;
+        border-bottom-color: var(--cor-fundo-cinza-muito-claro) !important; /* Evita dupla borda */
+    }
+    .main-nav ul li a.active-page-link:hover {
+        background-color: var(--cor-fundo-cinza-muito-claro); /* Mantém o fundo no hover do ativo */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de hambúrguer */
+        order: 2; /* Coloca o toggle depois do logo e antes do menu (que terá order 3) */
+    }
+
+    .header-actions {
+        /* O usuário especificou que o CTA no mobile será o ícone do WhatsApp flutuante. */
+        /* Portanto, o .header-actions (botão de texto) pode ser escondido. */
+        display: none; 
+    }
+
+    /* Ajustes para Mega Menu em Mobile (se for mantido) */
+    .mega-menu-container:hover .mega-menu-content { 
+        display: none; /* Desabilitar hover em mobile */
+    }
+
+    .mega-menu-content {
+        position: static;
+        flex-direction: column;
+        min-width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--cor-fundo-cinza-muito-claro);
+        padding-left: 0; /* Reset */
+    }
+
+    .mega-menu-column {
+        border-right: none;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro);
+        padding-right: 0;
+        padding-bottom: 0; /* Reset */
+        margin-bottom: 0; /* Reset */
+    }
+    .mega-menu-column:last-child {
+        border-bottom: none;
+    }
+
+    .mega-menu-sub-column {
+        padding-left: 0; /* Reset */
+    }
+    
+    .mega-menu-column a.mega-menu-main-item,
+    .mega-submenu a {
+        padding: 15px 20px;
+        padding-left: 30px; /* Indentação para sub-itens */
+        text-align: left;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+    }
+    .mega-menu-column a.mega-menu-main-item:last-child,
+    .mega-submenu a:last-child {
+         border-bottom: none !important;
+    }
+
+    /* Estilo para o ícone de dropdown no mobile */
+    .main-nav .dropdown > a .fa-chevron-down {
+        float: right; /* Alinha a seta à direita */
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 767px) { /* Ajustes mais finos para celulares */
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .logo-container #logo {
+        height: 35px; /* Logo ainda menor se necessário */
+    }
+}
+
+/* Script.js deve adicionar/remover a classe .active no .main-nav e .open no .mega-menu-container */
+
+
+/* Integração dos estilos do rodapé no CSS principal */
+
+/* Estilos do Rodapé com Alinhamento Extremo e Responsividade */
+
+/* Container principal do rodapé */
+.footer-rd-inspired .container.footer-container-redesenhado {
+    /* COMENTÁRIO: Usando uma nova classe para evitar conflito com estilos existentes se necessário,
+       ou podemos sobrescrever .footer-rd-inspired .container diretamente. */
+    /* O padding lateral de 10px para alinhamento extremo será aplicado nos elementos internos (logo e conteúdo central) */
+}
+
+/* Estrutura principal do rodapé: Logo à esquerda, conteúdo centralizado */
+.footer-rd-inspired .footer-main-content-redesenhado {
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda, restante à direita/centro */
+    align-items: flex-start; /* Alinha itens ao topo */
+    flex-wrap: wrap; /* Permite quebra em mobile */
+    padding-top: 40px; /* Espaçamento superior */
+    padding-bottom: 20px; /* Espaçamento inferior antes do copyright */
+}
+
+/* Logo no rodapé */
+.footer-logo-container-redesenhado {
+    flex-shrink: 0;
+    padding-left: 10px; /* Margem mínima à esquerda */
+    margin-bottom: 30px; /* Espaçamento em mobile quando quebrar */
+}
+
+.footer-logo-container-redesenhado .footer-logo img {
+    max-height: 45px; /* Altura ajustada para o rodapé */
+    width: auto;
+}
+
+/* Conteúdo central do rodapé (colunas de links) */
+.footer-content-centered-redesenhado {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza as colunas de links */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 20px; /* Espaço entre as colunas de links */
+    padding: 0 10px; /* Espaçamento lateral para o bloco de conteúdo */
+    margin-bottom: 30px; /* Espaçamento em mobile */
+}
+
+/* Colunas individuais de links no rodapé */
+.footer-column-redesenhado {
+    /* COMENTÁRIO: A largura das colunas pode ser flexível ou fixa. 
+       Para centralização horizontal de várias colunas, elas podem ter larguras automáticas ou definidas. 
+       Exemplo com flex-basis para distribuição. */
+    flex: 1 1 200px; /* Base flexível, permite crescer e encolher, com base de 200px */
+    min-width: 180px; /* Largura mínima para cada coluna */
+    /* padding: 0 15px; /* Removido, o gap cuida do espaçamento entre colunas */
+}
+
+.footer-column-redesenhado .bsc-title, 
+.footer-column-redesenhado h2 {
+    font-size: 1rem; /* Tamanho do título da coluna */
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footer-column-redesenhado .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column-redesenhado .links li a {
+    display: block;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: var(--cor-texto-principal);
+    transition: color 0.3s ease;
+    border-bottom: none !important; /* Remove bordas de links no rodapé */
+}
+
+.footer-column-redesenhado .links li a:hover {
+    color: var(--cor-secundaria-verde-esmeralda);
+}
+
+/* Informações de contato e Newsletter (se mantidas como colunas) */
+.footer-column-redesenhado .contact-info p,
+.footer-column-redesenhado .newsletter-form p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-column-redesenhado .contact-info .bsc-text.mobile-xs {
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.footer-column-redesenhado .newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-borda-sutil);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.footer-column-redesenhado .newsletter-form .cta-button-header {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Rodapé inferior (Copyright e links de política) */
+.footer-bottom-content-redesenhado {
+    display: flex;
+    justify-content: space-between; /* Copyright à esquerda, links à direita */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10px; /* Padding lateral para alinhamento com logo/CTA */
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-content-redesenhado .copyright-text {
+    margin-right: 20px; /* Espaço entre copyright e links */
+    margin-bottom: 10px; /* Para quebra em mobile */
+    /* Alinhamento à esquerda por padrão, seguindo o logo */
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li:first-child {
+    margin-left: 0;
+}
+
+/* --- Responsividade do Rodapé --- */
+@media (max-width: 991px) {
+    .footer-main-content-redesenhado {
+        /* Em telas médias, o logo pode ficar acima e o conteúdo centralizado abaixo */
+    }
+    .footer-content-centered-redesenhado {
+        gap: 15px; /* Reduz o gap entre colunas */
+    }
+    .footer-column-redesenhado {
+        flex-basis: calc(50% - 10px); /* Duas colunas em telas médias */
+        min-width: unset;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) { /* Mobile */
+    .footer-main-content-redesenhado {
+        flex-direction: column; /* Empilha logo e conteúdo */
+        align-items: center; /* Centraliza tudo em mobile */
+        text-align: center;
+    }
+
+    .footer-logo-container-redesenhado {
+        padding-left: 0; /* Remove padding para centralizar */
+        margin-bottom: 20px;
+    }
+
+    .footer-content-centered-redesenhado {
+        flex-direction: column; /* Empilha as colunas de links */
+        align-items: center; /* Centraliza as colunas */
+        width: 100%;
+        gap: 0;
+        padding: 0;
+    }
+
+    .footer-column-redesenhado {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .footer-column-redesenhado:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-column-redesenhado .bsc-title,
+    .footer-column-redesenhado h2 {
+        /* COMENTÁRIO: Em mobile, os títulos das colunas do rodapé podem se tornar botões de accordion
+           se a funcionalidade de accordion do rodapé original for mantida/adaptada. 
+           Por enquanto, apenas centralizados. */
+    }
+
+    .footer-bottom-content-redesenhado {
+        flex-direction: column;
+        align-items: center; /* Centraliza copyright e links */
+        text-align: center;
+    }
+
+    .footer-bottom-content-redesenhado .copyright-text {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom-content-redesenhado .footer-bottom-links ul {
+        justify-content: center; /* Centraliza os links de política */
+    }
+    .footer-bottom-content-redesenhado .footer-bottom-links li {
+        margin: 0 7px 10px; /* Ajusta margens para centralização */
+    }
+}

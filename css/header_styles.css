@@ -1,0 +1,239 @@
+/* Estilos do Cabeçalho com Alinhamento Extremo e Responsividade */
+
+/* Container principal do cabeçalho */
+.header-container {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Cria espaço entre os itens: logo à esquerda, menu ao centro, CTA à direita */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding-left: 10px; /* Margem mínima à esquerda para o logo */
+    padding-right: 10px; /* Margem mínima à direita para o CTA */
+}
+
+/* Logo no cabeçalho */
+.logo-container {
+    flex-shrink: 0; /* Impede que o logo encolha */
+    /* A margem esquerda já está no .header-container */
+}
+
+.logo-container #logo {
+    display: block;
+    height: 50px; /* Altura reduzida para melhor encaixe, pode ser ajustada */
+    width: auto;
+    padding: 5px 0; /* Ajuste no padding vertical se necessário */
+}
+
+/* Navegação Principal (Desktop) */
+.main-nav {
+    flex-grow: 1; /* Permite que a navegação ocupe o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza a lista de links (ul) */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0; /* Reset do padding */
+}
+
+.main-nav ul li {
+    margin: 0 15px; /* Espaçamento entre os itens do menu, ajustado de margin-left para margin em ambos os lados */
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    font-family: var(--fonte-titulos);
+    font-size: 1.05rem;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent; /* Aumenta a espessura da borda para melhor feedback */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease; /* Adicionada transição para background-color */
+}
+
+/* Feedback visual ao passar o mouse (hover) e item ativo */
+.main-nav ul li a:hover,
+.main-nav ul li a.active-page-link {
+    color: var(--cor-secundaria-verde-esmeralda); /* Cor de destaque no hover/ativo */
+    border-bottom-color: var(--cor-secundaria-verde-esmeralda); /* Linha indicadora mais visível */
+    /* background-color: var(--cor-fundo-cinza-muito-claro); /* Leve fundo para maior destaque - opcional */
+}
+
+/* Para o item ativo, garantir melhor contraste como solicitado */
+.main-nav ul li a.active-page-link {
+    color: var(--cor-primaria-azul-corporativo); /* Texto mais escuro para contraste no item ativo */
+    font-weight: 700; /* Deixa o item ativo em negrito */
+    border-bottom-color: var(--cor-primaria-azul-corporativo); /* Borda na cor primária para o ativo */
+}
+
+/* Ações do Cabeçalho (CTA) */
+.header-actions {
+    flex-shrink: 0; /* Impede que o CTA encolha */
+    /* A margem direita já está no .header-container */
+}
+
+.header-actions .cta-button-header {
+    background-color: var(--cor-secundaria-verde-esmeralda);
+    color: var(--cor-texto-claro) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--fonte-titulos);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    margin-left: 0; /* Removida margem esquerda anterior, pois o .header-container controla o espaçamento */
+    border-bottom: none !important;
+}
+
+.header-actions .cta-button-header:hover {
+    background-color: #1A653B;
+    color: var(--cor-texto-claro) !important;
+}
+
+/* Botão de Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--cor-primaria-azul-corporativo);
+    cursor: pointer;
+    padding: 5px; /* Adiciona um pouco de área de clique */
+    margin-left: 15px; /* Espaço se o CTA estiver visível ao lado */
+}
+
+/* --- Responsividade do Cabeçalho --- */
+@media (max-width: 991px) { /* Ponto de quebra para tablets e início do mobile */
+    .header-container {
+        padding-left: 15px; /* Ajuste de margem para mobile */
+        padding-right: 15px;
+    }
+
+    .logo-container #logo {
+        height: 40px; /* Logo menor em mobile */
+    }
+
+    .main-nav {
+        display: none; /* Menu principal escondido, será ativado pelo .menu-toggle */
+        order: 3; /* Muda a ordem para aparecer abaixo do logo e toggle */
+        width: 100%;
+        background-color: var(--cor-fundo-principal);
+        border-top: 1px solid var(--cor-borda);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+        position: absolute; /* Para sobrepor o conteúdo abaixo */
+        top: 100%; /* Posiciona abaixo do header */
+        left: 0;
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: block; /* Mostra o menu quando ativo */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha itens à esquerda no menu dropdown */
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px 20px; /* Mais padding para toque */
+        width: 100%;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+        text-align: left;
+    }
+
+    .main-nav ul li:last-child a {
+        border-bottom: none !important;
+    }
+    
+    /* Estilos para o item ativo no menu mobile */
+    .main-nav ul li a.active-page-link {
+        background-color: var(--cor-fundo-cinza-muito-claro);
+        color: var(--cor-primaria-azul-corporativo); 
+        font-weight: bold;
+        border-bottom-color: var(--cor-fundo-cinza-muito-claro) !important; /* Evita dupla borda */
+    }
+    .main-nav ul li a.active-page-link:hover {
+        background-color: var(--cor-fundo-cinza-muito-claro); /* Mantém o fundo no hover do ativo */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de hambúrguer */
+        order: 2; /* Coloca o toggle depois do logo e antes do menu (que terá order 3) */
+    }
+
+    .header-actions {
+        /* O usuário especificou que o CTA no mobile será o ícone do WhatsApp flutuante. */
+        /* Portanto, o .header-actions (botão de texto) pode ser escondido. */
+        display: none; 
+    }
+
+    /* Ajustes para Mega Menu em Mobile (se for mantido) */
+    .mega-menu-container:hover .mega-menu-content { 
+        display: none; /* Desabilitar hover em mobile */
+    }
+
+    .mega-menu-content {
+        position: static;
+        flex-direction: column;
+        min-width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--cor-fundo-cinza-muito-claro);
+        padding-left: 0; /* Reset */
+    }
+
+    .mega-menu-column {
+        border-right: none;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro);
+        padding-right: 0;
+        padding-bottom: 0; /* Reset */
+        margin-bottom: 0; /* Reset */
+    }
+    .mega-menu-column:last-child {
+        border-bottom: none;
+    }
+
+    .mega-menu-sub-column {
+        padding-left: 0; /* Reset */
+    }
+    
+    .mega-menu-column a.mega-menu-main-item,
+    .mega-submenu a {
+        padding: 15px 20px;
+        padding-left: 30px; /* Indentação para sub-itens */
+        text-align: left;
+        border-bottom: 1px solid var(--cor-fundo-cinza-muito-claro) !important;
+    }
+    .mega-menu-column a.mega-menu-main-item:last-child,
+    .mega-submenu a:last-child {
+         border-bottom: none !important;
+    }
+
+    /* Estilo para o ícone de dropdown no mobile */
+    .main-nav .dropdown > a .fa-chevron-down {
+        float: right; /* Alinha a seta à direita */
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 767px) { /* Ajustes mais finos para celulares */
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .logo-container #logo {
+        height: 35px; /* Logo ainda menor se necessário */
+    }
+}
+
+/* Script.js deve adicionar/remover a classe .active no .main-nav e .open no .mega-menu-container */
+

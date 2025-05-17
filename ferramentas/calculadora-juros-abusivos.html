@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcule o juros do seu emprestimo com nossa calculadora especializada.">
+    <meta name="keywords" content="calculadora juros abusivos, aposentadoria, juros, finaniamento, Cunha Soluções Jurídicas">
+    <title>Calculadora de Aposentadoria - Cunha Soluções Jurídicas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/cunha.adv/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/cunha.adv/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/cunha.adv/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/cunha.adv/img/favicon-16x16.png">
+    <link rel="manifest" href="/cunha.adv/site.webmanifest">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="pagina-area calculadora-aposentadoria-page">
+        <div class="container">
+            <header class="pagina-header">
+            <h1>Calculadora de Juros Abusivos</h1>
+            <p class="mb-4">Utilize nossa calculadora para verificar se você está pagando juros abusivos em seus contratos de empréstimo, financiamento ou cartão de crédito.</p>
+            
+            <div class="calculadora-container">
+                <div class="calculadora-form">
+                    <div class="form-group">
+                        <label for="valor-principal">Valor do Empréstimo (R$)</label>
+                        <input type="number" id="valor-principal" placeholder="Ex: 10000" min="1" step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taxa-contrato">Taxa de Juros do Contrato (% ao mês)</label>
+                        <input type="number" id="taxa-contrato" placeholder="Ex: 6" min="0.01" step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taxa-mercado">Taxa Média de Mercado (% ao mês)</label>
+                        <input type="number" id="taxa-mercado" placeholder="Ex: 3" min="0.01" step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prazo">Prazo (meses)</label>
+                        <input type="number" id="prazo" placeholder="Ex: 12" min="1" max="360">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo-operacao">Tipo de Operação</label>
+                        <select id="tipo-operacao">
+                            <option value="emprestimo">Empréstimo Pessoal</option>
+                            <option value="financiamento">Financiamento</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="cheque">Cheque Especial</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" class="btn-calcular" onclick="calcularJurosAbusivos()">Calcular</button>
+                </div>
+                
+                <div class="resultado" id="resultado">
+                    <h3>Resultado da Análise</h3>
+                    <p><strong>Limite Legal (Art. 591 CC):</strong> <span id="limite-legal">0</span>% ao mês</p>
+                    <p><strong>Taxa Cobrada:</strong> <span id="taxa-cobrada">0</span>% ao mês</p>
+                    <p><strong>Excesso:</strong> <span id="excesso">0</span>% ao mês</p>
+                    <p><strong>Valor Abusivo Total:</strong> <span id="valor-abusivo" class="valor-abusivo">R$ 0,00</span></p>
+                    <p id="conclusao"></p>
+                </div>
+                
+                <div class="base-legal">
+                    <h3>Base Legal</h3>
+                    <ul>
+                        <li><strong>Código Civil (Art. 591)</strong> - Considera abusivos juros que excedam em 50% a taxa média praticada no mercado.</li>
+                        <li><strong>Lei de Usura (Decreto 22.626/33)</strong> - Estabelece limites para juros.</li>
+                        <li><strong>CDC (Código de Defesa do Consumidor)</strong> - Proíbe práticas abusivas.</li>
+                    </ul>
+                    
+                    <h3 class="mt-4">Jurisprudência</h3>
+                    <ul>
+                        <li>TJSP costuma considerar abusivo acima de 2% a.m.</li>
+                        <li>STJ tem entendimentos variados conforme o tipo de operação.</li>
+                    </ul>
+                    
+                    <p class="mt-4"><strong>Observação:</strong> Esta calculadora é apenas uma ferramenta informativa. Para uma análise jurídica completa do seu caso, entre em contato com nossos advogados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Scripts -->
+    <script>
+        // Carrega os componentes (header e footer)
+        document.addEventListener('DOMContentLoaded', function() {
+
+        });
+        
+        // Função para calcular juros abusivos
+        function calcularJurosAbusivos() {
+            // Obter valores do formulário
+            const valorPrincipal = parseFloat(document.getElementById('valor-principal').value);
+            const taxaContrato = parseFloat(document.getElementById('taxa-contrato').value) / 100;
+            const taxaMercado = parseFloat(document.getElementById('taxa-mercado').value) / 100;
+            const prazo = parseInt(document.getElementById('prazo').value);
+            const tipoOperacao = document.getElementById('tipo-operacao').value;
+            
+            // Validar entradas
+            if (isNaN(valorPrincipal) || isNaN(taxaContrato) || isNaN(taxaMercado) || isNaN(prazo)) {
+                alert('Por favor, preencha todos os campos com valores válidos.');
+                return;
+            }
+            
+            // Calcular limite legal (taxa de mercado + 50%)
+            const limiteJuros = taxaMercado * 1.5;
+            
+            // Verificar se há abuso
+            let excesso = 0;
+            if (taxaContrato > limiteJuros) {
+                excesso = taxaContrato - limiteJuros;
+            }
+            
+            // Calcular valor abusivo
+            const valorComTaxaContrato = valorPrincipal * Math.pow(1 + taxaContrato, prazo);
+            const valorComTaxaLimite = valorPrincipal * Math.pow(1 + limiteJuros, prazo);
+            const valorAbusivo = valorComTaxaContrato - valorComTaxaLimite;
+            
+            // Exibir resultados
+            document.getElementById('limite-legal').textContent = (limiteJuros * 100).toFixed(2);
+            document.getElementById('taxa-cobrada').textContent = (taxaContrato * 100).toFixed(2);
+            document.getElementById('excesso').textContent = (excesso * 100).toFixed(2);
+            document.getElementById('valor-abusivo').textContent = 'R$ ' + valorAbusivo.toFixed(2);
+            
+            // Conclusão
+            let conclusao = '';
+            if (excesso > 0) {
+                conclusao = `<strong>Conclusão:</strong> Há indícios de juros abusivos neste contrato. Você pode ter direito à restituição de aproximadamente R$ ${valorAbusivo.toFixed(2)}. Recomendamos que entre em contato com nossos advogados para uma análise detalhada do seu caso.`;
+            } else {
+                conclusao = '<strong>Conclusão:</strong> Os juros praticados estão dentro dos limites legais.';
+            }
+            document.getElementById('conclusao').innerHTML = conclusao;
+            
+            // Mostrar resultado
+            document.getElementById('resultado').style.display = 'block';
+        }
+    document.addEventListener('DOMContentLoaded', function() {
+    // Carrega o cabeçalho
+    fetch('/cunha.adv/componentes/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+
+    // Carrega o rodapé
+    fetch('/cunha.adv/componentes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+});
+
+</body>
+</html>

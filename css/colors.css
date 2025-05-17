@@ -1,0 +1,110 @@
+/* 
+ * ARQUIVO CENTRAL DE CORES - CUNHA ADVOCACIA
+ * 
+ * Este arquivo contém todas as variáveis de cores do site.
+ * IMPORTANTE: Qualquer alteração de cor deve ser feita APENAS neste arquivo.
+ * Outros arquivos CSS devem apenas referenciar estas variáveis.
+ */
+
+:root {
+    /* Cores Primárias (Vermelho) */
+    --color-primary-900: #5a0000; /* Para textos */
+    --color-primary-700: #8B0000; /* Cor principal */
+    --color-primary-500: #a30000; /* Hover/CTAs */
+    --color-primary-300: #c12e2e; /* Destaques suaves */
+    --color-primary-100: #f8e6e6; /* Fundo muito suave */
+    
+    /* Cores Neutras */
+    --color-neutral-100: #ffffff; /* Fundo claro */
+    --color-neutral-200: #f8f9fa; /* Fundo secundário */
+    --color-neutral-300: #e9ecef; /* Bordas claras */
+    --color-neutral-400: #ced4da; /* Bordas médias */
+    --color-neutral-500: #6c757d; /* Texto secundário */
+    --color-neutral-700: #343a40; /* Títulos */
+    --color-neutral-900: #212529; /* Texto principal */
+    
+    /* Cores Funcionais */
+    --color-success: #28a745; /* Confirmações */
+    --color-warning: #ffc107; /* Alertas */
+    --color-error: #dc3545; /* Erros */
+    --color-info: #17a2b8; /* Informações */
+    
+    /* Cores da Paleta Fornecida */
+    --color-beige: #CFC4B1; /* RGB: 230, 220, 177 - Fundo claro, elementos sutis */
+    --color-midnight: #141414; /* RGB: 20, 20, 20 - Texto escuro, fundos de contraste */
+    --color-olive: #676127; /* RGB: 100, 100, 39 - Cor de destaque principal */
+    --color-rust: #803407; /* RGB: 130, 50, 7 - Acentos, destaques secundários */
+    --color-charcoal: #383230; /* Cor de fundo preta substituída por charcoal */
+    
+    /* Variações de Olive (Verde Oliva) */
+    --color-olive-900: #3F3A17; /* Mais escuro para texto */
+    --color-olive-700: #676127; /* Padrão (igual ao --color-olive) */
+    --color-olive-500: #7F7A30; /* Mais claro para hover */
+    --color-olive-300: #9A9649; /* Destaques suaves */
+    --color-olive-100: #F4F3E7; /* Fundo muito suave */
+    
+    /* Variações de Rust (Ferrugem) */
+    --color-rust-900: #5A2505; /* Mais escuro para texto */
+    --color-rust-700: #803407; /* Padrão (igual ao --color-rust) */
+    --color-rust-500: #A04409; /* Mais claro para hover */
+    --color-rust-300: #C0652B; /* Destaques suaves */
+    --color-rust-100: #F9EBE3; /* Fundo muito suave */
+    
+    /* Variações de Beige (Bege) */
+    --color-beige-900: #8A8475; /* Mais escuro para texto */
+    --color-beige-700: #AEA694; /* Médio */
+    --color-beige-500: #CFC4B1; /* Padrão (igual ao --color-beige) */
+    --color-beige-300: #DFD8CA; /* Mais claro */
+    --color-beige-100: #F5F2ED; /* Fundo muito suave */
+    
+    /* Variações de Midnight (Preto) */
+    --color-midnight-900: #000000; /* Preto absoluto */
+    --color-midnight-700: #141414; /* Padrão (igual ao --color-midnight) */
+    --color-midnight-500: #2A2A2A; /* Mais claro */
+    --color-midnight-300: #454545; /* Destaques suaves */
+    --color-midnight-100: #E0E0E0; /* Fundo muito suave */
+    
+    /* Variações de Charcoal */
+    --color-charcoal-900: #252120; /* Mais escuro */
+    --color-charcoal-700: #383230; /* Padrão */
+    --color-charcoal-500: #4A4340; /* Mais claro */
+    --color-charcoal-300: #6D6462; /* Destaques suaves */
+    --color-charcoal-100: #E8E6E5; /* Fundo muito suave */
+    
+    /* Cores de Sombra */
+    --color-shadow-light: rgba(0, 0, 0, 0.05);
+    --color-shadow-medium: rgba(0, 0, 0, 0.1);
+    --color-shadow-strong: rgba(0, 0, 0, 0.2);
+    
+    /* Cores de Overlay */
+    --color-overlay-light: rgba(0, 0, 0, 0.3);
+    --color-overlay-medium: rgba(0, 0, 0, 0.5);
+    --color-overlay-strong: rgba(0, 0, 0, 0.7);
+    
+    /* Mapeamento para compatibilidade com código existente */
+    --cor-primaria-azul-corporativo: var(--color-midnight-700); /* Substituindo o azul #0A2342 por Midnight */
+    --cor-secundaria-verde-esmeralda: var(--color-olive-700); /* Substituindo o verde #2E8B57 por Olive */
+    --cor-texto-principal: var(--color-neutral-900);
+    --cor-texto-secundario: var(--color-midnight-700);
+    --cor-texto-claro: var(--color-neutral-100);
+    --cor-fundo-principal: var(--color-neutral-100);
+    --cor-fundo-secundario: var(--color-neutral-200);
+    --cor-fundo-contraste-escuro: var(--color-charcoal-700); /* Alterado para charcoal */
+    --cor-fundo-cinza-muito-claro: var(--color-neutral-300);
+    --cor-borda: var(--color-neutral-300);
+    --cor-borda-sutil: var(--color-neutral-400);
+    --cor-hover-primaria: var(--color-midnight-500);
+    --cor-hover-secundaria: var(--color-olive-500);
+    --cor-sucesso: var(--color-success);
+    --cor-alerta: var(--color-warning);
+    --cor-erro: var(--color-error);
+    --cor-info: var(--color-info);
+    --cor-sombra-leve: var(--color-shadow-light);
+    --cor-sombra-media: var(--color-shadow-medium);
+    --cor-sombra-forte: var(--color-shadow-strong);
+}
+
+/* 
+ * IMPORTANTE: Não adicione outros estilos neste arquivo.
+ * Este arquivo é exclusivamente para definição de variáveis de cores.
+ */

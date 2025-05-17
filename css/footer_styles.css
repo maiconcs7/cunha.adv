@@ -1,0 +1,215 @@
+/* Estilos do Rodapé com Alinhamento Extremo e Responsividade */
+
+/* Container principal do rodapé */
+.footer-rd-inspired .container.footer-container-redesenhado {
+    /* COMENTÁRIO: Usando uma nova classe para evitar conflito com estilos existentes se necessário,
+       ou podemos sobrescrever .footer-rd-inspired .container diretamente. */
+    /* O padding lateral de 10px para alinhamento extremo será aplicado nos elementos internos (logo e conteúdo central) */
+}
+
+/* Estrutura principal do rodapé: Logo à esquerda, conteúdo centralizado */
+.footer-rd-inspired .footer-main-content-redesenhado {
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda, restante à direita/centro */
+    align-items: flex-start; /* Alinha itens ao topo */
+    flex-wrap: wrap; /* Permite quebra em mobile */
+    padding-top: 40px; /* Espaçamento superior */
+    padding-bottom: 20px; /* Espaçamento inferior antes do copyright */
+}
+
+/* Logo no rodapé */
+.footer-logo-container-redesenhado {
+    flex-shrink: 0;
+    padding-left: 10px; /* Margem mínima à esquerda */
+    margin-bottom: 30px; /* Espaçamento em mobile quando quebrar */
+}
+
+.footer-logo-container-redesenhado .footer-logo img {
+    max-height: 45px; /* Altura ajustada para o rodapé */
+    width: auto;
+}
+
+/* Conteúdo central do rodapé (colunas de links) */
+.footer-content-centered-redesenhado {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza as colunas de links */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 20px; /* Espaço entre as colunas de links */
+    padding: 0 10px; /* Espaçamento lateral para o bloco de conteúdo */
+    margin-bottom: 30px; /* Espaçamento em mobile */
+}
+
+/* Colunas individuais de links no rodapé */
+.footer-column-redesenhado {
+    /* COMENTÁRIO: A largura das colunas pode ser flexível ou fixa. 
+       Para centralização horizontal de várias colunas, elas podem ter larguras automáticas ou definidas. 
+       Exemplo com flex-basis para distribuição. */
+    flex: 1 1 200px; /* Base flexível, permite crescer e encolher, com base de 200px */
+    min-width: 180px; /* Largura mínima para cada coluna */
+    /* padding: 0 15px; /* Removido, o gap cuida do espaçamento entre colunas */
+}
+
+.footer-column-redesenhado .bsc-title, 
+.footer-column-redesenhado h2 {
+    font-size: 1rem; /* Tamanho do título da coluna */
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footer-column-redesenhado .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column-redesenhado .links li a {
+    display: block;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: var(--cor-texto-principal);
+    transition: color 0.3s ease;
+    border-bottom: none !important; /* Remove bordas de links no rodapé */
+}
+
+.footer-column-redesenhado .links li a:hover {
+    color: var(--cor-secundaria-verde-esmeralda);
+}
+
+/* Informações de contato e Newsletter (se mantidas como colunas) */
+.footer-column-redesenhado .contact-info p,
+.footer-column-redesenhado .newsletter-form p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-column-redesenhado .contact-info .bsc-text.mobile-xs {
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.footer-column-redesenhado .newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-borda-sutil);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.footer-column-redesenhado .newsletter-form .cta-button-header {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Rodapé inferior (Copyright e links de política) */
+.footer-bottom-content-redesenhado {
+    display: flex;
+    justify-content: space-between; /* Copyright à esquerda, links à direita */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10px; /* Padding lateral para alinhamento com logo/CTA */
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-content-redesenhado .copyright-text {
+    margin-right: 20px; /* Espaço entre copyright e links */
+    margin-bottom: 10px; /* Para quebra em mobile */
+    /* Alinhamento à esquerda por padrão, seguindo o logo */
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li:first-child {
+    margin-left: 0;
+}
+
+/* --- Responsividade do Rodapé --- */
+@media (max-width: 991px) {
+    .footer-main-content-redesenhado {
+        /* Em telas médias, o logo pode ficar acima e o conteúdo centralizado abaixo */
+    }
+    .footer-content-centered-redesenhado {
+        gap: 15px; /* Reduz o gap entre colunas */
+    }
+    .footer-column-redesenhado {
+        flex-basis: calc(50% - 10px); /* Duas colunas em telas médias */
+        min-width: unset;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) { /* Mobile */
+    .footer-main-content-redesenhado {
+        flex-direction: column; /* Empilha logo e conteúdo */
+        align-items: center; /* Centraliza tudo em mobile */
+        text-align: center;
+    }
+
+    .footer-logo-container-redesenhado {
+        padding-left: 0; /* Remove padding para centralizar */
+        margin-bottom: 20px;
+    }
+
+    .footer-content-centered-redesenhado {
+        flex-direction: column; /* Empilha as colunas de links */
+        align-items: center; /* Centraliza as colunas */
+        width: 100%;
+        gap: 0;
+        padding: 0;
+    }
+
+    .footer-column-redesenhado {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .footer-column-redesenhado:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-column-redesenhado .bsc-title,
+    .footer-column-redesenhado h2 {
+        /* COMENTÁRIO: Em mobile, os títulos das colunas do rodapé podem se tornar botões de accordion
+           se a funcionalidade de accordion do rodapé original for mantida/adaptada. 
+           Por enquanto, apenas centralizados. */
+    }
+
+    .footer-bottom-content-redesenhado {
+        flex-direction: column;
+        align-items: center; /* Centraliza copyright e links */
+        text-align: center;
+    }
+
+    .footer-bottom-content-redesenhado .copyright-text {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom-content-redesenhado .footer-bottom-links ul {
+        justify-content: center; /* Centraliza os links de política */
+    }
+    .footer-bottom-content-redesenhado .footer-bottom-links li {
+        margin: 0 7px 10px; /* Ajusta margens para centralização */
+    }
+}
+
