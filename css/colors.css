@@ -1,0 +1,107 @@
+/* 
+ * ARQUIVO CENTRAL DE CORES - CUNHA ADVOCACIA
+ * Este arquivo contém todas as variáveis de cores do site para facilitar manutenção e troca de paleta
+ */
+
+:root {
+    /* ======== CORES PRIMÁRIAS ======== */
+    --color-primary-900: #5a0000; /* Para textos - Vermelho escuro */
+    --color-primary-700: #8B0000; /* Cor principal - Vermelho padrão */
+    --color-primary-500: #a30000; /* Para hover/CTAs - Vermelho médio */
+    --color-primary-300: #c12e2e; /* Para destaques suaves - Vermelho claro */
+    --color-primary-100: #f8d7d7; /* Para fundos sutis - Vermelho muito claro */
+    
+    /* ======== CORES NEUTRAS ======== */
+    --color-neutral-900: #141414; /* Preto para textos importantes */
+    --color-neutral-800: #333333; /* Quase preto para títulos */
+    --color-neutral-700: #4a4a4a; /* Para títulos secundários */
+    --color-neutral-600: #666666; /* Para textos secundários */
+    --color-neutral-500: #888888; /* Para textos terciários */
+    --color-neutral-400: #aaaaaa; /* Para bordas escuras */
+    --color-neutral-300: #cccccc; /* Para bordas médias */
+    --color-neutral-200: #e6e6e6; /* Para bordas claras e separadores */
+    --color-neutral-100: #f5f5f5; /* Para fundos claros */
+    --color-neutral-50: #fafafa;  /* Para fundos muito claros */
+    
+    /* ======== CORES FUNCIONAIS ======== */
+    --color-success: #28a745; /* Verde para confirmações e sucesso */
+    --color-warning: #ffc107; /* Amarelo para alertas e avisos */
+    --color-error: #dc3545;   /* Vermelho para erros e problemas */
+    --color-info: #17a2b8;    /* Azul para informações */
+    
+    /* ======== CORES DA PALETA FORNECIDA ======== */
+    /* Beige - #CFC4B1 */
+    --color-beige-900: #5c5850; /* Beige muito escuro */
+    --color-beige-700: #8a8374; /* Beige escuro */
+    --color-beige-500: #b7ac99; /* Beige médio */
+    --color-beige-300: #CFC4B1; /* Beige padrão (da paleta) */
+    --color-beige-100: #e7e2d8; /* Beige claro */
+    
+    /* Midnight - #141414 */
+    --color-midnight-900: #000000; /* Preto absoluto */
+    --color-midnight-700: #0a0a0a; /* Quase preto */
+    --color-midnight-500: #141414; /* Midnight padrão (da paleta) */
+    --color-midnight-300: #2a2a2a; /* Cinza muito escuro */
+    --color-midnight-100: #3d3d3d; /* Cinza escuro */
+    
+    /* Olive - #676127 */
+    --color-olive-900: #343213; /* Olive muito escuro */
+    --color-olive-700: #4a4a1c; /* Olive escuro */
+    --color-olive-500: #676127; /* Olive padrão (da paleta) */
+    --color-olive-300: #878432; /* Olive claro */
+    --color-olive-100: #b5b35c; /* Olive muito claro */
+    
+    /* Rust - #803407 */
+    --color-rust-900: #401a03; /* Rust muito escuro */
+    --color-rust-700: #602705; /* Rust escuro */
+    --color-rust-500: #803407; /* Rust padrão (da paleta) */
+    --color-rust-300: #a04409; /* Rust claro */
+    --color-rust-100: #d4753a; /* Rust muito claro */
+    
+    /* Charcoal - #383230 */
+    --color-charcoal-900: #1c1918; /* Charcoal muito escuro */
+    --color-charcoal-700: #2a2624; /* Charcoal escuro */
+    --color-charcoal-500: #383230; /* Charcoal padrão (da paleta) */
+    --color-charcoal-300: #4e4745; /* Charcoal claro */
+    --color-charcoal-100: #7a7270; /* Charcoal muito claro */
+    
+    /* ======== MAPEAMENTO PARA COMPATIBILIDADE COM CÓDIGO EXISTENTE ======== */
+    /* Estas variáveis mantêm compatibilidade com o código existente */
+    --cor-primaria-azul-corporativo: var(--color-primary-700);
+    --cor-hover-primaria: var(--color-primary-500);
+    --cor-secundaria-verde-esmeralda: var(--color-olive-500);
+    --cor-hover-secundaria: var(--color-olive-700);
+    --cor-texto-principal: var(--color-neutral-800);
+    --cor-texto-secundario: var(--color-neutral-600);
+    --cor-texto-claro: var(--color-neutral-50);
+    --cor-borda: var(--color-neutral-300);
+    --cor-borda-sutil: var(--color-neutral-200);
+    --cor-fundo-principal: var(--color-neutral-50);
+    --cor-fundo-secundario: var(--color-neutral-100);
+    --cor-fundo-contraste-escuro: var(--color-charcoal-500); /* Alterado de preto para charcoal */
+    --cor-fundo-contraste-claro: var(--color-beige-300);
+    --cor-sombra-leve: rgba(0, 0, 0, 0.05);
+    --cor-sombra-media: rgba(0, 0, 0, 0.1);
+    --cor-sombra-forte: rgba(0, 0, 0, 0.2);
+    --cor-overlay: rgba(0, 0, 0, 0.7);
+    --cor-sucesso: var(--color-success);
+    --cor-alerta: var(--color-warning);
+    --cor-erro: var(--color-error);
+    --cor-info: var(--color-info);
+}
+
+/* 
+ * INSTRUÇÕES PARA TROCA DE PALETA DE CORES
+ * 
+ * Para alterar a paleta de cores do site:
+ * 
+ * 1. MÉTODO SIMPLES: Altere apenas as variáveis na seção "CORES DA PALETA FORNECIDA"
+ *    - Isso afetará automaticamente todas as áreas que usam essas cores
+ * 
+ * 2. MÉTODO AVANÇADO: Altere o mapeamento na seção "MAPEAMENTO PARA COMPATIBILIDADE"
+ *    - Por exemplo, para mudar a cor primária de vermelho para azul:
+ *      --cor-primaria-azul-corporativo: var(--color-info);
+ * 
+ * 3. MÉTODO COMPLETO: Crie uma nova paleta substituindo todas as variáveis --color-*
+ *    - Isso permite uma reformulação completa mantendo a estrutura
+ */

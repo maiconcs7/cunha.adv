@@ -1,0 +1,70 @@
+<!-- COMENTÁRIO: Início do Cabeçalho do Site -->
+<header class="site-header">
+    <!-- Container principal do cabeçalho, agora com Flexbox para alinhamento extremo -->
+    <div class="container header-container">
+        
+        <!-- Logotipo posicionado à extrema esquerda -->
+        <div class="logo-container">
+            <a href="/cunha.adv/index.html">
+                <!-- COMENTÁRIO: A altura do logo é primariamente controlada pelo CSS em #logo. O estilo inline foi removido para centralizar o controle no CSS. -->
+                <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" alt="Logo Cunha Soluções Jurídicas e Consultoria" id="logo">
+            </a>
+        </div>
+
+        <!-- Navegação Principal: itens centralizados entre logo e CTA no desktop -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/cunha.adv/index.html" data-page-name="index.html">Início</a></li>
+                <li class="dropdown mega-menu-container">
+                    <!-- COMENTÁRIO: Link do dropdown não leva a lugar nenhum, apenas aciona o menu. -->
+                    <a href="javascript:void(0)" class="dropbtn">Nossas Soluções <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-column">
+                            <a href="/cunha.adv/solucoes/agronegocio.html" class="mega-menu-main-item" data-submenu="agronegocio-submenu">Para o Agronegócio</a>
+                            <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="mega-menu-main-item" data-submenu="pequenos-negocios-submenu">Para Pequenos Negócios e MEIs</a>
+                            <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="mega-menu-main-item" data-submenu="pessoas-fisicas-submenu">Para Pessoas Físicas</a>
+                        </div>
+                        <div class="mega-menu-sub-column">
+                            <div id="agronegocio-submenu" class="mega-submenu">
+                                <a href="/cunha.adv/solucoes/agronegocio.html#contratos-agrarios">Contratos Agrários</a>
+                                <a href="/cunha.adv/solucoes/agronegocio.html#tributacao-rural">Tributação Rural</a>
+                                <a href="/cunha.adv/solucoes/agronegocio.html#recuperacao-credito">Recuperação de Crédito</a>
+                            </div>
+                            <div id="pequenos-negocios-submenu" class="mega-submenu">
+                                <a href="/cunha.adv/areas/direito-empresarial.html">Direito Empresarial</a>
+                                <a href="/cunha.adv/areas/direito-tributario.html">Direito Tributário</a>
+                                <a href="/cunha.adv/areas/direito-societario.html">Direito Societário</a>
+                            </div>
+                            <div id="pessoas-fisicas-submenu" class="mega-submenu">
+                                <a href="/cunha.adv/areas/direito-previdenciario.html">Direito Previdenciário</a>
+                                <a href="/cunha.adv/areas/direito-consumidor.html">Direito do Consumidor</a>
+                                <a href="/cunha.adv/areas/direito-trabalhista.html">Direito Trabalhista</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/cunha.adv/blog/index.html" data-page-name="blog/index.html">Blog</a></li>
+                <li><a href="/cunha.adv/ferramentas/index.html" data-page-name="ferramentas/index.html">Ferramentas</a></li>
+                <li><a href="/cunha.adv/contato.html" data-page-name="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Ações do Cabeçalho (CTA): posicionado à extrema direita -->
+        <div class="header-actions">
+            <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." class="cta-button-header" target="_blank">Fale com um Especialista</a>
+        </div>
+
+        <!-- Botão de Menu Hambúrguer para Mobile -->
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+            <!-- COMENTÁRIO: Poderia adicionar um ícone de "X" para quando o menu estiver aberto, alternando via JS -->
+            <!-- <i class="fas fa-times" aria-hidden="true"></i> -->
+        </button>
+
+    </div> <!-- Fim .header-container -->
+</header>
+<!-- COMENTÁRIO: Fim do Cabeçalho do Site -->
+
+<!-- COMENTÁRIO: O script do Mega Menu é carregado aqui, mas a lógica de toggle do menu mobile principal e active-page-link será no script.js ou loadComponents.js -->
+<script src="/cunha.adv/js/megaMenu.js" defer></script>
+

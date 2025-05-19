@@ -1,0 +1,300 @@
+/* 
+ * ESTILOS DO RODAPÉ - CUNHA ADVOCACIA
+ * Ajustado para seguir o layout da imagem de referência
+ */
+
+/* Container principal do rodapé */
+.footer-rd-inspired {
+    background-color: #f8f9fa;
+    color: var(--cor-texto-principal);
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-rd-inspired .container.footer-container-redesenhado {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Estrutura principal do rodapé: Logo à esquerda, conteúdo centralizado */
+.footer-rd-inspired .footer-main-content-redesenhado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 40px 0 20px;
+    gap: 30px;
+}
+
+/* Logo e informações de contato no rodapé */
+.footer-logo-container-redesenhado {
+    flex: 0 0 auto;
+    padding-left: 0;
+    margin-right: 20px;
+}
+
+.footer-logo-container-redesenhado .footer-logo img {
+    max-height: 45px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+/* Ícones de redes sociais */
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-texto-principal);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+.social-icon .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Informações de contato */
+.contact-info {
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin: 0 0 5px;
+    font-size: 0.9rem;
+}
+
+.contact-info .mobile-xs {
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.contact-info .mobile-xs:first-child {
+    margin-top: 0;
+}
+
+.contact-info .mobile-sm {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+/* Conteúdo centralizado (colunas de links) */
+.footer-content-centered-redesenhado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: flex-start;
+}
+
+/* Colunas individuais de links no rodapé */
+.footer-column-redesenhado {
+    flex: 0 0 auto;
+    min-width: 160px;
+}
+
+.footer-column-redesenhado .bsc-title,
+.footer-column-redesenhado h2 {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footer-column-redesenhado .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column-redesenhado .links li {
+    margin-bottom: 8px;
+}
+
+.footer-column-redesenhado .links li a {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column-redesenhado .links li a:hover {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+/* Newsletter */
+.footer-column-redesenhado p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    max-width: 300px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda-sutil);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.newsletter-form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.newsletter-form button:hover {
+    background-color: #333;
+}
+
+/* Rodapé inferior (Copyright e links de política) */
+.footer-bottom-content-redesenhado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid var(--cor-borda-sutil);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-content-redesenhado .copyright-text {
+    margin: 0;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li {
+    margin-left: 20px;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-content-redesenhado .footer-bottom-links li a:hover {
+    color: var(--cor-primaria-azul-corporativo);
+}
+
+/* --- Responsividade do Rodapé --- */
+@media (max-width: 1200px) {
+    .footer-rd-inspired .container.footer-container-redesenhado {
+        padding: 0 20px;
+    }
+    
+    .footer-content-centered-redesenhado {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-main-content-redesenhado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-logo-container-redesenhado {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .footer-content-centered-redesenhado {
+        width: 100%;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    
+    .footer-column-redesenhado {
+        flex: 0 0 calc(50% - 15px);
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content-centered-redesenhado {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-column-redesenhado {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .footer-bottom-content-redesenhado {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links li {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links .links {
+        justify-content: flex-start;
+    }
+    
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
+    }
+}
