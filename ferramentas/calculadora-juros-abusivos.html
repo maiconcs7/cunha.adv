@@ -26,70 +26,68 @@
 <body>
     <div id="header-placeholder"></div>
     
-    <main class="pagina-area">
-        <div class="ferramentas-container">
-            <h1 class="ferramentas-titulo">Calculadora de Juros Abusivos</h1>
-            
-            <div class="ferramentas-descricao">
-                <p>Utilize esta calculadora para verificar se os juros do seu financiamento podem ser considerados abusivos conforme a legislação brasileira.</p>
-            </div>
-            
-            <div class="form-group">
-                <label for="valorFinanciado">Valor Financiado (R$)</label>
-                <input type="number" id="valorFinanciado" placeholder="Ex: 10.000" min="0" step="0.01">
-            </div>
-            
-            <div class="form-group">
-                <label for="valorParcela">Valor da Parcela (R$)</label>
-                <input type="number" id="valorParcela" placeholder="Ex: 500" min="0" step="0.01">
-            </div>
-            
-            <div class="form-group">
-                <label for="numeroParcelas">Número de Parcelas</label>
-                <input type="number" id="numeroParcelas" placeholder="Ex: 24" min="1">
-            </div>
-            
-            <div class="form-group">
-                <label for="taxaMercado">Taxa Média de Mercado (% ao mês)</label>
-                <input type="number" id="taxaMercado" placeholder="Ex: 2.5" step="0.01" min="0">
-                <small class="input-hint">Consulte as taxas médias no site do Banco Central</small>
-            </div>
-            
-            <button id="calcularBtn" class="btn-primary">Calcular Juros</button>
-            
-            <div id="resultado" class="result-box" style="display: none;">
-                <h3>Resultado da Análise</h3>
-                
-                <div class="result-item">
-                    <span>Total a Pagar:</span>
-                    <span class="result-value" id="totalPagar">R$ 0,00</span>
-                </div>
-                
-                <div class="result-item">
-                    <span>Juros Totais:</span>
-                    <span class="result-value" id="jurosTotais">R$ 0,00</span>
-                </div>
-                
-                <div class="result-item">
-                    <span>Taxa Mensal:</span>
-                    <span class="result-value" id="taxaMensal">0%</span>
-                </div>
-                
-                <div class="result-item">
-                    <span>Taxa Anual:</span>
-                    <span class="result-value" id="taxaAnual">0%</span>
-                </div>
-                
-                <div class="result-item">
-                    <span>Situação:</span>
-                    <span class="result-value" id="situacao">-</span>
-                </div>
-                
-                <button id="especialistaBtn" class="btn-whatsapp" style="display: none;">
-                    <i class="fab fa-whatsapp"></i> Fale com especialista
-                </button>
-            </div>
+     </style>
+    </head>
+    <section>
+    <div class="calculator-box">
+        <h1>Calculadora de Juros Abusivos</h1>
+        
+        <div class="form-group">
+            <label for="valorFinanciado">Valor Financiado (R$)</label>
+            <input type="number" id="valorFinanciado" placeholder="Ex: 10.000">
         </div>
+        
+        <div class="form-group">
+            <label for="valorParcela">Valor da Parcela (R$)</label>
+            <input type="number" id="valorParcela" placeholder="Ex: 500">
+        </div>
+        
+        <div class="form-group">
+            <label for="numeroParcelas">Número de Parcelas</label>
+            <input type="number" id="numeroParcelas" placeholder="Ex: 24">
+        </div>
+        
+        <div class="form-group">
+            <label for="taxaMercado">Taxa Média de Mercado (% ao mês)</label>
+            <input type="number" id="taxaMercado" placeholder="Ex: 2.5" step="0.01">
+            <small style="color: #7f8c8d;">Consulte as taxas médias no site do Banco Central</small>
+        </div>
+        
+        <button id="calcularBtn">Calcular Juros</button>
+        
+        <div id="resultado" class="result-box">
+            <h3>Resultado da Análise</h3>
+            
+            <div class="result-item">
+                <span>Total a Pagar:</span>
+                <span class="result-value" id="totalPagar">R$ 0,00</span>
+            </div>
+            
+            <div class="result-item">
+                <span>Juros Totais:</span>
+                <span class="result-value" id="jurosTotais">R$ 0,00</span>
+            </div>
+            
+            <div class="result-item">
+                <span>Taxa Mensal:</span>
+                <span class="result-value" id="taxaMensal">0%</span>
+            </div>
+            
+            <div class="result-item">
+                <span>Taxa Anual:</span>
+                <span class="result-value" id="taxaAnual">0%</span>
+            </div>
+            
+            <div class="result-item">
+                <span>Situação:</span>
+                <span class="result-value" id="situacao">-</span>
+            </div>
+            
+            <button id="especialistaBtn" class="btn-whatsapp" style="display: none;">
+                <i class="fab fa-whatsapp"></i> Fale com especialista
+            </button>
+        </div>
+    </div>
         
         <!-- Container com as instruções para consulta no BACEN -->
         <div class="instructions-container">
@@ -128,31 +126,34 @@
             <p class="disclaimer"><em>Disclaimer: As informações aqui apresentadas são de caráter informativo e não substituem uma consulta jurídica especializada. Os resultados podem variar de acordo com cada caso.</em></p>
         </div>
         
-        <!-- Modal para juros abusivos -->
-        <div id="modalAbusivo" class="modal">
-            <div class="modal-content">
-                <span class="modal-close" id="fecharModal">&times;</span>
-                <h2>Atenção: Juros Abusivos Detectados!</h2>
-                <p>Nossa análise identificou que os juros deste financiamento podem ser considerados abusivos pela legislação brasileira.</p>
-                <p>Você pode ter direito a revisão do contrato e até restituição dos valores pagos a mais.</p>
-                
-                <div class="modal-actions">
-                    <a id="modalWhatsappBtn" href="https://api.whatsapp.com/send/?phone=5551995249234&text=Ol%C3%A1%21+Gostaria+de+falar+com+um+especialista+sobre+juros+abusivos.&type=phone_number&app_absent=0" 
-                       class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> Falar com advogado
-                    </a>
-                    
-                    <button id="fecharModalBtn" class="btn-secondary">
-                        Fechar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
+       <!-- Modal para juros abusivos -->
+    <div id="modalAbusivo" class="modal">
+        <div class="modal-content">
+            <h2>Atenção: Juros Abusivos Detectados!</h2>
+            <p>Nossa análise identificou que os juros deste financiamento podem ser considerados abusivos pela legislação brasileira.</p>
+            <p>Você pode ter direito a revisão do contrato e até restituição dos valores pagos a mais.</p>
 
-    <div id="footer-placeholder"></div>
+
+                
+            <div style="margin: 20px 0;">
+                <a id="modalWhatsappBtn" href="https://api.whatsapp.com/send/?phone=5551995249234&text=Ol%C3%A1%21+Gostaria+de+falar+com+um+especialista+sobre+juros+abusivos.&type=phone_number&app_absent=0" 
+                   style="background: #25D366; color: white; padding: 12px 20px; border-radius: 4px; text-decoration: none; display: inline-block; font-weight: bold;"
+                   target="_blank">
+                    <i class="fab fa-whatsapp"></i> Falar com advogado
+                </a>
+            </div>
+            
+            <button id="fecharModal" style="background: #e74c3c; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+                Fechar
+            </button>
+        </div>
     
-    <script src="/cunha.adv/js/loadComponents.js" defer></script>
+            
+    </div>
+    
+    <!-- Ícone do WhatsApp (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Elementos do DOM
@@ -161,16 +162,6 @@
             const especialistaBtn = document.getElementById('especialistaBtn');
             const modal = document.getElementById('modalAbusivo');
             const fecharModal = document.getElementById('fecharModal');
-            const fecharModalBtn = document.getElementById('fecharModalBtn');
-            
-            // Função para formatar moeda
-            function formatarMoeda(valor) {
-                return valor.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                    minimumFractionDigits: 2
-                });
-            }
             
             // Função para calcular juros
             function calcularJuros() {
@@ -186,44 +177,32 @@
                     return;
                 }
                 
-                if (valorFinanciado <= 0 || valorParcela <= 0 || numeroParcelas <= 0 || taxaMercado < 0) {
-                    alert('Por favor, insira valores válidos maiores que zero.');
-                    return;
-                }
-                
                 // Cálculos
                 const totalPagar = valorParcela * numeroParcelas;
                 const jurosTotais = totalPagar - valorFinanciado;
                 
-                // Calcular taxa mensal aproximada (Método de Newton-Raphson simplificado)
+                // Calcular taxa mensal aproximada
                 let taxaMensal = 0;
                 if (valorFinanciado > 0 && numeroParcelas > 0) {
-                    // Aproximação inicial
-                    taxaMensal = (totalPagar / valorFinanciado - 1) / numeroParcelas * 100;
-                    
-                    // Refinamento (2 iterações para melhor precisão)
-                    for (let i = 0; i < 2; i++) {
-                        const f = valorFinanciado * Math.pow(1 + taxaMensal/100, numeroParcelas) - valorParcela * (Math.pow(1 + taxaMensal/100, numeroParcelas) - 1) / (taxaMensal/100);
-                        const df = numeroParcelas * valorFinanciado * Math.pow(1 + taxaMensal/100, numeroParcelas - 1) - (valorParcela * (numeroParcelas * Math.pow(1 + taxaMensal/100, numeroParcelas - 1) * (taxaMensal/100) - (Math.pow(1 + taxaMensal/100, numeroParcelas) - 1)) / Math.pow(taxaMensal/100, 2);
-                        taxaMensal = taxaMensal - f/df * 100;
-                    }
+                    const razao = totalPagar / valorFinanciado;
+                    taxaMensal = (Math.pow(razao, 1/numeroParcelas) - 1) * 100;
                 }
                 
                 // Calcular taxa anual
                 const taxaAnual = (Math.pow(1 + taxaMensal/100, 12) - 1) * 100;
                 
-                // Verificar se é abusivo (considerando 50% acima da média como potencialmente abusivo)
-                const isAbusivo = taxaMensal > (taxaMercado * 1.5);
+                // Verificar se é abusivo
+                const isAbusivo = taxaMensal > (taxaMercado * 2);
                 
                 // Mostrar resultados
-                document.getElementById('totalPagar').textContent = formatarMoeda(totalPagar);
-                document.getElementById('jurosTotais').textContent = formatarMoeda(jurosTotais);
+                document.getElementById('totalPagar').textContent = 'R$ ' + totalPagar.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+                document.getElementById('jurosTotais').textContent = 'R$ ' + jurosTotais.toLocaleString('pt-BR', {minimumFractionDigits: 2});
                 document.getElementById('taxaMensal').textContent = taxaMensal.toFixed(2).replace('.', ',') + '%';
                 document.getElementById('taxaAnual').textContent = taxaAnual.toFixed(2).replace('.', ',') + '%';
                 
                 const situacaoElement = document.getElementById('situacao');
                 if (isAbusivo) {
-                    situacaoElement.textContent = 'POTENCIALMENTE ABUSIVO';
+                    situacaoElement.textContent = 'JUROS ABUSIVOS';
                     situacaoElement.className = 'result-value text-danger';
                     especialistaBtn.style.display = 'block';
                     
@@ -240,29 +219,18 @@
             
             // Event Listeners
             calcularBtn.addEventListener('click', calcularJuros);
-            
-            // Fechar modal
-            function fecharModalHandler() {
+            fecharModal.addEventListener('click', function() {
                 modal.style.display = 'none';
-            }
-            
-            fecharModal.addEventListener('click', fecharModalHandler);
-            fecharModalBtn.addEventListener('click', fecharModalHandler);
+            });
             
             // Fechar modal ao clicar fora
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
-                    fecharModalHandler();
-                }
-            });
-            
-            // Permitir calcular com Enter
-            document.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    calcularJuros();
+                    modal.style.display = 'none';
                 }
             });
         });
     </script>
+  </section>
 </body>
 </html>
