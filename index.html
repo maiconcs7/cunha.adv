@@ -7,30 +7,33 @@
     <meta name="keywords" content="consultoria jurídica, direito agronegócio, planejamento tributário, assessoria jurídica, direito empresarial">
     <title>Cunha Soluções Jurídicas - Eficiência e Precisão Jurídica</title>
     <link rel="stylesheet" href="/cunha.adv/css/style.css">
+    <link rel="stylesheet" href="/cunha.adv/css/colors.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* VARIÁVEIS DE CORES - TONS ESCUROS E SÓBRIOS */
-        :root {
-            --cor-carvão: #2a2e35;
-            --cor-azul-profundo: #1a3a72;
-            --cor-azul-escuro: #142d54;
-            --cor-texto-claro: #f8f9fa;
-            --cor-texto-cinza: #e0e0e0;
-            --cor-destaque: #4a90e2;
-            --cor-borda: rgba(255,255,255,0.1);
-        }
+        /* Importação da fonte JA jayagiri Sans Rough para títulos */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
         
-        /* ESTILOS GERAIS */
+        /* ESTILOS ESPECÍFICOS PARA A PÁGINA INDEX */
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Open Sans', Roboto, sans-serif;
             color: var(--cor-texto-cinza);
-            background-color: #1e2025;
+            /* Aplicação do gradiente linear do mais claro para o mais escuro */
+            background: linear-gradient(to bottom, 
+                var(--color-gradient-1),
+                var(--color-gradient-2),
+                var(--color-gradient-3),
+                var(--color-gradient-4),
+                var(--color-gradient-5),
+                var(--color-gradient-6),
+                var(--color-gradient-7),
+                white); /* Interrupção branca antes do rodapé */
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
         
         h1, h2, h3 {
+            font-family: 'JA jayagiri Sans Rough', 'Segoe UI', Roboto, sans-serif;
             font-weight: 600;
             color: var(--cor-texto-claro);
         }
@@ -72,26 +75,26 @@
             opacity: 0.9;
         }
         
-        /* BOTÕES - MANTIDOS OS ORIGINAIS */
+        /* BOTÕES - AJUSTADOS PARA TONS DE OLIVE */
         .cta-button {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--cor-destaque);
-            color: white;
+            background-color: var(--color-olive-500); /* Tom médio de olive */
+            color: white; /* Texto branco para contraste com fundo escuro */
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--cor-destaque);
+            border: 2px solid var(--color-olive-500);
         }
         
         .cta-button:hover {
-            background-color: transparent;
-            color: var(--cor-destaque);
+            background-color: var(--color-olive-700); /* Tom mais escuro no hover */
+            border-color: var(--color-olive-700);
         }
         
         .saiba-mais-novo {
-            color: var(--cor-destaque);
+            color: var(--color-olive-700); /* Tom escuro de olive */
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
@@ -100,12 +103,12 @@
         }
         
         .saiba-mais-novo:hover {
-            color: var(--cor-texto-claro);
+            color: var(--color-olive-900); /* Tom mais escuro no hover */
         }
         
         /* SEÇÃO DE SOLUÇÕES */
         .areas-atuacao-novo {
-            background-color: var(--cor-carvão);
+            background-color: transparent; /* Transparente para mostrar o gradiente */
             padding: 80px 0;
         }
         
@@ -113,6 +116,7 @@
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 20px;
+            color: var(--color-neutral-800); /* Cor escura para contraste com fundo claro */
         }
         
         .areas-atuacao-novo p {
@@ -120,6 +124,7 @@
             max-width: 800px;
             margin: 0 auto 50px;
             opacity: 0.9;
+            color: var(--color-neutral-700);
         }
         
         .cards-container-novo {
@@ -131,12 +136,12 @@
         }
         
         .card-novo {
-            background-color: #2a2e35;
+            background-color: white; /* Fundo claro para os cards */
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 3px solid var(--cor-destaque);
+            border-top: 3px solid var(--color-olive-500); /* Borda superior em tom olive */
         }
         
         .card-novo:hover {
@@ -152,16 +157,19 @@
         .card-novo h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
+            color: var(--color-neutral-800); /* Cor escura para contraste com fundo claro */
         }
         
         .card-novo p {
             margin-bottom: 20px;
             opacity: 0.9;
+            color: var(--color-neutral-700);
+            text-align: left;
         }
         
         /* SEÇÃO DIFERENCIAIS */
         .diferenciais-novo {
-            background-color: #25282e;
+            background-color: transparent; /* Transparente para mostrar o gradiente */
             padding: 80px 0;
         }
         
@@ -169,21 +177,22 @@
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 50px;
+            color: var(--color-neutral-50); /* Cor clara para contraste com fundo escuro */
         }
         
         .diferenciais-novo .card-novo {
             text-align: center;
-            background-color: #2a2e35;
+            background-color: white; /* Fundo claro para os cards */
         }
         
         .diferenciais-novo .fa-3x {
-            color: var(--cor-destaque);
+            color: var(--color-olive-500); /* Ícones em tom olive */
             margin-bottom: 20px;
         }
         
         /* CTA FINAL */
         .cta-final-novo {
-            background-color: var(--cor-azul-profundo);
+            background-color: var(--color-gradient-6); /* Tom escuro do gradiente */
             padding: 80px 0;
             text-align: center;
         }
@@ -191,6 +200,7 @@
         .cta-final-novo h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
+            color: var(--color-neutral-50); /* Cor clara para contraste */
         }
         
         .cta-final-novo p {
@@ -198,6 +208,7 @@
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            color: var(--color-neutral-100);
         }
         
         /* WHATSAPP FLUTUANTE */
@@ -277,7 +288,7 @@
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
                 <!-- Agronegócio (centro esquerda) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-tractor fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-tractor fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Agronegócio</h3>
                     <p>Segurança jurídica e planejamento tributário especializado para o setor agrícola. Maximize seus resultados com conformidade legal.</p>
                     <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Saiba Mais →</a>
@@ -285,7 +296,7 @@
                 
                 <!-- Pequenos Negócios (centro direita) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-store-alt fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-store-alt fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Pequenos Negócios</h3>
                     <p>Estruturação jurídica eficiente para MEIs e pequenas empresas. Foco em redução de riscos e otimização tributária.</p>
                     <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Saiba Mais →</a>
@@ -296,7 +307,7 @@
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
                 <!-- Pessoas Físicas (esquerda) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-user-tie fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-user-tie fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Pessoas Físicas</h3>
                     <p>Proteção de direitos e planejamento previdenciário estratégico. Soluções personalizadas para suas necessidades jurídicas.</p>
                     <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Saiba Mais →</a>
@@ -304,7 +315,7 @@
                 
                 <!-- Gestão Patrimonial Familiar (centro) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-home fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-home fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Gestão Patrimonial Familiar</h3>
                     <p>Proteção e otimização do patrimônio familiar com estratégias jurídicas personalizadas para segurança das gerações.</p>
                     <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
@@ -312,7 +323,7 @@
                 
                 <!-- Redução de Carga Tributária (direita) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-file-invoice-dollar fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-file-invoice-dollar fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Gestão de Passivos Tributários</h3>
                     <p>Estratégias legais para redução da carga tributária e regularização fiscal com máxima eficiência.</p>
                     <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
@@ -323,7 +334,7 @@
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%;">
                 <!-- Negociação Terceirizada (esquerda) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-handshake fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-handshake fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Negociação Terceirizada</h3>
                     <p>Mediação profissional para resolução de conflitos e acordos com abordagem técnica e imparcial.</p>
                     <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
@@ -331,7 +342,7 @@
                 
                 <!-- Compliance Jurídico (direita) -->
                 <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-clipboard-check fa-3x" style="color: var(--cor-azul-profundo);"></i>
+                    <i class="fas fa-clipboard-check fa-3x" style="color: var(--color-olive-500);"></i>
                     <h3>Compliance Jurídico</h3>
                     <p>Implementação de programas de conformidade legal para prevenção de riscos e governança corporativa.</p>
                     <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
