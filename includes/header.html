@@ -1,4 +1,4 @@
-<!-- COMENTÁRIO: Cabeçalho Premium para Escritório Jurídico -->
+<!-- Cabeçalho Premium para Escritório Jurídico -->
 <header class="site-header">
     <!-- Container principal com layout flexível e sombra sutil -->
     <div class="container header-container">
@@ -186,6 +186,7 @@
         z-index: 1000;
         padding: 0.8rem 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
     .header-container {
@@ -253,7 +254,7 @@
     
     .nav-link:hover,
     .nav-link:focus {
-        color: #1a5276;
+        color: #7d8a2e;
     }
     
     .nav-link::after {
@@ -263,7 +264,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background-color: #1a5276;
+        background-color: #7d8a2e;
         transition: width 0.3s ease;
     }
     
@@ -281,6 +282,19 @@
     .dropdown:hover .dropdown-icon,
     .dropbtn[aria-expanded="true"] .dropdown-icon {
         transform: rotate(180deg);
+    }
+    
+    /* Botão Nossas Soluções */
+    .dropbtn.nav-link {
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0.8rem 0;
+        cursor: pointer;
+    }
+    
+    .dropbtn.nav-link:hover {
+        background: none;
     }
     
     /* Mega Menu */
@@ -320,7 +334,7 @@
     }
     
     .mega-menu-title {
-        color: #1a5276;
+        color: #7d8a2e;
         font-size: 1.1rem;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
@@ -338,13 +352,13 @@
     }
     
     .mega-menu-main-item:hover {
-        color: #1a5276;
+        color: #7d8a2e;
     }
     
     .menu-icon {
         margin-right: 0.7rem;
         font-size: 1rem;
-        color: #1a5276;
+        color: #7d8a2e;
     }
     
     .mega-submenu {
@@ -362,7 +376,7 @@
     }
     
     .submenu-link:hover {
-        color: #1a5276;
+        color: #7d8a2e;
     }
     
     .submenu-link i {
@@ -385,12 +399,12 @@
     
     .highlight-icon {
         font-size: 2rem;
-        color: #1a5276;
+        color: #7d8a2e;
         margin-bottom: 1rem;
     }
     
     .highlight-content h3 {
-        color: #1a5276;
+        color: #7d8a2e;
         margin-bottom: 0.5rem;
         font-size: 1.1rem;
     }
@@ -403,7 +417,7 @@
     
     .highlight-cta {
         display: inline-block;
-        background: #1a5276;
+        background: #7d8a2e;
         color: white !important;
         padding: 0.6rem 1.2rem;
         border-radius: 4px;
@@ -414,7 +428,7 @@
     }
     
     .highlight-cta:hover {
-        background: #154360;
+        background: #6a7735;
     }
     
     /* Botão WhatsApp */
@@ -455,8 +469,8 @@
         cursor: pointer;
         position: relative;
         z-index: 1100;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -464,15 +478,15 @@
     
     .menu-toggle-bar {
         height: 2px;
-        width: 24px;
+        width: 20px;
         background: #2c3e50;
-        margin: 3px 0;
+        margin: 2px 0;
         transition: all 0.3s ease;
         transform-origin: center;
     }
     
     .menu-toggle[aria-expanded="true"] .top-bar {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
     }
     
     .menu-toggle[aria-expanded="true"] .middle-bar {
@@ -480,7 +494,7 @@
     }
     
     .menu-toggle[aria-expanded="true"] .bottom-bar {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-5px) rotate(-45deg);
     }
     
     /* Acessibilidade */
@@ -521,7 +535,7 @@
             height: 100vh;
             background: #fff;
             z-index: 1000;
-            padding: 6rem 2rem 2rem;
+            padding: 5rem 2rem 2rem;
             overflow-y: auto;
             margin: 0;
         }
