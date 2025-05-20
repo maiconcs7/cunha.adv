@@ -14,6 +14,28 @@
             </a>
         </div>
 
+        <!-- CTA Principal - Mantido o WhatsApp mas com estilo melhorado -->
+        <div class="header-actions">
+            <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
+               class="cta-button-header whatsapp-cta" 
+               target="_blank"
+               aria-label="Fale conosco pelo WhatsApp">
+                <i class="fab fa-whatsapp cta-icon" aria-hidden="true"></i>
+                Fale com um Especialista
+            </a>
+        </div>
+
+        <!-- Menu Mobile melhorado com acessibilidade -->
+        <button class="menu-toggle" 
+                aria-label="Menu principal" 
+                aria-expanded="false" 
+                aria-controls="main-nav">
+            <span class="menu-toggle-bar top-bar"></span>
+            <span class="menu-toggle-bar middle-bar"></span>
+            <span class="menu-toggle-bar bottom-bar"></span>
+            <span class="sr-only">Menu</span>
+        </button>
+
         <!-- Navegação Principal com indicador de página ativa -->
         <nav class="main-nav" aria-label="Navegação principal">
             <ul class="nav-list">
@@ -152,28 +174,6 @@
                 </li>
             </ul>
         </nav>
-
-        <!-- CTA Principal - Mantido o WhatsApp mas com estilo melhorado -->
-        <div class="header-actions">
-            <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
-               class="cta-button-header whatsapp-cta" 
-               target="_blank"
-               aria-label="Fale conosco pelo WhatsApp">
-                <i class="fab fa-whatsapp cta-icon" aria-hidden="true"></i>
-                Fale com um Especialista
-            </a>
-        </div>
-
-        <!-- Menu Mobile melhorado com acessibilidade -->
-        <button class="menu-toggle" 
-                aria-label="Menu principal" 
-                aria-expanded="false" 
-                aria-controls="main-nav">
-            <span class="menu-toggle-bar top-bar"></span>
-            <span class="menu-toggle-bar middle-bar"></span>
-            <span class="menu-toggle-bar bottom-bar"></span>
-            <span class="sr-only">Menu</span>
-        </button>
     </div>
 </header>
 
@@ -196,6 +196,7 @@
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 2rem;
+        position: relative;
     }
     
     .logo-container {
@@ -526,35 +527,56 @@
     }
     
     @media (max-width: 768px) {
+        .header-container {
+            flex-wrap: wrap;
+            padding: 0.5rem 1rem;
+        }
+        
+        .logo-container {
+            order: 1;
+            flex: 1;
+        }
+        
+        .header-actions {
+            order: 2;
+        }
+        
+        .menu-toggle {
+            order: 3;
+            display: flex;
+        }
+        
         .main-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+            order: 4;
             width: 100%;
-            height: 100vh;
-            background: #fff;
-            z-index: 1000;
-            padding: 5rem 2rem 2rem;
-            overflow-y: auto;
+            height: 0;
+            padding: 0;
+            transition: height 0.3s ease;
+            overflow: hidden;
+            position: relative;
             margin: 0;
         }
         
         .main-nav.active {
-            display: block;
+            height: calc(100vh - 70px);
+            padding: 1rem 1.5rem;
+            overflow-y: auto;
         }
         
         .nav-list {
             flex-direction: column;
+            gap: 0.5rem;
         }
         
         .nav-item {
-            margin: 0.5rem 0;
+            margin: 0;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .nav-link {
             padding: 1rem 0;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            justify-content: space-between;
         }
         
         .mega-menu-content {
@@ -562,26 +584,51 @@
             transform: none;
             width: 100%;
             box-shadow: none;
-            padding: 1rem 0 0 1rem;
+            padding: 0;
+            margin-top: 0.5rem;
             display: none;
+        }
+        
+        .mega-menu-content.active {
+            display: block;
         }
         
         .mega-menu-grid {
             grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .mega-menu-column {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .mega-menu-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mega-menu-main-item {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .submenu-link {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            font-size: 0.9rem;
         }
         
         .mega-menu-highlight {
-            grid-column: span 1;
             margin-top: 1rem;
+            padding: 1rem;
         }
         
-        .menu-toggle {
-            display: flex;
+        .highlight-content h3 {
+            font-size: 1rem;
         }
         
-        .header-actions {
-            margin-left: auto;
-            margin-right: 1rem;
+        .highlight-content p {
+            font-size: 0.85rem;
         }
         
         .whatsapp-cta {
@@ -615,7 +662,7 @@
 </style>
 
 <script>
-    // Script melhorado para o menu mobile
+    // Script atualizado para o menu mobile
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('.main-nav');
@@ -624,38 +671,66 @@
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
             mainNav.classList.toggle('active');
+            document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
         });
         
         // Fechar menu ao clicar em um link (para mobile)
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link:not(.dropbtn)');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
                     menuToggle.setAttribute('aria-expanded', 'false');
                     mainNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
             });
         });
         
-        // Melhorar a experiência do dropdown
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('.dropbtn');
-            
+        // Melhorar a experiência do dropdown no mobile
+        const dropdownButtons = document.querySelectorAll('.dropbtn');
+        dropdownButtons.forEach(button => {
             button.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
                     
                     const megaMenu = this.nextElementSibling;
                     if (isExpanded) {
-                        megaMenu.style.display = 'none';
+                        megaMenu.classList.remove('active');
                     } else {
-                        megaMenu.style.display = 'block';
+                        // Fechar outros menus abertos
+                        document.querySelectorAll('.mega-menu-content.active').forEach(menu => {
+                            if (menu !== megaMenu) {
+                                menu.classList.remove('active');
+                                menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+                            }
+                        });
+                        megaMenu.classList.add('active');
                     }
                 }
             });
+        });
+        
+        // Fechar menu quando clicar fora
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+                if (!e.target.closest('.main-nav') && !e.target.closest('.menu-toggle')) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Fechar todos os submenus
+                    document.querySelectorAll('.mega-menu-content').forEach(menu => {
+                        menu.classList.remove('active');
+                    });
+                    document.querySelectorAll('.dropbtn').forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            }
         });
     });
 </script>
