@@ -14,28 +14,6 @@
             </a>
         </div>
 
-        <!-- CTA Principal - Mantido o WhatsApp mas com estilo melhorado -->
-        <div class="header-actions">
-            <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
-               class="cta-button-header whatsapp-cta" 
-               target="_blank"
-               aria-label="Fale conosco pelo WhatsApp">
-                <i class="fab fa-whatsapp cta-icon" aria-hidden="true"></i>
-                Fale com um Especialista
-            </a>
-        </div>
-
-        <!-- Menu Mobile melhorado com acessibilidade -->
-        <button class="menu-toggle" 
-                aria-label="Menu principal" 
-                aria-expanded="false" 
-                aria-controls="main-nav">
-            <span class="menu-toggle-bar top-bar"></span>
-            <span class="menu-toggle-bar middle-bar"></span>
-            <span class="menu-toggle-bar bottom-bar"></span>
-            <span class="sr-only">Menu</span>
-        </button>
-
         <!-- Navegação Principal com indicador de página ativa -->
         <nav class="main-nav" aria-label="Navegação principal">
             <ul class="nav-list">
@@ -174,6 +152,28 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- CTA Principal - Mantido o WhatsApp mas com estilo melhorado -->
+        <div class="header-actions">
+            <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
+               class="cta-button-header whatsapp-cta" 
+               target="_blank"
+               aria-label="Fale conosco pelo WhatsApp">
+                <i class="fab fa-whatsapp cta-icon" aria-hidden="true"></i>
+                <span class="cta-text">Fale com um Especialista</span>
+            </a>
+        </div>
+
+        <!-- Menu Mobile melhorado com acessibilidade -->
+        <button class="menu-toggle" 
+                aria-label="Menu principal" 
+                aria-expanded="false" 
+                aria-controls="main-nav">
+            <span class="menu-toggle-bar top-bar"></span>
+            <span class="menu-toggle-bar middle-bar"></span>
+            <span class="menu-toggle-bar bottom-bar"></span>
+            <span class="sr-only">Menu</span>
+        </button>
     </div>
 </header>
 
@@ -195,8 +195,7 @@
         align-items: center;
         max-width: 1280px;
         margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
+        padding: 0 1.5rem;
     }
     
     .logo-container {
@@ -225,7 +224,7 @@
     /* Navegação Principal */
     .main-nav {
         flex: 1 1 auto;
-        margin: 0 2rem;
+        margin: 0 1.5rem;
     }
     
     .nav-list {
@@ -435,12 +434,13 @@
     /* Botão WhatsApp */
     .header-actions {
         flex: 0 0 auto;
+        margin-left: 1rem;
     }
     
     .whatsapp-cta {
         background: #25D366;
         color: white !important;
-        padding: 0.8rem 1.5rem;
+        padding: 0.8rem 1.2rem;
         border-radius: 4px;
         font-weight: 500;
         display: flex;
@@ -448,6 +448,7 @@
         transition: all 0.3s ease;
         text-decoration: none;
         box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+        white-space: nowrap;
     }
     
     .whatsapp-cta:hover {
@@ -459,6 +460,10 @@
     .cta-icon {
         margin-right: 0.7rem;
         font-size: 1.2rem;
+    }
+    
+    .cta-text {
+        display: inline;
     }
     
     /* Menu Mobile */
@@ -475,6 +480,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-left: 0.5rem;
     }
     
     .menu-toggle-bar {
@@ -514,7 +520,7 @@
     /* Responsivo */
     @media (max-width: 1024px) {
         .header-container {
-            padding: 0 1.5rem;
+            padding: 0 1.2rem;
         }
         
         .mega-menu-grid {
@@ -524,48 +530,39 @@
         .mega-menu-highlight {
             grid-column: span 2;
         }
+        
+        .whatsapp-cta {
+            padding: 0.7rem 1rem;
+        }
     }
     
     @media (max-width: 768px) {
         .header-container {
-            flex-wrap: wrap;
             padding: 0.5rem 1rem;
         }
         
-        .logo-container {
-            order: 1;
-            flex: 1;
-        }
-        
-        .header-actions {
-            order: 2;
-        }
-        
-        .menu-toggle {
-            order: 3;
-            display: flex;
-        }
-        
         .main-nav {
-            order: 4;
+            position: fixed;
+            top: 70px;
+            left: 0;
             width: 100%;
-            height: 0;
-            padding: 0;
-            transition: height 0.3s ease;
-            overflow: hidden;
-            position: relative;
+            height: calc(100vh - 70px);
+            background: #fff;
+            z-index: 1000;
             margin: 0;
+            padding: 1rem;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
         
         .main-nav.active {
-            height: calc(100vh - 70px);
-            padding: 1rem 1.5rem;
-            overflow-y: auto;
+            transform: translateX(0);
         }
         
         .nav-list {
             flex-direction: column;
-            gap: 0.5rem;
+            padding: 0;
         }
         
         .nav-item {
@@ -574,9 +571,8 @@
         }
         
         .nav-link {
-            padding: 1rem 0;
+            padding: 1rem 0.5rem;
             font-size: 1rem;
-            justify-content: space-between;
         }
         
         .mega-menu-content {
@@ -584,9 +580,9 @@
             transform: none;
             width: 100%;
             box-shadow: none;
-            padding: 0;
-            margin-top: 0.5rem;
+            padding: 0.5rem 0 0 1rem;
             display: none;
+            border: none;
         }
         
         .mega-menu-content.active {
@@ -595,49 +591,58 @@
         
         .mega-menu-grid {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 0.5rem;
         }
         
         .mega-menu-column {
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f5f5f5;
+            padding-bottom: 0.5rem;
+            border-bottom: none;
         }
         
         .mega-menu-title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .mega-menu-main-item {
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
         }
         
-        .submenu-link {
-            padding: 0.5rem 0 0.5rem 1.5rem;
+        .mega-menu-main-item {
             font-size: 0.9rem;
+            margin-bottom: 0.3rem;
         }
         
-        .mega-menu-highlight {
-            margin-top: 1rem;
-            padding: 1rem;
-        }
-        
-        .highlight-content h3 {
-            font-size: 1rem;
-        }
-        
-        .highlight-content p {
+        .submenu-link {
+            padding: 0.4rem 0 0.4rem 1.2rem;
             font-size: 0.85rem;
         }
         
-        .whatsapp-cta {
-            padding: 0.6rem 1rem;
-            font-size: 0.9rem;
+        .mega-menu-highlight {
+            margin-top: 0.5rem;
+            padding: 0.8rem;
         }
         
-        .cta-icon {
-            margin-right: 0.5rem;
+        .highlight-content h3 {
+            font-size: 0.95rem;
+        }
+        
+        .highlight-content p {
+            font-size: 0.8rem;
+        }
+        
+        .menu-toggle {
+            display: flex;
+        }
+        
+        .whatsapp-cta {
+            padding: 0.6rem 0.8rem;
+            font-size: 0;
+        }
+        
+        .whatsapp-cta .cta-text {
+            display: none;
+        }
+        
+        .whatsapp-cta .cta-icon {
+            margin-right: 0;
+            font-size: 1.2rem;
         }
     }
     
@@ -647,16 +652,11 @@
         }
         
         .header-container {
-            padding: 0 1rem;
+            padding: 0.5rem 0.8rem;
         }
         
-        .whatsapp-cta span {
-            display: none;
-        }
-        
-        .whatsapp-cta i {
-            margin-right: 0;
-            font-size: 1.4rem;
+        .whatsapp-cta {
+            padding: 0.5rem;
         }
     }
 </style>
