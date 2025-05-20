@@ -8,136 +8,319 @@
     <title>Calculadora de Rescisão Trabalhista - Blog Cunha Soluções Jurídicas</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos adaptados para combinar com a calculadora de juros abusivos */
+        .pagina-area {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .calculator-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .calculator-container h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .form-section-rd {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-section-rd h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .form-grid-rd {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group-rd {
+            margin-bottom: 20px;
+        }
+        
+        .form-group-rd label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group-rd input,
+        .form-group-rd select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group-rd input:focus,
+        .form-group-rd select:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+        }
+        
+        .form-group-rd small {
+            display: block;
+            margin-top: 5px;
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        
+        .form-actions-rd {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex: 1;
+        }
+        
+        .cta-button:hover {
+            background: #2980b9;
+        }
+        
+        .button-secondary-rd {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 1px solid #ddd;
+            padding: 14px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+        }
+        
+        .button-secondary-rd:hover {
+            background: #e9ecef;
+            border-color: #ccc;
+        }
+        
+        .resultado-rescisao-rd {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .resultado-rescisao-rd h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .aviso-resultado-rd {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .sidebar-widget-rd {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-widget-rd h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .sidebar-widget-rd p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .cta-button-sidebar {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .cta-button-sidebar:hover {
+            background: #128C7E;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid-rd {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions-rd {
+                flex-direction: column;
+            }
+            
+            .calculator-container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <main class="blog-article-page-main calculadora-rescisao-page">
-        <div class="container article-layout-rd">
-            <article class="article-content-main-rd">
-                <div id="header-placeholder"></div>
-
-                <div class="article-body-rd">
-                    <p>Utilize nossa calculadora para ter uma estimativa dos valores a receber em caso de rescisão do contrato de trabalho. Preencha os campos abaixo com atenção.</p>
-                    
-                    <form id="calculadoraRescisaoForm" class="calculadora-form-rd">
-                        
-                        <div class="form-section-rd">
-                            <h3>Informações do Contrato</h3>
-                            <div class="form-grid-rd">
-                                <div class="form-group-rd">
-                                    <label for="dataAdmissao">Data de Admissão:</label>
-                                    <input type="date" id="dataAdmissao" name="dataAdmissao" required>
-                                </div>
-                                <div class="form-group-rd">
-                                    <label for="dataDemissao">Data de Demissão (Último dia trabalhado):</label>
-                                    <input type="date" id="dataDemissao" name="dataDemissao" required>
-                                </div>
-                                <div class="form-group-rd">
-                                    <label for="ultimoSalarioBruto">Último Salário Bruto (R$):</label>
-                                    <input type="number" id="ultimoSalarioBruto" name="ultimoSalarioBruto" step="0.01" placeholder="Ex: 2500.00" required>
-                                </div>
-                                <div class="form-group-rd">
-                                    <label for="motivoRescisao">Motivo da Rescisão:</label>
-                                    <select id="motivoRescisao" name="motivoRescisao" required>
-                                        <option value="">Selecione...</option>
-                                        <option value="sem_justa_causa_empregador">Demissão sem justa causa (pelo empregador)</option>
-                                        <option value="justa_causa_empregador">Demissão por justa causa (pelo empregador)</option>
-                                        <option value="pedido_demissao">Pedido de demissão (pelo empregado)</option>
-                                        <option value="acordo_comum">Rescisão por comum acordo (Art. 484-A da CLT)</option>
-                                        <option value="termino_contrato_prazo">Término de contrato por prazo determinado</option>
-                                        <option value="rescisao_indireta">Rescisão indireta</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section-rd">
-                            <h3>Aviso Prévio</h3>
-                            <div class="form-grid-rd">
-                                <div class="form-group-rd">
-                                    <label for="avisoPrevio">Tipo de Aviso Prévio:</label>
-                                    <select id="avisoPrevio" name="avisoPrevio">
-                                        <option value="trabalhado">Trabalhado</option>
-                                        <option value="indenizado_empregador">Indenizado pelo empregador</option>
-                                        <option value="indenizado_empregado">Indenizado pelo empregado (descontado)</option>
-                                        <option value="dispensado_cumprimento">Dispensado do cumprimento (sem ônus)</option>
-                                        <option value="nao_aplicavel">Não se aplica / Pedido de demissão sem cumprimento</option>
-                                    </select>
-                                </div>
-                                <div class="form-group-rd" id="diasAvisoTrabalhadoGroup" style="display: none;">
-                                    <label for="diasAvisoTrabalhado">Dias de Aviso Trabalhado (se houver):</label>
-                                    <input type="number" id="diasAvisoTrabalhado" name="diasAvisoTrabalhado" min="0" value="0">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section-rd">
-                            <h3>Férias</h3>
-                             <div class="form-grid-rd">
-                                <div class="form-group-rd">
-                                    <label for="feriasVencidas">Possui Férias Vencidas (não gozadas)?</label>
-                                    <select id="feriasVencidas" name="feriasVencidas">
-                                        <option value="nao">Não</option>
-                                        <option value="sim_um_periodo">Sim, 1 período</option>
-                                        <option value="sim_dois_periodos">Sim, 2 períodos</option>
-                                    </select>
-                                </div>
-                                <div class="form-group-rd">
-                                    <label for="diasFeriasVendidas">Vendeu dias de férias (abono pecuniário)?</label>
-                                    <input type="number" id="diasFeriasVendidas" name="diasFeriasVendidas" min="0" max="10" value="0" placeholder="0 a 10 dias">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section-rd">
-                            <h3>Outras Informações</h3>
-                            <div class="form-grid-rd">
-                                <div class="form-group-rd">
-                                    <label for="saldoFgts">Saldo do FGTS (para fins de multa, R$):</label>
-                                    <input type="number" id="saldoFgts" name="saldoFgts" step="0.01" placeholder="Ex: 5000.00">
-                                    <small>Informe apenas se souber. Necessário para cálculo da multa de 40% ou 20%.</small>
-                                </div>
-                                <div class="form-group-rd">
-                                    <label for="dependentesIrrf">Número de Dependentes para IRRF:</label>
-                                    <input type="number" id="dependentesIrrf" name="dependentesIrrf" min="0" value="0">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-actions-rd">
-                            <button type="submit" class="cta-button">Calcular Rescisão</button>
-                            <button type="reset" class="button-secondary-rd">Limpar Campos</button>
-                        </div>
-                    </form>
-
-                    <div id="resultadoRescisao" class="resultado-rescisao-rd" style="display:none;">
-                        <h3>Resultado Estimado da Rescisão</h3>
-                        <div id="detalhesResultado"></div>
-                        <p class="aviso-resultado-rd"><strong>Atenção:</strong> Este é um cálculo estimado e não substitui uma consulta com um profissional especializado. Os valores podem variar de acordo com particularidades do contrato e da legislação vigente.</p>
-                    </div>
-
-                </div>
-            </article>
-
-            <aside class="article-sidebar-rd">
+    <main class="pagina-area">
+        <div class="calculator-container">
+            <h1>Calculadora de Rescisão Trabalhista</h1>
+            
+            <p>Utilize nossa calculadora para ter uma estimativa dos valores a receber em caso de rescisão do contrato de trabalho. Preencha os campos abaixo com atenção.</p>
+            
+            <form id="calculadoraRescisaoForm" class="calculadora-form-rd">
                 
-                <div class="sidebar-widget-rd cta-widget-rd">
-                    <h4>Precisa de Ajuda?</h4>
-                    <p>Nossos especialistas em Direito Trabalhista podem te auxiliar.</p>
-                    <a href="../contato.html" class="cta-button-sidebar">Fale Conosco</a>
+                <div class="form-section-rd">
+                    <h3>Informações do Contrato</h3>
+                    <div class="form-grid-rd">
+                        <div class="form-group-rd">
+                            <label for="dataAdmissao">Data de Admissão:</label>
+                            <input type="date" id="dataAdmissao" name="dataAdmissao" required>
+                        </div>
+                        <div class="form-group-rd">
+                            <label for="dataDemissao">Data de Demissão (Último dia trabalhado):</label>
+                            <input type="date" id="dataDemissao" name="dataDemissao" required>
+                        </div>
+                        <div class="form-group-rd">
+                            <label for="ultimoSalarioBruto">Último Salário Bruto (R$):</label>
+                            <input type="number" id="ultimoSalarioBruto" name="ultimoSalarioBruto" step="0.01" placeholder="Ex: 2500.00" required>
+                        </div>
+                        <div class="form-group-rd">
+                            <label for="motivoRescisao">Motivo da Rescisão:</label>
+                            <select id="motivoRescisao" name="motivoRescisao" required>
+                                <option value="">Selecione...</option>
+                                <option value="sem_justa_causa_empregador">Demissão sem justa causa (pelo empregador)</option>
+                                <option value="justa_causa_empregador">Demissão por justa causa (pelo empregador)</option>
+                                <option value="pedido_demissao">Pedido de demissão (pelo empregado)</option>
+                                <option value="acordo_comum">Rescisão por comum acordo (Art. 484-A da CLT)</option>
+                                <option value="termino_contrato_prazo">Término de contrato por prazo determinado</option>
+                                <option value="rescisao_indireta">Rescisão indireta</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </aside>
+
+                <div class="form-section-rd">
+                    <h3>Aviso Prévio</h3>
+                    <div class="form-grid-rd">
+                        <div class="form-group-rd">
+                            <label for="avisoPrevio">Tipo de Aviso Prévio:</label>
+                            <select id="avisoPrevio" name="avisoPrevio">
+                                <option value="trabalhado">Trabalhado</option>
+                                <option value="indenizado_empregador">Indenizado pelo empregador</option>
+                                <option value="indenizado_empregado">Indenizado pelo empregado (descontado)</option>
+                                <option value="dispensado_cumprimento">Dispensado do cumprimento (sem ônus)</option>
+                                <option value="nao_aplicavel">Não se aplica / Pedido de demissão sem cumprimento</option>
+                            </select>
+                        </div>
+                        <div class="form-group-rd" id="diasAvisoTrabalhadoGroup" style="display: none;">
+                            <label for="diasAvisoTrabalhado">Dias de Aviso Trabalhado (se houver):</label>
+                            <input type="number" id="diasAvisoTrabalhado" name="diasAvisoTrabalhado" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-rd">
+                    <h3>Férias</h3>
+                     <div class="form-grid-rd">
+                        <div class="form-group-rd">
+                            <label for="feriasVencidas">Possui Férias Vencidas (não gozadas)?</label>
+                            <select id="feriasVencidas" name="feriasVencidas">
+                                <option value="nao">Não</option>
+                                <option value="sim_um_periodo">Sim, 1 período</option>
+                                <option value="sim_dois_periodos">Sim, 2 períodos</option>
+                            </select>
+                        </div>
+                        <div class="form-group-rd">
+                            <label for="diasFeriasVendidas">Vendeu dias de férias (abono pecuniário)?</label>
+                            <input type="number" id="diasFeriasVendidas" name="diasFeriasVendidas" min="0" max="10" value="0" placeholder="0 a 10 dias">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-rd">
+                    <h3>Outras Informações</h3>
+                    <div class="form-grid-rd">
+                        <div class="form-group-rd">
+                            <label for="saldoFgts">Saldo do FGTS (para fins de multa, R$):</label>
+                            <input type="number" id="saldoFgts" name="saldoFgts" step="0.01" placeholder="Ex: 5000.00">
+                            <small>Informe apenas se souber. Necessário para cálculo da multa de 40% ou 20%.</small>
+                        </div>
+                        <div class="form-group-rd">
+                            <label for="dependentesIrrf">Número de Dependentes para IRRF:</label>
+                            <input type="number" id="dependentesIrrf" name="dependentesIrrf" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-rd">
+                    <button type="submit" class="cta-button">Calcular Rescisão</button>
+                    <button type="reset" class="button-secondary-rd">Limpar Campos</button>
+                </div>
+            </form>
+
+            <div id="resultadoRescisao" class="resultado-rescisao-rd" style="display:none;">
+                <h3>Resultado Estimado da Rescisão</h3>
+                <div id="detalhesResultado"></div>
+                <p class="aviso-resultado-rd"><strong>Atenção:</strong> Este é um cálculo estimado e não substitui uma consulta com um profissional especializado. Os valores podem variar de acordo com particularidades do contrato e da legislação vigente.</p>
+            </div>
+        </div>
+
+        <div class="sidebar-widget-rd cta-widget-rd">
+            <h4>Precisa de Ajuda?</h4>
+            <p>Nossos especialistas em Direito Trabalhista podem te auxiliar.</p>
+            <a href="../contato.html" class="cta-button-sidebar">Fale Conosco</a>
         </div>
     </main>
 
     <div id="footer-placeholder"></div>
 
-
-
-
     <script src="../js/script.js"></script>
-    <script src="../js/calculadora-rescisao.js"></script> <!-- Novo arquivo JS para a calculadora -->
-<script src="/cunha.adv/js/loadComponents.js" defer></script>
+    <script src="../js/calculadora-rescisao.js"></script>
+    <script src="/cunha.adv/js/loadComponents.js" defer></script>
 </body>
 </html>
