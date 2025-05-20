@@ -8,30 +8,209 @@
     <title>Blog - Cunha Soluções Jurídicas</title>
     <link rel="stylesheet" href="/cunha.adv/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* New CSS for improved blog layout */
+        .blog-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem 0;
+        }
+        
+        .logo-author {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: contain;
+            margin-right: 12px;
+        }
+        
+        .author-details {
+            font-size: 0.85rem;
+        }
+        
+        .author-name {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .article-image-link {
+            display: block;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            margin: 0 0 1rem;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #3498db;
+        }
+        
+        .article-summary {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+        
+        .read-more-link {
+            display: inline-block;
+            color: #3498db;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            align-self: flex-start;
+        }
+        
+        .read-more-link:hover {
+            color: #2980b9;
+        }
+        
+        .read-more-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background: #f1f9fe;
+            color: #3498db;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .article-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
     <script src="/cunha.adv/js/loadComponents.js" defer></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
     <main class="blog-container">
-        <div id="header-placeholder"></div>
+        <header class="blog-header">
+            <h1>Artigos Jurídicos</h1>
+            <p>Insights e análises especializadas sobre direito agronegócio, tributário, previdenciário e mais</p>
+        </header>
 
         <section class="article-list">
-            
             <!-- Artigo: Emissão de LCA e LCI -->
             <article class="article-card">
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/emissao-de-lca-e-lci-para-captacao-de-credito-empresarial.html" class="article-image-link">
                     <img src="/cunha.adv/images/placeholder-blog-1.png" alt="Imagem de destaque do artigo Emissão de LCA e LCI" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/emissao-de-lca-e-lci-para-captacao-de-credito-empresarial.html">Guia Prático: Emissão de LCA e LCI para Captação de Crédito Empresarial</a></h2>
-                <p class="article-summary">Empresas que buscam otimizar a captação de recursos encontram na Letra de Crédito do Agronegócio (LCA) e na Letra de Crédito Imobiliário (LCI) excelentes alternativas...</p>
-                <a href="/cunha.adv/blog/emissao-de-lca-e-lci-para-captacao-de-credito-empresarial.html" class="read-more-link">Leia mais &rarr;</a> 
+                <div class="article-content">
+                    <span class="category-tag">Direito Financeiro</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/emissao-de-lca-e-lci-para-captacao-de-credito-empresarial.html">Guia Prático: Emissão de LCA e LCI para Captação de Crédito Empresarial</a></h2>
+                    <p class="article-summary">Empresas que buscam otimizar a captação de recursos encontram na Letra de Crédito do Agronegócio (LCA) e na Letra de Crédito Imobiliário (LCI) excelentes alternativas...</p>
+                    <a href="/cunha.adv/blog/emissao-de-lca-e-lci-para-captacao-de-credito-empresarial.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <!-- Artigo: Restituição do INSS Acima do Teto -->
@@ -39,15 +218,18 @@
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/restituicao-do-inss-para-contribuicoes-acima-do-teto.html" class="article-image-link">
                     <img src="/cunha.adv/images/placeholder-blog-2.png" alt="Imagem de destaque do artigo Restituição do INSS" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/restituicao-do-inss-para-contribuicoes-acima-do-teto.html">INSS Acima do Teto: Como Profissionais e Empresas Podem Solicitar a Restituição</a></h2>
-                <p class="article-summary">Muitos profissionais com múltiplos vínculos empregatícios ou autônomos acabam contribuindo para o INSS acima do teto legal sem perceber. Saiba como reaver esses valores...</p>
-                <a href="/cunha.adv/blog/restituicao-do-inss-para-contribuicoes-acima-do-teto.html" class="read-more-link">Leia mais &rarr;</a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Previdenciário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/restituicao-do-inss-para-contribuicoes-acima-do-teto.html">INSS Acima do Teto: Como Solicitar a Restituição</a></h2>
+                    <p class="article-summary">Muitos profissionais com múltiplos vínculos empregatícios ou autônomos acabam contribuindo para o INSS acima do teto legal sem perceber. Saiba como reaver esses valores...</p>
+                    <a href="/cunha.adv/blog/restituicao-do-inss-para-contribuicoes-acima-do-teto.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <!-- Artigo: Direitos do Franqueado -->
@@ -55,15 +237,18 @@
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/direitos-do-franqueado-descomprimento-contratual.html" class="article-image-link">
                     <img src="/cunha.adv/images/placeholder-blog-3.png" alt="Imagem de destaque do artigo Direitos do Franqueado" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/direitos-do-franqueado-descomprimento-contratual.html">Direitos do Franqueado: Quando a Franqueadora Não Cumpre o Combinado</a></h2>
-                <p class="article-summary">Entenda em quais situações é possível buscar compensação por prejuízos em seu negócio de franquia quando a franqueadora não cumpre o que foi acordado...</p>
-                <a href="/cunha.adv/blog/direitos-do-franqueado-descomprimento-contratual.html" class="read-more-link">Leia mais &rarr;</a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Empresarial</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/direitos-do-franqueado-descomprimento-contratual.html">Direitos do Franqueado: Quando a Franqueadora Não Cumpre o Combinado</a></h2>
+                    <p class="article-summary">Entenda em quais situações é possível buscar compensação por prejuízos em seu negócio de franquia quando a franqueadora não cumpre o que foi acordado...</p>
+                    <a href="/cunha.adv/blog/direitos-do-franqueado-descomprimento-contratual.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <!-- Artigo: Isenção de Imposto de Renda por Moléstias Graves -->
@@ -71,186 +256,189 @@
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/isencao-imposto-de-renda-molestias-graves.html" class="article-image-link">
                     <img src="/cunha.adv/images/placeholder-blog-1.png" alt="Imagem de destaque do artigo Isenção IR Moléstias Graves" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/isencao-imposto-de-renda-molestias-graves.html">Isenção Permanente do Imposto de Renda para Moléstias Graves - Lei 7.713/88</a></h2>
-                <p class="article-summary">Assessoria especializada para comprovar seu direito à isenção de IR por moléstias graves, conforme a Lei 7.713/88. Conheça as doenças que dão direito e como proceder...</p>
-                <a href="/cunha.adv/blog/isencao-imposto-de-renda-molestias-graves.html" class="read-more-link">Leia mais &rarr;</a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Tributário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/isencao-imposto-de-renda-molestias-graves.html">Isenção Permanente do Imposto de Renda para Moléstias Graves</a></h2>
+                    <p class="article-summary">Assessoria especializada para comprovar seu direito à isenção de IR por moléstias graves, conforme a Lei 7.713/88. Conheça as doenças que dão direito e como proceder...</p>
+                    <a href="/cunha.adv/blog/isencao-imposto-de-renda-molestias-graves.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
-            <!-- Artigos Placeholder restantes (do briefing original) -->
+            <!-- Artigos Placeholder restantes -->
             <article class="article-card">
-                <div class="author-info"><img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author"><div class="author-details"><span class="author-name">Cunha Soluções Jurídicas e Consultoria</span></div></div>
-                <a href="/cunha.adv/blog/tema-placeholder-3.html" class="article-image-link"><img src="/cunha.adv/images/placeholder-blog-2.png" alt="Imagem de destaque do artigo Elisão Fiscal" class="article-image"></a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-3.html">Elisão Fiscal: O Que É e Riscos da Não-Defesa</a></h2>
-                <p class="article-summary">Entenda a diferença entre elisão e evasão fiscal e os riscos de não se defender adequadamente em casos de questionamento pela Receita Federal...</p>
-                <a href="/cunha.adv/blog/tema-placeholder-3.html" class="read-more-link">Leia mais &rarr;</a>
+                <div class="author-info">
+                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
+                    <div class="author-details">
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
+                    </div>
+                </div>
+                <a href="/cunha.adv/blog/tema-placeholder-3.html" class="article-image-link">
+                    <img src="/cunha.adv/images/placeholder-blog-2.png" alt="Imagem de destaque do artigo Elisão Fiscal" class="article-image">
+                </a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Tributário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-3.html">Elisão Fiscal: O Que É e Riscos da Não-Defesa</a></h2>
+                    <p class="article-summary">Entenda a diferença entre elisão e evasão fiscal e os riscos de não se defender adequadamente em casos de questionamento pela Receita Federal...</p>
+                    <a href="/cunha.adv/blog/tema-placeholder-3.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
-
-            <article class="article-card">
-                <div class="author-info"><img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author"><div class="author-details"><span class="author-name">Cunha Soluções Jurídicas e Consultoria</span></div></div>
-                <a href="/cunha.adv/blog/tema-placeholder-4.html" class="article-image-link"><img src="/cunha.adv/images/placeholder-blog-3.png" alt="Imagem de destaque do artigo ICMS Monofásico" class="article-image"></a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-4.html">Restituição de ICMS Monofásico para Restaurantes</a></h2>
-                <p class="article-summary">Restaurantes podem ter direito à restituição do ICMS monofásico pago em diversos produtos. Saiba como identificar e solicitar essa recuperação tributária...</p>
-                <a href="/cunha.adv/blog/tema-placeholder-4.html" class="read-more-link">Leia mais &rarr;</a>
-            </article>
-            
-            <article class="article-card">
-                <div class="author-info"><img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author"><div class="author-details"><span class="author-name">Cunha Soluções Jurídicas e Consultoria</span></div></div>
-                <a href="/cunha.adv/blog/tema-placeholder-5.html" class="article-image-link"><img src="/cunha.adv/images/placeholder-blog-1.png" alt="Imagem de destaque do artigo Contribuição Previdenciária Clínicas" class="article-image"></a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-5.html">Redução da Base de Contribuição Previdenciária para Clínicas Médicas</a></h2>
-                <p class="article-summary">Clínicas médicas podem ter a oportunidade de reduzir a base de cálculo da contribuição previdenciária patronal. Entenda os requisitos e como implementar...</p>
-                <a href="/cunha.adv/blog/tema-placeholder-5.html" class="read-more-link">Leia mais &rarr;</a>
-            </article>
-
-            <article class="article-card">
-                <div class="author-info"><img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author"><div class="author-details"><span class="author-name">Cunha Soluções Jurídicas e Consultoria</span></div></div>
-                <a href="/cunha.adv/blog/tema-placeholder-6.html" class="article-image-link"><img src="/cunha.adv/images/placeholder-blog-2.png" alt="Imagem de destaque do artigo PIS/COFINS Insumos" class="article-image"></a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-6.html">Restituição de PIS/COFINS sobre Insumos para Mercados e Varejos</a></h2>
-                <p class="article-summary">Mercados e varejistas podem recuperar créditos de PIS/COFINS sobre diversos insumos. Saiba como identificar esses créditos e otimizar sua carga tributária...</p>
-                <a href="/cunha.adv/blog/tema-placeholder-6.html" class="read-more-link">Leia mais &rarr;</a>
-            </article>
-
-            <article class="article-card">
-                <div class="author-info"><img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author"><div class="author-details"><span class="author-name">Cunha Soluções Jurídicas e Consultoria</span></div></div>
-                <a href="/cunha.adv/blog/tema-placeholder-7.html" class="article-image-link"><img src="/cunha.adv/images/placeholder-blog-3.png" alt="Imagem de destaque do artigo Defesa Penal Tributária" class="article-image"></a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-7.html">Defesa Penal Tributária: Riscos da Má Orientação</a></h2>
-                <p class="article-summary">A importância de uma defesa técnica especializada em casos de crimes tributários. Entenda os riscos de uma má orientação e como proteger seus direitos...</p>
-                <a href="/cunha.adv/blog/tema-placeholder-7.html" class="read-more-link">Leia mais &rarr;</a>
-            </article>
-            
-            <!-- Adicionar mais artigos conforme necessário, até o limite de 20 por página se houver paginação futura -->
 
             <article class="article-card">
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
+                    </div>
+                </div>
+                <a href="/cunha.adv/blog/tema-placeholder-4.html" class="article-image-link">
+                    <img src="/cunha.adv/images/placeholder-blog-3.png" alt="Imagem de destaque do artigo ICMS Monofásico" class="article-image">
+                </a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Tributário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-4.html">Restituição de ICMS Monofásico para Restaurantes</a></h2>
+                    <p class="article-summary">Restaurantes podem ter direito à restituição do ICMS monofásico pago em diversos produtos. Saiba como identificar e solicitar essa recuperação tributária...</p>
+                    <a href="/cunha.adv/blog/tema-placeholder-4.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            
+            <!-- Additional articles with the same structure -->
+            <article class="article-card">
+                <div class="author-info">
+                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
+                    <div class="author-details">
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
+                    </div>
+                </div>
+                <a href="/cunha.adv/blog/tema-placeholder-5.html" class="article-image-link">
+                    <img src="/cunha.adv/images/placeholder-blog-1.png" alt="Imagem de destaque do artigo Contribuição Previdenciária Clínicas" class="article-image">
+                </a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Previdenciário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-5.html">Redução da Base de Contribuição Previdenciária para Clínicas Médicas</a></h2>
+                    <p class="article-summary">Clínicas médicas podem ter a oportunidade de reduzir a base de cálculo da contribuição previdenciária patronal. Entenda os requisitos e como implementar...</p>
+                    <a href="/cunha.adv/blog/tema-placeholder-5.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="author-info">
+                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
+                    <div class="author-details">
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
+                    </div>
+                </div>
+                <a href="/cunha.adv/blog/tema-placeholder-6.html" class="article-image-link">
+                    <img src="/cunha.adv/images/placeholder-blog-2.png" alt="Imagem de destaque do artigo PIS/COFINS Insumos" class="article-image">
+                </a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Tributário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-6.html">Restituição de PIS/COFINS sobre Insumos para Mercados e Varejos</a></h2>
+                    <p class="article-summary">Mercados e varejistas podem recuperar créditos de PIS/COFINS sobre diversos insumos. Saiba como identificar esses créditos e otimizar sua carga tributária...</p>
+                    <a href="/cunha.adv/blog/tema-placeholder-6.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="author-info">
+                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
+                    <div class="author-details">
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
+                    </div>
+                </div>
+                <a href="/cunha.adv/blog/tema-placeholder-7.html" class="article-image-link">
+                    <img src="/cunha.adv/images/placeholder-blog-3.png" alt="Imagem de destaque do artigo Defesa Penal Tributária" class="article-image">
+                </a>
+                <div class="article-content">
+                    <span class="category-tag">Direito Penal Tributário</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/tema-placeholder-7.html">Defesa Penal Tributária: Riscos da Má Orientação</a></h2>
+                    <p class="article-summary">A importância de uma defesa técnica especializada em casos de crimes tributários. Entenda os riscos de uma má orientação e como proteger seus direitos...</p>
+                    <a href="/cunha.adv/blog/tema-placeholder-7.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            
+            <article class="article-card">
+                <div class="author-info">
+                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
+                    <div class="author-details">
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html" class="article-image-link">
                     <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Direitos na Demissão Sem Justa Causa" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html">Direitos na Demissão Sem Justa Causa</a></h2>
-                <p class="article-summary">Saiba mais sobre Direitos na Demissão Sem Justa Causa e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html" class="read-more-link">Leia mais &rarr;</a> 
+                <div class="article-content">
+                    <span class="category-tag">Direito Trabalhista</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html">Direitos na Demissão Sem Justa Causa</a></h2>
+                    <p class="article-summary">Saiba mais sobre Direitos na Demissão Sem Justa Causa e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
+                    <a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <article class="article-card">
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html" class="article-image-link">
                     <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Como Funciona o Aviso Prévio" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html">Como Funciona o Aviso Prévio</a></h2>
-                <p class="article-summary">Saiba mais sobre Como Funciona o Aviso Prévio e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html" class="read-more-link">Leia mais &rarr;</a> 
+                <div class="article-content">
+                    <span class="category-tag">Direito Trabalhista</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html">Como Funciona o Aviso Prévio</a></h2>
+                    <p class="article-summary">Saiba mais sobre Como Funciona o Aviso Prévio e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
+                    <a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <article class="article-card">
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html" class="article-image-link">
                     <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Cálculo de Férias Proporcionais" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html">Cálculo de Férias Proporcionais</a></h2>
-                <p class="article-summary">Saiba mais sobre Cálculo de Férias Proporcionais e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html" class="read-more-link">Leia mais &rarr;</a> 
+                <div class="article-content">
+                    <span class="category-tag">Direito Trabalhista</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html">Cálculo de Férias Proporcionais</a></h2>
+                    <p class="article-summary">Saiba mais sobre Cálculo de Férias Proporcionais e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
+                    <a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
             </article>
 
             <article class="article-card">
                 <div class="author-info">
                     <img src="/cunha.adv/img/logo_reformulada/logo_cunha_original_preto.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
                     <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
+                        <span class="author-name">Cunha Soluções Jurídicas</span>
                     </div>
                 </div>
                 <a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html" class="article-image-link">
                     <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Saque do FGTS e Multa Rescisória" class="article-image">
                 </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html">Saque do FGTS e Multa Rescisória</a></h2>
-                <p class="article-summary">Saiba mais sobre Saque do FGTS e Multa Rescisória e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html" class="read-more-link">Leia mais &rarr;</a> 
-            </article>
-
-            <article class="article-card">
-                <div class="author-info">
-                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
-                    <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
-                    </div>
+                <div class="article-content">
+                    <span class="category-tag">Direito Trabalhista</span>
+                    <h2 class="article-title"><a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html">Saque do FGTS e Multa Rescisória</a></h2>
+                    <p class="article-summary">Saiba mais sobre Saque do FGTS e Multa Rescisória e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
+                    <a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html" class="read-more-link">Leia mais <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html" class="article-image-link">
-                    <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Direitos na Demissão Sem Justa Causa" class="article-image">
-                </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html">Direitos na Demissão Sem Justa Causa</a></h2>
-                <p class="article-summary">Saiba mais sobre Direitos na Demissão Sem Justa Causa e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/direitos-na-demisso-sem-justa-causa.html" class="read-more-link">Leia mais &rarr;</a> 
             </article>
+        </section>
 
-            <article class="article-card">
-                <div class="author-info">
-                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
-                    <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
-                    </div>
-                </div>
-                <a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html" class="article-image-link">
-                    <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Como Funciona o Aviso Prévio" class="article-image">
-                </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html">Como Funciona o Aviso Prévio</a></h2>
-                <p class="article-summary">Saiba mais sobre Como Funciona o Aviso Prévio e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/como-funciona-o-aviso-prvio.html" class="read-more-link">Leia mais &rarr;</a> 
-            </article>
-
-            <article class="article-card">
-                <div class="author-info">
-                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
-                    <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
-                    </div>
-                </div>
-                <a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html" class="article-image-link">
-                    <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Cálculo de Férias Proporcionais" class="article-image">
-                </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html">Cálculo de Férias Proporcionais</a></h2>
-                <p class="article-summary">Saiba mais sobre Cálculo de Férias Proporcionais e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/clculo-de-frias-proporcionais.html" class="read-more-link">Leia mais &rarr;</a> 
-            </article>
-
-            <article class="article-card">
-                <div class="author-info">
-                    <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" alt="Logo Cunha Soluções Jurídicas" class="logo-author">
-                    <div class="author-details">
-                        <span class="author-name">Cunha Soluções Jurídicas e Consultoria</span>
-                    </div>
-                </div>
-                <a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html" class="article-image-link">
-                    <img src="/cunha.adv/img/blog/placeholder.jpg" alt="Imagem de destaque do artigo Saque do FGTS e Multa Rescisória" class="article-image">
-                </a>
-                <h2 class="article-title"><a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html">Saque do FGTS e Multa Rescisória</a></h2>
-                <p class="article-summary">Saiba mais sobre Saque do FGTS e Multa Rescisória e como isso pode impactar seus direitos e deveres. Informações relevantes e insights jurídicos.</p>
-                <a href="/cunha.adv/blog/saque-do-fgts-e-multa-rescisria.html" class="read-more-link">Leia mais &rarr;</a> 
-            </article>
-            </section>
-        <!-- Paginação removida conforme solicitado, mas pode ser adicionada aqui se necessário no futuro -->
-
+        <!-- Pagination could be added here if needed -->
     </main>
 
     <div id="footer-placeholder"></div>
 
 </body>
 </html>
-
