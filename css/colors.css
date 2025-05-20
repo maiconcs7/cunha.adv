@@ -30,13 +30,15 @@
     --color-info: #17a2b8;    /* Azul para informações */
     
     /* ======== CORES DO GRADIENTE (BASEADO NA IMAGEM ENVIADA) ======== */
-    --color-gradient-1: #D5E4CF; /* Verde muito claro */
-    --color-gradient-2: #9DCC9B; /* Verde claro */
-    --color-gradient-3: #6EB47D; /* Verde médio */
-    --color-gradient-4: #499C70; /* Verde médio-escuro */
-    --color-gradient-5: #2A836B; /* Verde-azulado */
-    --color-gradient-6: #136B69; /* Azul-esverdeado */
-    --color-gradient-7: #024053; /* Azul escuro */
+    --color-gradient-1:  #f5f5f5; 
+    --color-gradient-2:  #e0e0e0; 
+    --color-gradient-3:  #b0b0b0; 
+    --color-gradient-4:  #808080; 
+    --color-gradient-5:  #424242; 
+    --color-gradient-6: #424242; 
+    --color-gradient-7: #424242; 
+ , 
+       
     
     /* ======== CORES DA PALETA FORNECIDA ======== */
     /* Beige - #CFC4B1 */
