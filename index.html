@@ -190,6 +190,71 @@
             margin-bottom: 20px;
         }
         
+        /* SEÇÃO METODOLOGIA (NOVO) */
+        .metodologia-hero {
+            background: linear-gradient(rgba(42, 46, 53, 0.9), rgba(42, 46, 53, 0.9)), 
+                        url('/cunha.adv/images/banner-hero-placeholder.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .metodologia-titulo {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .linha-branca {
+            width: 100px;
+            height: 3px;
+            background: white;
+            margin: 0 auto 40px;
+        }
+        
+        .metodologia-itens {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .metodologia-item {
+            flex: 0 1 300px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .metodologia-item:hover {
+            background: rgba(139, 0, 0, 0.7);
+            transform: translateY(-5px);
+        }
+        
+        .metodologia-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .metodologia-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .metodologia-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
         /* CTA FINAL */
         .cta-final-novo {
             background-color: var(--color-gradient-6); /* Tom escuro do gradiente */
@@ -247,6 +312,10 @@
             .banner-principal-novo p {
                 font-size: 1.1rem;
             }
+            
+            .metodologia-titulo {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -261,6 +330,10 @@
             
             .cta-final-novo h2 {
                 font-size: 1.8rem;
+            }
+            
+            .metodologia-item {
+                flex: 0 1 100%;
             }
         }
     </style>
@@ -277,101 +350,110 @@
             <a href="#nossas-solucoes" class="cta-button">Nossas Soluções</a>
         </section>
 
-       <!-- Nossas Soluções -->
-<section id="nossas-solucoes" class="areas-atuacao-novo section-padding">
-    <div class="container">
-        <h2>Soluções Jurídicas Estratégicas</h2>
-        <p>Consultoria especializada com abordagem técnica e resultados mensuráveis para seu negócio ou necessidade pessoal.</p>
-        
-        <div class="cards-container-novo" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-            <!-- Linha Central (4 cards principais) -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
-                <!-- Agronegócio (centro esquerda) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-tractor fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Agronegócio</h3>
-                    <p>Segurança jurídica e planejamento tributário especializado para o setor agrícola. Maximize seus resultados com conformidade legal.</p>
-                    <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-                
-                <!-- Pequenos Negócios (centro direita) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-store-alt fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Pequenos Negócios</h3>
-                    <p>Estruturação jurídica eficiente para MEIs e pequenas empresas. Foco em redução de riscos e otimização tributária.</p>
-                    <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-            </div>
-            
-            <!-- Segunda Linha (3 cards - acima e abaixo do centro) -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
-                <!-- Pessoas Físicas (esquerda) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-user-tie fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Pessoas Físicas</h3>
-                    <p>Proteção de direitos e planejamento previdenciário estratégico. Soluções personalizadas para suas necessidades jurídicas.</p>
-                    <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-                
-                <!-- Gestão Patrimonial Familiar (centro) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-home fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Gestão Patrimonial Familiar</h3>
-                    <p>Proteção e otimização do patrimônio familiar com estratégias jurídicas personalizadas para segurança das gerações.</p>
-                    <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-                
-                <!-- Redução de Carga Tributária (direita) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-file-invoice-dollar fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Gestão de Passivos Tributários</h3>
-                    <p>Estratégias legais para redução da carga tributária e regularização fiscal com máxima eficiência.</p>
-                    <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-            </div>
-            
-            <!-- Terceira Linha (2 cards - extremidades) -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%;">
-                <!-- Negociação Terceirizada (esquerda) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-handshake fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Negociação Terceirizada</h3>
-                    <p>Mediação profissional para resolução de conflitos e acordos com abordagem técnica e imparcial.</p>
-                    <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-                
-                <!-- Compliance Jurídico (direita) -->
-                <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                    <i class="fas fa-clipboard-check fa-3x" style="color: var(--color-olive-500);"></i>
-                    <h3>Compliance Jurídico</h3>
-                    <p>Implementação de programas de conformidade legal para prevenção de riscos e governança corporativa.</p>
-                    <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- Diferenciais -->
-        <section class="diferenciais-novo section-padding">
+        <!-- Nossas Soluções -->
+        <section id="nossas-solucoes" class="areas-atuacao-novo section-padding">
             <div class="container">
-                <h2>Nossa Metodologia</h2>
+                <h2>Soluções Jurídicas Estratégicas</h2>
+                <p>Consultoria especializada com abordagem técnica e resultados mensuráveis para seu negócio ou necessidade pessoal.</p>
                 
-                <div class="cards-container-novo" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div class="card-novo">
-                        <i class="fas fa-balance-scale-right fa-3x"></i>
-                        <h3>Análise Técnica</h3>
-                        <p>Diagnóstico jurídico preciso com avaliação de riscos e oportunidades baseada em dados concretos.</p>
+                <div class="cards-container-novo" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                    <!-- Linha Central (4 cards principais) -->
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
+                        <!-- Agronegócio (centro esquerda) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-tractor fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Agronegócio</h3>
+                            <p>Segurança jurídica e planejamento tributário especializado para o setor agrícola. Maximize seus resultados com conformidade legal.</p>
+                            <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
+                        
+                        <!-- Pequenos Negócios (centro direita) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-store-alt fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Pequenos Negócios</h3>
+                            <p>Estruturação jurídica eficiente para MEIs e pequenas empresas. Foco em redução de riscos e otimização tributária.</p>
+                            <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
                     </div>
-                    <div class="card-novo">
-                        <i class="fas fa-chart-line fa-3x"></i>
-                        <h3>Estratégia Mensurável</h3>
-                        <p>Planejamento jurídico com objetivos claros e indicadores de performance para acompanhamento.</p>
+                    
+                    <!-- Segunda Linha (3 cards - acima e abaixo do centro) -->
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
+                        <!-- Pessoas Físicas (esquerda) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-user-tie fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Pessoas Físicas</h3>
+                            <p>Proteção de direitos e planejamento previdenciário estratégico. Soluções personalizadas para suas necessidades jurídicas.</p>
+                            <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
+                        
+                        <!-- Gestão Patrimonial Familiar (centro) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-home fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Gestão Patrimonial Familiar</h3>
+                            <p>Proteção e otimização do patrimônio familiar com estratégias jurídicas personalizadas para segurança das gerações.</p>
+                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
+                        
+                        <!-- Redução de Carga Tributária (direita) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-file-invoice-dollar fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Gestão de Passivos Tributários</h3>
+                            <p>Estratégias legais para redução da carga tributária e regularização fiscal com máxima eficiência.</p>
+                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
                     </div>
-                    <div class="card-novo">
-                        <i class="fas fa-clock fa-3x"></i>
-                        <h3>Eficiência Processual</h3>
-                        <p>Otimização de prazos e recursos com uso de tecnologia e processos enxutos.</p>
+                    
+                    <!-- Terceira Linha (2 cards - extremidades) -->
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%;">
+                        <!-- Negociação Terceirizada (esquerda) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-handshake fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Negociação Terceirizada</h3>
+                            <p>Mediação profissional para resolução de conflitos e acordos com abordagem técnica e imparcial.</p>
+                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
+                        
+                        <!-- Compliance Jurídico (direita) -->
+                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
+                            <i class="fas fa-clipboard-check fa-3x" style="color: var(--color-olive-500);"></i>
+                            <h3>Compliance Jurídico</h3>
+                            <p>Implementação de programas de conformidade legal para prevenção de riscos e governança corporativa.</p>
+                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossa Metodologia -->
+        <section class="metodologia-hero">
+            <div class="container">
+                <h2 class="metodologia-titulo">Nossa Metodologia</h2>
+                <div class="linha-branca"></div>
+                
+                <div class="metodologia-itens">
+                    <div class="metodologia-item">
+                        <div class="metodologia-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Análise Detalhada</h3>
+                        <p>Examinamos minuciosamente cada caso para entender todas as nuances e particularidades.</p>
+                    </div>
+                    
+                    <div class="metodologia-item">
+                        <div class="metodologia-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3>Estratégia Personalizada</h3>
+                        <p>Desenvolvemos abordagens jurídicas sob medida para cada cliente e situação.</p>
+                    </div>
+                    
+                    <div class="metodologia-item">
+                        <div class="metodologia-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Solução Eficiente</h3>
+                        <p>Atuamos com agilidade e precisão para alcançar os melhores resultados possíveis.</p>
                     </div>
                 </div>
             </div>
