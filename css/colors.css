@@ -6,10 +6,10 @@
 :root {
     /* ======== CORES PRIMÁRIAS ======== */
     --color-primary-900:  #2A836B; /* Verde-azulado */
-    --color-primary-700: #8B0000; /* Cor principal - Vermelho padrão */
-    --color-primary-500: #a30000; /* Para hover/CTAs - Vermelho médio */
-    --color-primary-300: #c12e2e; /* Para destaques suaves - Vermelho claro */
-    --color-primary-100: #f8d7d7; /* Para fundos sutis - Vermelho muito claro */
+    --color-primary-700:  #2A836B; /* Verde-azulado Cor principal - */
+    --color-primary-500:  #2A836B; /* Verde-azulado Para hover/CTAs */
+    --color-primary-300:  #2A836B; /* Verde-azulado  Para destaques suaves -  */
+    --color-primary-100:  #2A836B; /* Verde-azulado  Para fundos sutis -  */
     
     /* ======== CORES NEUTRAS ======== */
     --color-neutral-900: #141414; /* Preto para textos importantes */
