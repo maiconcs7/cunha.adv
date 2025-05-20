@@ -3,91 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consultoria jurídica estratégica com tecnologia e eficiência para agronegócio, empresas e pessoas físicas. Soluções precisas em direito rural, tributário e empresarial.">
-    <meta name="keywords" content="consultoria jurídica agronegócio, soluções jurídicas precisas, direito tributário eficiente, assessoria jurídica tecnológica, Cunha Soluções Jurídicas">
-    <title>Cunha Soluções Jurídicas | Consultoria Estratégica com Tecnologia e Eficiência</title>
+    <meta name="description" content="Consultoria jurídica estratégica para agronegócio, pequenos negócios e pessoas físicas. Soluções eficientes em direito tributário, previdenciário e empresarial.">
+    <meta name="keywords" content="consultoria jurídica, direito agronegócio, planejamento tributário, assessoria jurídica, direito empresarial">
+    <title>Cunha Soluções Jurídicas - Eficiência e Precisão Jurídica</title>
     <link rel="stylesheet" href="/cunha.adv/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* VARIÁVEIS DE CORES - TONS ESCUROS E SÓBRIOS */
+        :root {
+            --cor-carvão: #2a2e35;
+            --cor-azul-profundo: #1a3a72;
+            --cor-azul-escuro: #142d54;
+            --cor-texto-claro: #f8f9fa;
+            --cor-texto-cinza: #e0e0e0;
+            --cor-destaque: #4a90e2;
+            --cor-borda: rgba(255,255,255,0.1);
+        }
+        
+        /* ESTILOS GERAIS */
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: var(--cor-texto-cinza);
+            background-color: #1e2025;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            color: var(--cor-texto-claro);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-padding {
+            padding: 60px 0;
+        }
+        
+        /* BANNER PRINCIPAL */
+        .banner-principal-novo {
+            background: linear-gradient(rgba(42, 46, 53, 0.9), rgba(42, 46, 53, 0.9)), 
+                        url('/cunha.adv/images/banner-hero-placeholder.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .banner-principal-novo h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        
+        .banner-principal-novo p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+        
+        /* BOTÕES - MANTIDOS OS ORIGINAIS */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--cor-destaque);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cor-destaque);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--cor-destaque);
+        }
+        
+        .saiba-mais-novo {
+            color: var(--cor-destaque);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .saiba-mais-novo:hover {
+            color: var(--cor-texto-claro);
+        }
+        
+        /* SEÇÃO DE SOLUÇÕES */
+        .areas-atuacao-novo {
+            background-color: var(--cor-carvão);
+            padding: 80px 0;
+        }
+        
+        .areas-atuacao-novo h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .areas-atuacao-novo p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+        }
+        
+        .cards-container-novo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .card-novo {
+            background-color: #2a2e35;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 3px solid var(--cor-destaque);
+        }
+        
+        .card-novo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .icone-area {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .card-novo h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-novo p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        /* SEÇÃO DIFERENCIAIS */
+        .diferenciais-novo {
+            background-color: #25282e;
+            padding: 80px 0;
+        }
+        
+        .diferenciais-novo h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+        
+        .diferenciais-novo .card-novo {
+            text-align: center;
+            background-color: #2a2e35;
+        }
+        
+        .diferenciais-novo .fa-3x {
+            color: var(--cor-destaque);
+            margin-bottom: 20px;
+        }
+        
+        /* CTA FINAL */
+        .cta-final-novo {
+            background-color: var(--cor-azul-profundo);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-final-novo h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-final-novo p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* WHATSAPP FLUTUANTE */
+        #whatsapp-flutuante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        #whatsapp-flutuante:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        #whatsapp-flutuante img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .banner-principal-novo h1 {
+                font-size: 2.2rem;
+            }
+            
+            .banner-principal-novo p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            
+            .cards-container-novo {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+            
+            .cta-final-novo h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Cabeçalho -->
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="banner-principal-novo" style="background-image: url('/cunha.adv/images/banner-hero-placeholder.jpg');">
-            <h1>Jurídico Estratégico com Precisão e Tecnologia</h1>
-            <p>Soluções jurídicas eficientes para agronegócio, empresas e indivíduos. Resultados mensuráveis com abordagem técnica avançada.</p>
+        <!-- Banner Principal -->
+        <section class="banner-principal-novo">
+            <h1>Soluções Jurídicas com Eficiência e Precisão</h1>
+            <p>Tecnologia e expertise jurídica combinadas para proteger seus interesses e otimizar seus resultados.</p>
             <a href="#nossas-solucoes" class="cta-button">Nossas Soluções</a>
         </section>
 
-        <section id="nossas-solucoes" class="areas-atuacao-novo">
-            <h2>Soluções Jurídicas Especializadas</h2>
-            <p style="text-align:center; max-width: 800px; margin-left:auto; margin-right:auto; margin-bottom: 50px;">Consultoria técnica com foco em eficiência operacional e resultados concretos, combinando expertise jurídica com metodologias estruturadas.</p>
-            <div class="cards-container-novo">
-                 <div class="card-novo">
-                    <img src="/cunha.adv/images/icone-agronegocio-placeholder.png" alt="Ícone Soluções para o Agronegócio" class="icone-area">
-                    <h3>Agronegócio</h3>
-                    <p>Gestão jurídica integrada para operações rurais. Regularização fundiária, compliance ambiental e otimização tributária com metodologia validada.</p>
-                    <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Detalhes</a>
-                </div>
-                <div class="card-novo">
-                    <img src="/cunha.adv/images/icone-pequenos-negocios-placeholder.png" alt="Ícone Soluções para Pequenos Negócios e MEIs" class="icone-area">
-                    <h3>Empresas e MEIs</h3>
-                    <p>Estruturação jurídica eficiente para negócios. Desde constituição até gestão contratual e tributária, com processos otimizados.</p>
-                    <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Detalhes</a>
-                </div>
-                <div class="card-novo">
-                    <img src="/cunha.adv/images/icone-pessoas-fisicas-placeholder.png" alt="Ícone Soluções para Pessoas Físicas" class="icone-area">
-                    <h3>Indivíduos</h3>
-                    <p>Proteção de direitos com abordagem técnica. Planejamento previdenciário estratégico e defesa do consumidor com métricas claras.</p>
-                    <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Detalhes</a>
+        <!-- Nossas Soluções -->
+        <section id="nossas-solucoes" class="areas-atuacao-novo section-padding">
+            <div class="container">
+                <h2>Soluções Jurídicas Estratégicas</h2>
+                <p>Consultoria especializada com abordagem técnica e resultados mensuráveis para seu negócio ou necessidade pessoal.</p>
+                
+                <div class="cards-container-novo">
+                    <!-- Agronegócio -->
+                    <div class="card-novo">
+                        <img src="/cunha.adv/images/icone-agronegocio-placeholder.png" alt="Ícone Agronegócio" class="icone-area">
+                        <h3>Agronegócio</h3>
+                        <p>Segurança jurídica e planejamento tributário especializado para o setor agrícola. Maximize seus resultados com conformidade legal.</p>
+                        <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Saiba Mais →</a>
+                    </div>
+                    
+                    <!-- Pequenos Negócios -->
+                    <div class="card-novo">
+                        <img src="/cunha.adv/images/icone-pequenos-negocios-placeholder.png" alt="Ícone Pequenos Negócios" class="icone-area">
+                        <h3>Pequenos Negócios</h3>
+                        <p>Estruturação jurídica eficiente para MEIs e pequenas empresas. Foco em redução de riscos e otimização tributária.</p>
+                        <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Saiba Mais →</a>
+                    </div>
+                    
+                    <!-- Pessoas Físicas -->
+                    <div class="card-novo">
+                        <img src="/cunha.adv/images/icone-pessoas-fisicas-placeholder.png" alt="Ícone Pessoas Físicas" class="icone-area">
+                        <h3>Pessoas Físicas</h3>
+                        <p>Proteção de direitos e planejamento previdenciário estratégico. Soluções personalizadas para suas necessidades jurídicas.</p>
+                        <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Saiba Mais →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="diferenciais-novo" style="padding: 60px 0; background-color: #f8f8f8;">
+        <!-- Diferenciais -->
+        <section class="diferenciais-novo section-padding">
             <div class="container">
-                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: #2c3e50;">Metodologia Comprovada</h2>
+                <h2>Nossa Metodologia</h2>
+                
                 <div class="cards-container-novo" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div class="card-novo" style="background-color: #ffffff;">
-                        <i class="fas fa-balance-scale-right fa-3x" style="color: #3498db; margin-bottom: 20px;"></i>
-                        <h3 style="color: #2c3e50;">Técnica Aplicada</h3>
-                        <p style="color: #34495e;">Conhecimento jurídico aprofundado aliado a metodologias estruturadas para solução precisa de problemas complexos.</p>
+                    <div class="card-novo">
+                        <i class="fas fa-balance-scale-right fa-3x"></i>
+                        <h3>Análise Técnica</h3>
+                        <p>Diagnóstico jurídico preciso com avaliação de riscos e oportunidades baseada em dados concretos.</p>
                     </div>
-                    <div class="card-novo" style="background-color: #ffffff;">
-                        <i class="fas fa-chart-line fa-3x" style="color: #3498db; margin-bottom: 20px;"></i>
-                        <h3 style="color: #2c3e50;">Eficiência Mensurável</h3>
-                        <p style="color: #34495e;">Processos otimizados com indicadores claros de performance, reduzindo custos e maximizando resultados.</p>
+                    <div class="card-novo">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                        <h3>Estratégia Mensurável</h3>
+                        <p>Planejamento jurídico com objetivos claros e indicadores de performance para acompanhamento.</p>
                     </div>
-                    <div class="card-novo" style="background-color: #ffffff;">
-                        <i class="fas fa-project-diagram fa-3x" style="color: #3498db; margin-bottom: 20px;"></i>
-                        <h3 style="color: #2c3e50;">Abordagem Sistêmica</h3>
-                        <p style="color: #34495e;">Visão integrada dos aspectos jurídicos, tributários e operacionais para soluções completas e duráveis.</p>
+                    <div class="card-novo">
+                        <i class="fas fa-clock fa-3x"></i>
+                        <h3>Eficiência Processual</h3>
+                        <p>Otimização de prazos e recursos com uso de tecnologia e processos enxutos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-final-novo" style="padding: 80px 0; background-color: #2c3e50; color: #ecf0f1; text-align: center;">
+        <!-- CTA Final -->
+        <section class="cta-final-novo section-padding">
             <div class="container">
-                <h2 style="font-size: 2.8rem; margin-bottom: 20px; color: #ecf0f1;">Soluções Jurídicas com Precisão e Eficiência</h2>
-                <p style="font-size: 1.5rem; margin-bottom: 30px; max-width: 700px; margin-left:auto; margin-right:auto;">Nossa equipe está preparada para oferecer a solução técnica mais adequada para seu caso.</p>
-                <a href="/cunha.adv/contato.html" class="cta-button" style="background-color: #3498db; color: #ecf0f1;">Iniciar Consultoria</a>
+                <h2>Precisa de Soluções Jurídicas Eficientes?</h2>
+                <p>Nossa equipe está pronta para oferecer consultoria estratégica personalizada para seu caso.</p>
+                <a href="/cunha.adv/contato.html" class="cta-button">Fale Conosco Agora</a>
             </div>
         </section>
     </main>
 
+    <!-- Rodapé -->
     <div id="footer-placeholder"></div>
 
-    <div id="popup-oferta">
-        <div class="popup-conteudo">
-            <span class="popup-fechar">&times;</span>
-            <h2>Análise Jurídica Especializada</h2>
-            <p>Nossa equipe técnica está disponível para avaliação precisa do seu caso. Agende uma análise inicial.</p>
-            <a href="https://wa.me/5551995249234?text=Olá! Gostaria de agendar uma análise técnica." class="cta-button" target="_blank">Agendar Análise</a>
-        </div>
-    </div>
-
-    <a href="https://wa.me/5551995249234?text=Olá! Gostaria de mais informações técnicas." target="_blank" id="whatsapp-flutuante" aria-label="Contato via WhatsApp">
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5551995249234?text=Olá! Gostaria de mais informações." target="_blank" id="whatsapp-flutuante" aria-label="Contato via WhatsApp">
         <img src="/cunha.adv/images/whatsapp-icon.png" alt="Ícone WhatsApp">
     </a>
 
