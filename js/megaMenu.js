@@ -66,4 +66,31 @@ document.addEventListener("DOMContentLoaded", function() {
         // que detecta cliques em vez de hover (passar o mouse)
     });
 });
+// Menu Mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    // Toggle do menu principal
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    });
 
+    // Submenus accordion
+    document.querySelectorAll('.has-submenu > a').forEach(item => {
+        item.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Fecha outros submenus
+                document.querySelectorAll('.has-submenu').forEach(el => {
+                    if (el !== parent) el.classList.remove('active');
+                });
+            }
+        });
+    });
+});
