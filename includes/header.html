@@ -15,7 +15,15 @@
         </div>
 
         <!-- Navegação Principal com indicador de página ativa -->
-        <nav class="main-nav" aria-label="Navegação principal">
+      <nav class="mobile-menu" id="main-nav" aria-label="Navegação móvel">
+    <div class="nav-overlay"></div>
+    <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+            <a href="/cunha.adv/index.html" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                Início
+            </a>
+        </li>
             <div class="nav-overlay"></div>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -166,15 +174,14 @@
         </div>
 
         <!-- Menu Mobile melhorado com acessibilidade -->
-        <button class="menu-toggle" 
-                aria-label="Menu principal" 
-                aria-expanded="false" 
-                aria-controls="main-nav">
-            <span class="menu-toggle-bar top-bar"></span>
-            <span class="menu-toggle-bar middle-bar"></span>
-            <span class="menu-toggle-bar bottom-bar"></span>
-            <span class="sr-only">Menu</span>
-        </button>
+       <button class="menu-toggle" 
+        aria-label="Menu mobile" 
+        aria-expanded="false" 
+        aria-controls="main-nav">
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+</button>
     </div>
 </header>
 
