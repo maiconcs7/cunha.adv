@@ -1,3 +1,386 @@
+olhe o codigo css e arrume ara mim, eu tentei fazer sozinho e não consegui
+
+/* Estilos do Cabeçalho com Alinhamento Extremo e Responsividade */
+
+/* Container principal do cabeçalho */
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-container {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Cria espaço entre os itens: logo à esquerda, menu ao centro, CTA à direita */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Logo no cabeçalho */
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo-link {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
+
+#logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover #logo {
+    transform: scale(1.03);
+}
+
+/* Navegação Principal (Desktop) */
+.main-nav {
+    flex: 1 1 auto;
+    margin: 0 1.5rem;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.main-nav.active .nav-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 0.8rem;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.8rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #7d8a2e;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7d8a2e;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-item.active .nav-link::after {
+    width: 100%;
+}
+
+.dropdown-icon {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-icon,
+.dropbtn[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Botão Nossas Soluções */
+.dropbtn.nav-link {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.8rem 0;
+    cursor: pointer;
+}
+
+.dropbtn.nav-link:hover {
+    background: none;
+}
+
+/* Mega Menu */
+.mega-menu-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 90vw;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+    padding: 2rem;
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+.dropdown:hover .mega-menu-content,
+.dropbtn[aria-expanded="true"] + .mega-menu-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    gap: 2rem;
+}
+
+.mega-menu-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-menu-title {
+    color: #7d8a2e;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.mega-menu-main-item {
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.mega-menu-main-item:hover {
+    color: #7d8a2e;
+}
+
+.menu-icon {
+    margin-right: 0.7rem;
+    font-size: 1rem;
+    color: #7d8a2e;
+}
+
+.mega-menu-main-item.active-main-item {
+    color: #7d8a2e;
+}
+
+.mega-submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-submenu.active {
+    display: flex;
+}
+
+.submenu-link {
+    color: #566573;
+    padding: 0.5rem 0;
+    padding-left: 1.7rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.submenu-link:hover {
+    color: #7d8a2e;
+}
+
+.submenu-link i {
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.mega-menu-highlight {
+    background: #f8f9f9;
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlight-content {
+    text-align: center;
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    color: #7d8a2e;
+    margin-bottom: 1rem;
+}
+
+.highlight-content h3 {
+    color: #7d8a2e;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight-content p {
+    color: #566573;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.highlight-cta {
+    display: inline-block;
+    background: #7d8a2e;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.highlight-cta:hover {
+    background: #6a7735;
+}
+
+/* Botão WhatsApp */
+.header-actions {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+}
+
+.whatsapp-cta {
+    background: #25D366;
+    color: white !important;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+    white-space: nowrap;
+}
+
+.whatsapp-cta:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.cta-icon {
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.cta-text {
+    display: inline;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.menu-toggle-bar {
+    height: 2px;
+    width: 20px;
+    background: #2c3e50;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.menu-toggle[aria-expanded="true"] .top-bar {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .middle-bar {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .bottom-bar {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsivo - Desktop */
+@media (max-width: 1200px) {
+    .footer-rd-inspired .container.footer-container-redesenhado {
+        padding: 0 20px;
+    }
+    
+    .footer-content-centered-redesenhado {
+        gap: 40px;
+    }
+}
+
 /* ========================================================================== */
 /* MENU MOBILE CORRIGIDO */
 /* ========================================================================== */
