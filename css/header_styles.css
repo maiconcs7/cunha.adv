@@ -1,293 +1,683 @@
 /* Estilos do Cabeçalho com Alinhamento Extremo e Responsividade */
 
 /* Container principal do cabeçalho */
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .header-container {
     display: flex; /* Habilita Flexbox */
     justify-content: space-between; /* Cria espaço entre os itens: logo à esquerda, menu ao centro, CTA à direita */
     align-items: center; /* Alinha os itens verticalmente ao centro */
-    padding-left: 10px; /* Margem mínima à esquerda para o logo */
-    padding-right: 10px; /* Margem mínima à direita para o CTA */
-    background-color: #f8f9fa; /* Cor de fundo igual ao rodapé */
-    color: var(--cor-texto-principal);
-    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* Logo no cabeçalho */
 .logo-container {
-    flex-shrink: 0; /* Impede que o logo encolha */
-    /* A margem esquerda já está no .header-container */
+    flex: 0 0 auto;
 }
 
-.logo-container #logo {
+.logo-link {
     display: block;
-    height: 50px; /* Altura reduzida para melhor encaixe, pode ser ajustada */
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
+
+#logo {
+    height: 50px;
     width: auto;
-    padding: 5px 0; /* Ajuste no padding vertical se necessário */
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover #logo {
+    transform: scale(1.03);
 }
 
 /* Navegação Principal (Desktop) */
 .main-nav {
-    flex-grow: 1; /* Permite que a navegação ocupe o espaço restante */
-    display: flex;
-    justify-content: center; /* Centraliza a lista de links (ul) */
+    flex: 1 1 auto;
+    margin: 0 1.5rem;
 }
 
-.main-nav ul {
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.main-nav.active .nav-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 0.8rem;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.8rem 0;
+    position: relative;
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0; /* Reset do padding */
+    transition: color 0.3s ease;
 }
 
-.main-nav ul li {
-    margin: 0 15px; /* Espaçamento entre os itens do menu, ajustado de margin-left para margin em ambos os lados */
-    position: relative;
+.nav-link:hover,
+.nav-link:focus {
+    color: #7d8a2e;
 }
 
-.main-nav ul li a {
-    color: var(--cor-texto-principal);
-    font-weight: 500;
-    font-family: var(--fonte-titulos);
-    font-size: 1.05rem;
-    padding: 10px 0;
-    border-bottom: 3px solid transparent; /* Aumenta a espessura da borda para melhor feedback */
-    transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease; /* Adicionada transição para background-color */
-    text-decoration: none;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7d8a2e;
+    transition: width 0.3s ease;
 }
 
-/* Feedback visual ao passar o mouse (hover) e item ativo */
-.main-nav ul li a:hover,
-.main-nav ul li a.active-page-link {
-    color: var(--cor-primaria-azul-corporativo); /* Cor de destaque no hover/ativo igual ao rodapé */
-    border-bottom-color: var(--cor-primaria-azul-corporativo); /* Linha indicadora mais visível */
+.nav-link:hover::after,
+.nav-item.active .nav-link::after {
+    width: 100%;
 }
 
-/* Para o item ativo, garantir melhor contraste como solicitado */
-.main-nav ul li a.active-page-link {
-    color: var(--cor-primaria-azul-corporativo); /* Texto mais escuro para contraste no item ativo */
-    font-weight: 700; /* Deixa o item ativo em negrito */
-    border-bottom-color: var(--cor-primaria-azul-corporativo); /* Borda na cor primária para o ativo */
+.dropdown-icon {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
 }
 
-/* Ações do Cabeçalho (CTA) */
-.header-actions {
-    flex-shrink: 0; /* Impede que o CTA encolha */
-    /* A margem direita já está no .header-container */
+.dropdown:hover .dropdown-icon,
+.dropbtn[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
 }
 
-.header-actions .cta-button-header {
-    background-color: #000; /* Cor de fundo igual ao botão do rodapé */
-    color: #fff !important;
-    padding: 10px 20px;
-    border-radius: 4px; /* Borda arredondada igual ao rodapé */
-    font-family: var(--fonte-titulos);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease;
-    margin-left: 0; /* Removida margem esquerda anterior, pois o .header-container controla o espaçamento */
-    border-bottom: none !important;
-    text-decoration: none;
-}
-
-.header-actions .cta-button-header:hover {
-    background-color: #333; /* Cor de hover igual ao botão do rodapé */
-    color: #fff !important;
-}
-
-/* Botão de Menu Hambúrguer (Mobile) */
-.menu-toggle {
-    display: none; /* Escondido por padrão no desktop */
+/* Botão Nossas Soluções */
+.dropbtn.nav-link {
     background: none;
     border: none;
-    font-size: 2rem;
-    color: var(--cor-primaria-azul-corporativo);
+    box-shadow: none;
+    padding: 0.8rem 0;
     cursor: pointer;
-    padding: 5px; /* Adiciona um pouco de área de clique */
-    margin-left: 15px; /* Espaço se o CTA estiver visível ao lado */
 }
 
-/* --- Responsividade do Cabeçalho --- */
-@media (max-width: 991px) { /* Ponto de quebra para tablets e início do mobile */
-    .header-container {
-        padding-left: 15px; /* Ajuste de margem para mobile */
-        padding-right: 15px;
-    }
+.dropbtn.nav-link:hover {
+    background: none;
+}
 
-    .logo-container #logo {
-        height: 40px; /* Logo menor em mobile */
-    }
+/* Mega Menu */
+.mega-menu-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 90vw;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+    padding: 2rem;
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
 
-    .main-nav {
-        display: none; /* Menu principal escondido, será ativado pelo .menu-toggle */
-        order: 3; /* Muda a ordem para aparecer abaixo do logo e toggle */
-        width: 100%;
-        background-color: #f8f9fa; /* Cor de fundo igual ao rodapé */
-        border-top: 1px solid var(--cor-borda-sutil);
-        box-shadow: 0 3px 5px rgba(0,0,0,0.05);
-        position: absolute; /* Para sobrepor o conteúdo abaixo */
-        top: 100%; /* Posiciona abaixo do header */
-        left: 0;
-        z-index: 999;
-    }
+.dropdown:hover .mega-menu-content,
+.dropbtn[aria-expanded="true"] + .mega-menu-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
 
-    .main-nav.active {
-        display: block; /* Mostra o menu quando ativo */
-    }
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    gap: 2rem;
+}
 
-    .main-nav ul {
+.mega-menu-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-menu-title {
+    color: #7d8a2e;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.mega-menu-main-item {
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.mega-menu-main-item:hover {
+    color: #7d8a2e;
+}
+
+.menu-icon {
+    margin-right: 0.7rem;
+    font-size: 1rem;
+    color: #7d8a2e;
+}
+
+.mega-menu-main-item.active-main-item {
+    color: #7d8a2e;
+}
+
+.mega-submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-submenu.active {
+    display: flex;
+}
+
+.submenu-link {
+    color: #566573;
+    padding: 0.5rem 0;
+    padding-left: 1.7rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.submenu-link:hover {
+    color: #7d8a2e;
+}
+
+.submenu-link i {
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.mega-menu-highlight {
+    background: #f8f9f9;
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlight-content {
+    text-align: center;
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    color: #7d8a2e;
+    margin-bottom: 1rem;
+}
+
+.highlight-content h3 {
+    color: #7d8a2e;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight-content p {
+    color: #566573;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.highlight-cta {
+    display: inline-block;
+    background: #7d8a2e;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.highlight-cta:hover {
+    background: #6a7735;
+}
+
+/* Botão WhatsApp */
+.header-actions {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+}
+
+.whatsapp-cta {
+    background: #25D366;
+    color: white !important;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+    white-space: nowrap;
+}
+
+.whatsapp-cta:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.cta-icon {
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.cta-text {
+    display: inline;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.menu-toggle-bar {
+    height: 2px;
+    width: 20px;
+    background: #2c3e50;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.menu-toggle[aria-expanded="true"] .top-bar {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .middle-bar {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .bottom-bar {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsivo - Desktop */
+@media (max-width: 1200px) {
+    .footer-rd-inspired .container.footer-container-redesenhado {
+        padding: 0 20px;
+    }
+    
+    .footer-content-centered-redesenhado {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-main-content-redesenhado {
         flex-direction: column;
-        align-items: flex-start; /* Alinha itens à esquerda no menu dropdown */
+        align-items: flex-start;
+    }
+    
+    .footer-logo-container-redesenhado {
+        margin-bottom: 30px;
         width: 100%;
     }
-
-    .main-nav ul li {
+    
+    .footer-content-centered-redesenhado {
+        width: 100%;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    
+    .footer-column-redesenhado {
+        flex: 0 0 calc(50% - 15px);
+        margin-bottom: 30px;
+    }
+    
+    /* Ajustes para o cabeçalho em tablets */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .nav-list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 350px;
+        height: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 2rem 0;
+        overflow-y: auto;
+    }
+    
+    .nav-item {
         margin: 0;
         width: 100%;
     }
-
-    .main-nav ul li a {
-        display: block;
-        padding: 15px 20px; /* Mais padding para toque */
-        width: 100%;
-        border-bottom: 1px solid var(--cor-borda-sutil) !important;
-        text-align: left;
-        font-size: 0.9rem; /* Fonte menor como no rodapé mobile */
-    }
-
-    .main-nav ul li:last-child a {
-        border-bottom: none !important;
+    
+    .nav-link {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #eee;
     }
     
-    /* Estilos para o item ativo no menu mobile */
-    .main-nav ul li a.active-page-link {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: var(--cor-primaria-azul-corporativo); 
-        font-weight: bold;
-        border-bottom-color: var(--cor-borda-sutil) !important; /* Evita dupla borda */
-    }
-    .main-nav ul li a.active-page-link:hover {
-        background-color: rgba(0, 0, 0, 0.05); /* Mantém o fundo no hover do ativo */
-    }
-
-    .menu-toggle {
-        display: block; /* Mostra o botão de hambúrguer */
-        order: 2; /* Coloca o toggle depois do logo e antes do menu (que terá order 3) */
-    }
-
-    .header-actions {
-        /* Mantemos o CTA visível, mas ajustamos o estilo */
-        display: block;
-        margin-left: auto; /* Empurra para a direita */
-    }
-    
-    .header-actions .cta-button-header {
-        padding: 8px 15px; /* Reduz o padding para economizar espaço */
-        font-size: 0.85rem; /* Reduz o tamanho da fonte */
-    }
-
-    /* Ajustes para Mega Menu em Mobile (se for mantido) */
-    .mega-menu-container:hover .mega-menu-content { 
-        display: none; /* Desabilitar hover em mobile */
-    }
-
     .mega-menu-content {
         position: static;
-        flex-direction: column;
-        min-width: 100%;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
         box-shadow: none;
-        border: none;
-        border-top: 1px solid var(--cor-borda-sutil);
-        padding-left: 0; /* Reset */
-        background-color: #f8f9fa; /* Cor de fundo igual ao rodapé */
+        padding: 0;
+        background-color: #f8f9fa;
     }
-
+    
+    .mega-menu-grid {
+        display: block;
+    }
+    
     .mega-menu-column {
-        border-right: none;
-        border-bottom: 1px solid var(--cor-borda-sutil);
-        padding-right: 0;
-        padding-bottom: 0; /* Reset */
-        margin-bottom: 0; /* Reset */
-    }
-    .mega-menu-column:last-child {
-        border-bottom: none;
-    }
-
-    .mega-menu-sub-column {
-        padding-left: 0; /* Reset */
-    }
-    
-    .mega-menu-column a.mega-menu-main-item,
-    .mega-submenu a {
-        padding: 15px 20px;
-        padding-left: 30px; /* Indentação para sub-itens */
-        text-align: left;
-        border-bottom: 1px solid var(--cor-borda-sutil) !important;
-        font-size: 0.9rem; /* Fonte menor como no rodapé mobile */
-        color: var(--cor-texto-principal);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .mega-menu-column a.mega-menu-main-item:hover,
-    .mega-submenu a:hover {
-        color: var(--cor-primaria-azul-corporativo);
-    }
-    
-    .mega-menu-column a.mega-menu-main-item:last-child,
-    .mega-submenu a:last-child {
-         border-bottom: none !important;
-    }
-
-    /* Estilo para o ícone de dropdown no mobile */
-    .main-nav .dropdown > a .fa-chevron-down {
-        float: right; /* Alinha a seta à direita */
-        margin-top: 3px;
+        margin-bottom: 1rem;
     }
 }
 
-@media (max-width: 767px) { /* Ajustes mais finos para celulares */
-    .header-container {
-        padding-left: 10px;
-        padding-right: 10px;
+/* Melhorias para dispositivos móveis - Rodapé horizontal da esquerda para direita */
+@media (max-width: 767px) {
+    .footer-content-centered-redesenhado {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
     }
     
-    .logo-container #logo {
-        height: 35px; /* Logo ainda menor se necessário */
+    .footer-column-redesenhado {
+        flex: 0 0 auto;
+        min-width: 140px;
+        width: auto;
+        margin-bottom: 15px;
     }
     
-    /* Alinhamento vertical das colunas laterais no lado direito */
-    .main-nav ul {
-        flex-direction: column;
+    .footer-column-redesenhado .bsc-title,
+    .footer-column-redesenhado h2 {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column-redesenhado .links li a {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .footer-column-redesenhado .links li {
+        margin-bottom: 6px;
+    }
+    
+    .footer-bottom-content-redesenhado {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links li {
+        margin-left: 0;
+        flex: 0 0 auto;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links li a {
+        white-space: nowrap;
+        font-size: 0.75rem;
+    }
+    
+    /* Ajustes para o formulário de newsletter */
+    .newsletter-form {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .newsletter-form input[type="email"] {
+        width: 70%;
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    
+    .newsletter-form button {
+        width: 30%;
+        font-size: 0.8rem;
+        padding: 8px;
+        white-space: nowrap;
+    }
+    
+    /* Ajustes para o cabeçalho em smartphones */
+    .nav-list {
         align-items: flex-end; /* Alinha itens à direita no menu dropdown */
-        width: 100%;
     }
     
-    .main-nav ul li {
+    .nav-item {
         text-align: right;
     }
     
-    .main-nav ul li a {
+    .nav-link {
         text-align: right;
         padding-right: 20px;
         padding-left: 10px;
-        font-size: 0.85rem; /* Fonte ainda menor para telas pequenas */
+        font-size: 0.85rem;
     }
     
-    /* Ajustes para o mega menu em telas muito pequenas */
-    .mega-menu-column a.mega-menu-main-item,
-    .mega-submenu a {
+    .mega-menu-title {
         text-align: right;
-        padding-right: 30px; /* Indentação para sub-itens do lado direito */
+        padding-right: 20px;
         padding-left: 10px;
-        font-size: 0.85rem; /* Fonte ainda menor para telas pequenas */
     }
     
-    /* Ajuste para o botão CTA em telas muito pequenas */
-    .header-actions .cta-button-header {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+    .mega-menu-main-item {
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .submenu-link {
+        text-align: right;
+        padding-right: 40px;
+        padding-left: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .menu-icon,
+    .submenu-link i {
+        margin-right: 0;
+        margin-left: 0.7rem;
+        order: 2;
+    }
+    
+    .mega-menu-highlight {
+        padding-right: 20px;
+        padding-left: 10px;
+    }
+    
+    .highlight-content {
+        text-align: right;
     }
 }
 
-/* Script.js deve adicionar/remover a classe .active no .main-nav e .open no .mega-menu-container */
+@media (max-width: 480px) {
+    .social-links .links {
+        justify-content: flex-start;
+    }
+    
+    .footer-main-content-redesenhado {
+        padding: 25px 0 15px;
+        gap: 20px;
+    }
+    
+    .footer-logo-container-redesenhado {
+        margin-bottom: 20px;
+    }
+    
+    .footer-logo-container-redesenhado .footer-logo img {
+        max-height: 35px;
+    }
+    
+    .contact-info p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-info .mobile-xs {
+        font-size: 0.7rem;
+    }
+    
+    /* Ajustes adicionais para telas muito pequenas */
+    .footer-content-centered-redesenhado {
+        gap: 15px;
+    }
+    
+    .footer-column-redesenhado {
+        min-width: 120px;
+    }
+    
+    /* Esconde a barra de rolagem mas mantém a funcionalidade */
+    .footer-content-centered-redesenhado::-webkit-scrollbar,
+    .footer-bottom-content-redesenhado .footer-bottom-links ul::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    .footer-content-centered-redesenhado::-webkit-scrollbar-thumb,
+    .footer-bottom-content-redesenhado .footer-bottom-links ul::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+    
+    /* Ajustes para o cabeçalho em telas muito pequenas */
+    #logo {
+        height: 40px;
+    }
+    
+    .header-container {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .whatsapp-cta {
+        padding: 0.5rem;
+    }
+}
+
+/* Suporte para JavaScript desativado */
+.no-js .menu-toggle {
+    display: none;
+}
+
+.no-js .main-nav {
+    display: block;
+}
+
+.no-js .mega-menu-content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+}
+
+/* Classe para quando o menu está aberto */
+body.menu-open {
+    overflow: hidden;
+}
