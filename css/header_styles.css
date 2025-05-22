@@ -321,38 +321,6 @@
 /* ================================================== */
 /* MEGA MENU DESKTOP
 /* ================================================== */
-.mega-menu-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  max-width: 90vw;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border-radius: 0 0 8px 8px;
-  padding: 2rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
-  z-index: 1000;
-}
-
-.dropdown:hover .mega-menu-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mega-menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.5fr;
-  gap: 2rem;
-}
-
-.mega-menu-highlight {
-  background: var(--bg-light);
-  border-radius: 6px;
-  padding: 1.5rem;
-}
 
 /* ================================================== */
 /* MENU MOBILE - VERSÃO REVISADA
@@ -526,6 +494,7 @@
     display: none;
   }
 }
+/*================================*/
 
 /* ================================================== */
 /* ACESSIBILIDADE
@@ -614,4 +583,49 @@
 
 .menu-toggle:hover .menu-toggle-bar {
     background: #7d8a2e;
+}
+mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 991px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
 }
