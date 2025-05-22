@@ -149,3 +149,17 @@ document.addEventListener("DOMContentLoaded", function() {
     
     window.addEventListener('resize', handleResize);
 });
+function toggleMenu() {
+    const menu = document.querySelector('.mobile-nav');
+    const overlay = document.querySelector('.nav-overlay');
+    const toggle = document.querySelector('.menu-toggle');
+    
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+// Fechar ao clicar fora
+document.querySelector('.nav-overlay').addEventListener('click', toggleMenu);
