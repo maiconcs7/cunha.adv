@@ -354,6 +354,28 @@
 .menu-toggle[aria-expanded="true"] .bottom-bar {
     transform: translateY(-5px) rotate(-45deg);
 }
+/* Estado do Menu Mobile */
+.mobile-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
 
 /* Acessibilidade */
 .sr-only {
