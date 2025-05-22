@@ -166,18 +166,21 @@
         </div>
 
         <!-- Menu Mobile melhorado com acessibilidade -->
-        <button class="menu-toggle" 
-                aria-label="Menu principal" 
-                aria-expanded="false" 
-                aria-controls="main-nav">
-            <span class="menu-toggle-bar top-bar"></span>
-            <span class="menu-toggle-bar middle-bar"></span>
-            <span class="menu-toggle-bar bottom-bar"></span>
-            <span class="sr-only">Menu</span>
-        </button>
+       
+<button class="mobile-menu-toggle" 
+    aria-label="Menu principal"
+    onclick="document.body.classList.toggle('menu-open')">
+    <div class="hamburger-icon">
+</nav>
+        <span></span>
+        <span></span>
+        <span></span>
+</button>
+
+<div class="menu-overlay" onclick="document.body.classList.remove('menu-open')"></div>
     </div>
 </header>
 
 <!-- Adicione estas linhas no head do seu HTML -->
-<link rel="stylesheet" href="/css/header_styles.css"> -->
-<script src="/cunha.adv/js/megaMenu.js" defer></script> -->
+<link rel="stylesheet" href="/css/header_styles.css">
+<script src="/cunha.adv/js/megaMenu.js" defer></script>
