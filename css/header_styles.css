@@ -333,3 +333,120 @@
 body.menu-open {
   overflow: hidden;
 }
+/* Ícone do Menu Mobile */
+.mobile-menu-toggle {
+    display: none; /* Escondido por padrão */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    margin-left: auto; /* Alinha à direita */
+}
+
+/* Barras do Hambúrguer */
+.hamburger-icon {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.hamburger-icon span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #2c3e50;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 16px;
+}
+
+/* Estado Aberto (X) */
+.menu-open .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-open .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Quando o menu está aberto */
+.menu-open .mobile-menu {
+    right: 0;
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+.menu-open .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Exibir apenas em mobile */
+@media (max-width: 991px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 480px) {
+    .mobile-menu {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .hamburger-icon {
+        width: 25px;
+    }
+}
