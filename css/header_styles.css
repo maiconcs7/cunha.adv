@@ -56,16 +56,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 141, 101, 0.5);
+    background: rgba(0,0,0,0.5);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: all 0.8s ease;
 }
 
-.main-nav.active .nav-overlay {
-    opacity: 1;
-    visibility: visible;
+.main-nav.active {
+    display: block !important;
 }
 
 .nav-list {
@@ -343,18 +342,30 @@
     transform-origin: center;
 }
 
-.menu-toggle[aria-expanded="true"] .top-bar {
-    transform: translateY(5px) rotate(45deg);
+/* Animações do Hambúrguer */
+.menu-toggle.active .top-bar {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.menu-toggle[aria-expanded="true"] .middle-bar {
+.menu-toggle.active .middle-bar {
     opacity: 0;
 }
 
-.menu-toggle[aria-expanded="true"] .bottom-bar {
-    transform: translateY(-5px) rotate(-45deg);
+.menu-toggle.active .bottom-bar {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Bloqueio de Scroll */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Dropdown Mobile */
+.mega-menu-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
 /* Acessibilidade */
 .sr-only {
     position: absolute;
