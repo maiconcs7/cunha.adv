@@ -537,153 +537,170 @@
     }
     
     /* Responsivo - Desktop */
-    @media (min-width: 769px) {
-        .nav-overlay {
-            display: none;
-        }
+   /* --- Responsividade do Rodapé --- */
+@media (max-width: 1200px) {
+    .footer-rd-inspired .container.footer-container-redesenhado {
+        padding: 0 20px;
     }
     
-    /* Responsivo - Tablet */
-    @media (max-width: 1024px) {
-        .header-container {
-            padding: 0 1.2rem;
-        }
-        
-        .mega-menu-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .mega-menu-highlight {
-            grid-column: span 2;
-        }
-        
-        .whatsapp-cta {
-            padding: 0.7rem 1rem;
-        }
+    .footer-content-centered-redesenhado {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-main-content-redesenhado {
+        flex-direction: column;
+        align-items: flex-start;
     }
     
-    /* Responsivo - Mobile */
-    @media (max-width: 768px) {
-        .header-container {
-            padding: 0.5rem 1rem;
-        }
-        
-        .main-nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 85%;
-            max-width: 350px;
-            height: 100vh;
-            background: #fff;
-            z-index: 1000;
-            margin: 0;
-            padding: 1.5rem;
-            overflow-y: auto;
-            transition: left 0.3s ease;
-            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .main-nav.active {
-            left: 0;
-        }
-        
-        .nav-overlay {
-            display: block;
-        }
-        
-        .nav-list {
-            flex-direction: column;
-            padding: 0;
-        }
-        
-        .nav-item {
-            margin: 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .nav-link {
-            padding: 1rem 0.5rem;
-            font-size: 1rem;
-        }
-        
-        .mega-menu-content {
-            position: static;
-            transform: none;
-            width: 100%;
-            box-shadow: none;
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            border: none;
-        }
-        
-        .dropbtn[aria-expanded="true"] + .mega-menu-content {
-            max-height: 1000px;
-            padding: 0.5rem 0 0 1rem;
-        }
-        
-        .mega-menu-grid {
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-        }
-        
-        .mega-menu-column {
-            padding-bottom: 0.5rem;
-            border-bottom: none;
-        }
-        
-        .mega-menu-title {
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .mega-menu-main-item {
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .submenu-link {
-            padding: 0.4rem 0 0.4rem 1.2rem;
-            font-size: 0.85rem;
-        }
-        
-        .mega-menu-highlight {
-            margin-top: 0.5rem;
-            padding: 0.8rem;
-        }
-        
-        .highlight-content h3 {
-            font-size: 0.95rem;
-        }
-        
-        .highlight-content p {
-            font-size: 0.8rem;
-        }
-        
-        .menu-toggle {
-            display: flex;
-        }
-        
-        .whatsapp-cta {
-            padding: 0.6rem 0.8rem;
-            font-size: 0;
-        }
-        
-        .whatsapp-cta .cta-text {
-            display: none;
-        }
-        
-        .whatsapp-cta .cta-icon {
-            margin-right: 0;
-            font-size: 1.2rem;
-        }
-        
-        body.menu-open {
-            overflow: hidden;
-        }
+    .footer-logo-container-redesenhado {
+        margin-bottom: 30px;
+        width: 100%;
     }
+    
+    .footer-content-centered-redesenhado {
+        width: 100%;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    
+    .footer-column-redesenhado {
+        flex: 0 0 calc(50% - 15px);
+        margin-bottom: 30px;
+    }
+}
+
+/* Melhorias para dispositivos móveis - Rodapé horizontal da esquerda para direita */
+@media (max-width: 767px) {
+    .footer-content-centered-redesenhado {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .footer-column-redesenhado {
+        flex: 0 0 auto;
+        min-width: 140px;
+        width: auto;
+        margin-bottom: 15px;
+    }
+    
+    .footer-column-redesenhado .bsc-title,
+    .footer-column-redesenhado h2 {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column-redesenhado .links li a {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .footer-column-redesenhado .links li {
+        margin-bottom: 6px;
+    }
+    
+    .footer-bottom-content-redesenhado {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links li {
+        margin-left: 0;
+        flex: 0 0 auto;
+    }
+    
+    .footer-bottom-content-redesenhado .footer-bottom-links li a {
+        white-space: nowrap;
+        font-size: 0.75rem;
+    }
+    
+    /* Ajustes para o formulário de newsletter */
+    .newsletter-form {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .newsletter-form input[type="email"] {
+        width: 70%;
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    
+    .newsletter-form button {
+        width: 30%;
+        font-size: 0.8rem;
+        padding: 8px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links .links {
+        justify-content: flex-start;
+    }
+    
+    .footer-main-content-redesenhado {
+        padding: 25px 0 15px;
+        gap: 20px;
+    }
+    
+    .footer-logo-container-redesenhado {
+        margin-bottom: 20px;
+    }
+    
+    .footer-logo-container-redesenhado .footer-logo img {
+        max-height: 35px;
+    }
+    
+    .contact-info p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-info .mobile-xs {
+        font-size: 0.7rem;
+    }
+    
+    /* Ajustes adicionais para telas muito pequenas */
+    .footer-content-centered-redesenhado {
+        gap: 15px;
+    }
+    
+    .footer-column-redesenhado {
+        min-width: 120px;
+    }
+    
+    /* Esconde a barra de rolagem mas mantém a funcionalidade */
+    .footer-content-centered-redesenhado::-webkit-scrollbar,
+    .footer-bottom-content-redesenhado .footer-bottom-links ul::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    .footer-content-centered-redesenhado::-webkit-scrollbar-thumb,
+    .footer-bottom-content-redesenhado .footer-bottom-links ul::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+}
+
     
     @media (max-width: 480px) {
         #logo {
