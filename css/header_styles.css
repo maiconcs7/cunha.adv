@@ -361,8 +361,6 @@
         overflow-x: auto;
         gap: 20px;
         padding-bottom: 15px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
     }
     
     .footer-column-redesenhado {
@@ -387,52 +385,6 @@
         margin-bottom: 6px;
     }
     
-    .footer-bottom-content-redesenhado {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        font-size: 0.75rem;
-    }
-    
-    .footer-bottom-content-redesenhado .footer-bottom-links ul {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 15px;
-        padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .footer-bottom-content-redesenhado .footer-bottom-links li {
-        margin-left: 0;
-        flex: 0 0 auto;
-    }
-    
-    .footer-bottom-content-redesenhado .footer-bottom-links li a {
-        white-space: nowrap;
-        font-size: 0.75rem;
-    }
-    
-    /* Ajustes para o formulário de newsletter */
-    .newsletter-form {
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    
-    .newsletter-form input[type="email"] {
-        width: 70%;
-        font-size: 0.8rem;
-        padding: 8px;
-    }
-    
-    .newsletter-form button {
-        width: 30%;
-        font-size: 0.8rem;
-        padding: 8px;
-        white-space: nowrap;
-    }
 }
 
 @media (max-width: 480px) {
