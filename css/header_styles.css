@@ -319,63 +319,56 @@
 
 
 /* ================================================== */
-/* MEGA MENU DESKTOP
 /* ================================================== */
+/* Menu Mobile */
+.mobile-nav {
+    position: fixed;
+    top: 70px; /* Altura do header */
+    right: -100%;
+    width: 100%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background: #fff;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
 
-/* ================================================== */
-/* MENU MOBILE - VERSÃO REVISADA
-/* ================================================== */
+.mobile-nav.active {
+    right: 0;
+}
+
+/* Overlay */
 .nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
 }
 
-.main-nav.active {
-  display: block;
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Menu Mobile - Nova Estrutura */
-.mobile-menu-wrapper {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  max-width: 320px;
-  height: 100vh;
-  background: #fff;
-  z-index: 1001;
-  transition: right 0.3s ease;
-  overflow-y: auto;
+@media (max-width: 991px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        margin-left: 15px;
+    }
 }
 
-.main-nav.active .mobile-menu-wrapper {
-  right: 0;
-}
-
-.mobile-nav-list {
-  padding: 2rem;
-  list-style: none;
-}
-
-.mobile-nav-item {
-  border-bottom: 1px solid #eee;
-}
-
-.mobile-nav-link {
-  display: block;
-  padding: 1rem 0;
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1.1rem;
-}
 
 /* Ícone Hambúrguer/X */
 .menu-toggle {
