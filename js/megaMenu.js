@@ -61,36 +61,91 @@ document.addEventListener("DOMContentLoaded", function() {
             // Esconde todos os submenus (menu terciário)
             subMenus.forEach(submenu => submenu.classList.remove("active"));
         });
-
-        // Nota: Para dispositivos móveis, o comportamento é controlado por CSS e JavaScript adicional
-        // que detecta cliques em vez de hover (passar o mouse)
     });
-});
-// Menu Mobile
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.mobile-menu-overlay');
+
+    // Script atualizado para o menu overlay
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const body = document.body;
     
-    // Toggle do menu principal
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Submenus accordion
-    document.querySelectorAll('.has-submenu > a').forEach(item => {
-        item.addEventListener('click', (e) => {
+    // Abrir/fechar menu principal
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+    }
+    
+    // Fechar menu ao clicar no overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('active');
+            body.classList.remove('menu-open');
+            closeAllSubmenus();
+        });
+    }
+    
+    // Fechar menu ao clicar em um link (mobile)
+    const navLinks = document.querySelectorAll('.nav-link:not(.dropbtn)');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parent = item.parentElement;
-                parent.classList.toggle('active');
-                
-                // Fecha outros submenus
-                document.querySelectorAll('.has-submenu').forEach(el => {
-                    if (el !== parent) el.classList.remove('active');
-                });
+                closeMenu();
             }
         });
     });
+    
+    // Gerenciar dropdowns no mobile
+    const dropdownButtons = document.querySelectorAll('.dropbtn');
+    dropdownButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                
+                const megaMenu = this.nextElementSibling;
+                if (isExpanded) {
+                    megaMenu.style.maxHeight = '0';
+                } else {
+                    closeAllSubmenus();
+                    megaMenu.style.maxHeight = megaMenu.scrollHeight + 'px';
+                }
+            }
+        });
+    });
+    
+    // Funções auxiliares
+    function closeMenu() {
+        if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('active');
+            body.classList.remove('menu-open');
+            closeAllSubmenus();
+        }
+    }
+    
+    function closeAllSubmenus() {
+        document.querySelectorAll('.mega-menu-content').forEach(menu => {
+            menu.style.maxHeight = '0';
+        });
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    }
+    
+    // Fechar menu ao redimensionar para desktop
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    }
+    
+    window.addEventListener('resize', handleResize);
 });
