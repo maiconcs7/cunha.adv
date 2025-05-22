@@ -167,18 +167,34 @@
 
         <!-- Menu Mobile melhorado com acessibilidade -->
        
-       <div = <button class="menu-toggle" 
+           <!-- Menu Mobile Corrigido -->
+        <button class="menu-toggle" 
                 aria-label="Menu principal" 
                 aria-expanded="false" 
-                aria-controls="main-nav">
+                aria-controls="mobile-nav">
             <span class="menu-toggle-bar top-bar"></span>
             <span class="menu-toggle-bar middle-bar"></span>
             <span class="menu-toggle-bar bottom-bar"></span>
             <span class="sr-only">Menu</span>
         </button>
-           <div class="menu-overlay" onclick="document.body.classList.remove('"Menu principal"')"></div>
+
+        <!-- Overlay Correto -->
+        <div class="nav-overlay" onclick="toggleMenu()"></div>
     </div>
 
+    <!-- Menu Mobile Separado -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <!-- Adicione os mesmos itens do menu desktop aqui -->
+            <li><a href="index.html">Início</a></li>
+            <li><a href="solucoes.html">Nossas Soluções</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contato.html">Ferramentas</a></li>
+            <li><a href="contato.html">Contato</a></li>
+
+        </ul>
+    </nav>
+</header>
 
 </header>
 
