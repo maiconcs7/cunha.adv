@@ -163,3 +163,10 @@ function toggleMenu() {
 
 // Fechar ao clicar fora
 document.querySelector('.nav-overlay').addEventListener('click', toggleMenu);
+<script>
+// Controle do estado
+document.querySelector('.hamburger-icon').addEventListener('click', function() {
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !isExpanded);
+});
+</script>
