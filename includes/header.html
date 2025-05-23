@@ -178,7 +178,75 @@
             <span class="menu-toggle-bar bottom-bar"></span>
             <span class="sr-only">Menu</span>
         </button>
+<button class="hamburger-icon" aria-label="toggleMenu(" aria-expanded="false">
+  <svg class="hamburger-svg" width="32" height="32" viewBox="0 0 32 32">
+    <!-- Linha Superior -->
+    <path class="hamburger-line top" 
+          d="M6 10 L26 10"
+          stroke="#2c3e50"
+          stroke-width="2"
+          stroke-linecap="round"/>
+          
+    <!-- Linha do Meio -->
+    <path class="hamburger-line middle" 
+          d="M6 16 L26 16"
+          stroke="#2c3e50"
+          stroke-width="2"
+          stroke-linecap="round"/>
+          
+    <!-- Linha Inferior -->
+    <path class="hamburger-line bottom" 
+          d="M6 22 L26 22"
+          stroke="#2c3e50"
+          stroke-width="2"
+          stroke-linecap="round"/>
+  </svg>
+</button>
 
+<style>
+.hamburger-icon {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-svg {
+  display: block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* Estado Ativo (X) */
+.hamburger-icon[aria-expanded="true"] .top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-icon[aria-expanded="true"] .middle {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger-icon[aria-expanded="true"] .bottom {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Hover e Foco */
+.hamburger-icon:hover .hamburger-line,
+.hamburger-icon:focus .hamburger-line {
+  stroke: #7d8a2e;
+}
+
+.hamburger-icon:focus {
+  outline: 2px solid #7d8a2e;
+  outline-offset: 2px;
+}
+</style>
         <!-- Overlay Correto -->
        
     </div>
