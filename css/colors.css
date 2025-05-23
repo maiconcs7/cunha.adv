@@ -5,7 +5,24 @@
 
 :root {
     /* ======== CORES PRIMÁRIAS ======== */
-    --color-primary-900:  #2A836B; /* Verde-azulado */
+css
+/* colors.css */
+:root {
+  /* Cores baseadas no footer */
+  --primary-color: #7d8a2e;       /* Verde principal */
+  --secondary-color: #6a7735;     /* Verde escuro */
+  --dark-text: #2c3e50;           /* Texto escuro */
+  --light-text: #566573;          /* Texto claro */
+  --background-light: #f8f9f9;    /* Fundo claro */
+  --border-color: #e9ecef;        /* Bordas */
+  --whatsapp-green: #25D366;      /* Verde WhatsApp */
+  --highlight-bg: #e9f5e1;        /* Destaque verde claro */
+  
+  /* Novas cores do header */
+  --header-bg: #ffffff;           /* Fundo branco */
+  --header-shadow: rgba(0, 0, 0, 0.1); 
+  --nav-link-hover: #7d8a2e;      /* Hover links */
+}
     --color-primary-700:  #2A836B; /* Verde-azulado Cor principal - */
     --color-primary-500:  #2A836B; /* Verde-azulado Para hover/CTAs */
     --color-primary-300:  #2A836B; /* Verde-azulado  Para destaques suaves -  */
