@@ -1,11 +1,4 @@
-/* 
- * ESTILOS PARA PÁGINA DE FERRAMENTAS - CUNHA ADVOCACIA
- * Padronizado com base na calculadora de juros abusivos
- */
-@import url('css/colors.css');
-@import url('css/style.css');
-/* Estilos gerais para a página de ferramentas */
-/* FERRAMENTAS.CSS - CUNHA ADVOCACIA - VERSÃO OTIMIZADA */
+//* FERRAMENTAS.CSS - CUNHA ADVOCACIA - VERSÃO OTIMIZADA */
 @import url('../css/colors.css');
 
 /* Variáveis CSS para responsividade */
@@ -53,11 +46,9 @@
 /* Grid de Ferramentas Adaptativo */
 .ferramentas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, auto)); /* Colunas ajustáveis */
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 2rem;
-  margin: 0 auto;
-  width: fit-content; /* Faz a grade se ajustar ao conteúdo */
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 /* Cards Interativos */
@@ -73,8 +64,8 @@
 }
 
 .ferramenta-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .ferramenta-card h3 {
