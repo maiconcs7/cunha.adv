@@ -1,87 +1,93 @@
-/**** Lógica Aprimorada para o Mega Menu ****/
 document.addEventListener("DOMContentLoaded", function() {
-    const breakpointMobile = 991; // Atualizado para match com CSS
-    const transitionDuration = 300; // ms
+    const menuItems = document.querySelectorAll('.mega-menu-main-item');
+    let activeItem = null;
+    let clickTimer = null;
 
-    // Cache de elementos
-    const dom = {
-        megaContainers: document.querySelectorAll(".mega-menu-container"),
-        menuToggle: document.querySelector('.menu-toggle'),
-        mainNav: document.querySelector('.main-nav'),
-        navOverlay: document.querySelector('.nav-overlay'),
-        body: document.body
-    };
-
-    // Controle do Mega Menu
-    const initMegaMenu = (container) => {
-        const mainItems = container.querySelectorAll(".mega-menu-main-item");
-        const subMenus = container.querySelectorAll(".mega-submenu");
-
-        const isTouchDevice = () => window.matchMedia("(hover: none)").matches;
-
-        const handleHover = (item) => {
-            if(isTouchDevice()) return;
-
-            item.addEventListener("mouseenter", function() {
-                resetActiveItems(container);
-                this.classList.add("active-main-item");
-                toggleSubmenu(this.dataset.submenu, true);
-            });
-
-            container.addEventListener("mouseleave", () => resetActiveItems(container));
-        };
-
-        const handleTouch = (item) => {
-            item.addEventListener("click", (e) => {
-                if(window.innerWidth > breakpointMobile) return;
-                e.preventDefault();
-                const isActive = item.classList.contains("active-main-item");
-                resetActiveItems(container);
-                !isActive && item.classList.add("active-main-item");
-                toggleSubmenu(item.dataset.submenu, !isActive);
-            });
-        };
-
-        const resetActiveItems = (container) => {
-            container.querySelectorAll(".active-main-item, .active").forEach(el => {
-                el.classList.remove("active-main-item", "active");
-            });
-        };
-
-        const toggleSubmenu = (submenuId, show) => {
-            const targetSubmenu = submenuId && container.querySelector("#" + submenuId);
-            if(targetSubmenu) {
-                targetSubmenu.style.transition = `opacity ${transitionDuration}ms`;
-                targetSubmenu.classList.toggle("active", show);
+    // Controle de hover desktop
+    const handleHover = (item) => {
+        item.addEventListener('mouseenter', () => {
+            if(window.innerWidth > 991 && activeItem !== item) {
+                activateMenuItem(item);
             }
-        };
-
-        mainItems.forEach(item => {
-            handleHover(item);
-            handleTouch(item);
         });
     };
 
-    // Controle do Menu Mobile
-    const initMobileMenu = () => {
-        if(!dom.menuToggle) return;
+    // Controle de toque/clique mobile
+    const handleClick = (item) => {
+        item.addEventListener('click', (e) => {
+            // Double click/tap
+            if(e.detail === 2 && item.classList.contains('active-main-item')) {
+                window.location.href = item.href;
+                return;
+            }
 
-        const toggleMenu = (show) => {
-            const isExpanded = show ?? dom.menuToggle.getAttribute("aria-expanded") === "false";
-            dom.menuToggle.setAttribute("aria-expanded", isExpanded);
-            dom.mainNav.classList.toggle("active", isExpanded);
-            dom.body.classList.toggle("menu-open", isExpanded);
-            dom.navOverlay.classList.toggle("active", isExpanded);
-            
-            if(!isExpanded) closeAllSubmenus();
-        };
+            // Single click/tap
+            clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => {
+                if(window.innerWidth <= 991 || activeItem === item) {
+                    toggleMenuItem(item);
+                } else {
+                    activateMenuItem(item);
+                }
+            }, 200);
+        });
+    };
 
-        const closeOn = {
-            overlayClick: () => toggleMenu(false),
-            escapeKey: (e) => e.key === "Escape" && toggleMenu(false),
-            resize: () => window.innerWidth > breakpointMobile && toggleMenu(false),
-            linkClick: (e) => window.innerWidth <= breakpointMobile && toggleMenu(false)
-        };
+    // Ativa um item e fecha outros
+    const activateMenuItem = (item) => {
+        if(activeItem && activeItem !== item) {
+            closeMenuItem(activeItem);
+        }
+        activeItem = item;
+        item.classList.add('active-main-item');
+        const submenu = document.getElementById(item.dataset.submenu);
+        if(submenu) submenu.classList.add('active');
+    };
+
+    // Toggle do item
+    const toggleMenuItem = (item) => {
+        if(item.classList.contains('active-main-item')) {
+            closeMenuItem(item);
+        } else {
+            activateMenuItem(item);
+        }
+    };
+
+    // Fecha item específico
+    const closeMenuItem = (item) => {
+        item.classList.remove('active-main-item');
+        const submenu = document.getElementById(item.dataset.submenu);
+        if(submenu) submenu.classList.remove('active');
+        if(activeItem === item) activeItem = null;
+    };
+
+    // Fecha ao clicar fora
+    document.addEventListener('click', (e) => {
+        if(!e.target.closest('.mega-menu-main-item') && activeItem) {
+            closeMenuItem(activeItem);
+        }
+    });
+
+    // Inicialização
+    menuItems.forEach(item => {
+        handleHover(item);
+        handleClick(item);
+        
+        // Fecha ao passar para outro item (desktop)
+        item.addEventListener('mouseenter', () => {
+            if(window.innerWidth > 991 && activeItem && activeItem !== item) {
+                activateMenuItem(item);
+            }
+        });
+    });
+
+    // Adaptação para mobile
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 991) {
+            menuItems.forEach(closeMenuItem);
+        }
+    });
+});
 
         // Eventos
         dom.menuToggle.addEventListener("click", () => toggleMenu());
