@@ -5,18 +5,8 @@
  */
 
 /* Variáveis de cores - compatíveis com o sistema atual */
-:root {
-    --menu-bg-color: #fff;
-    --menu-text-color: #2c3e50;
-    --menu-hover-color: #7d8a2e;
-    --menu-border-color: #eee;
-    --menu-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    --menu-highlight-bg: #f8f9f9;
-    --menu-cta-bg: #7d8a2e;
-    --menu-cta-hover-bg: #6a7735;
-    --menu-overlay-bg: rgba(0, 0, 0, 0.5);
-    --menu-transition-time: 0.3s;
-}
+@import url('css/colors.css');
+@import url('css/style.css');
 
 /* Container principal do menu cascata */
 .cascata-menu-container {
