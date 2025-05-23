@@ -1,172 +1,115 @@
-/**** Lógica para o Mega Menu ****/
-/**
- * Este script controla o comportamento do mega menu do site.
- * 
- * Funcionalidade:
- * 1. Menu superior: Sempre visível
- * 2. Menu secundário: Aparece quando o mouse passa sobre o item do menu principal
- * 3. Menu terciário: Aparece quando o mouse passa sobre o item do menu secundário
- * 
- * Comportamento específico:
- * - Ao passar o mouse sobre um item do menu secundário, o submenu correspondente é exibido
- * - Ao remover o mouse do container do menu, todos os submenus são escondidos
- * - Em dispositivos móveis, o comportamento é adaptado para funcionar com toques
- */
+/**** Lógica Aprimorada para o Mega Menu ****/
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleciona todos os containers de mega menu na página
-    const megaMenuContainers = document.querySelectorAll(".mega-menu-container");
+    const breakpointMobile = 991; // Atualizado para match com CSS
+    const transitionDuration = 300; // ms
 
-    megaMenuContainers.forEach(container => {
-        // Elementos dentro de cada container de mega menu
-        const mainItems = container.querySelectorAll(".mega-menu-main-item");  // Itens do menu secundário
-        const subMenus = container.querySelectorAll(".mega-submenu");          // Submenus (menu terciário)
-        const megaMenuContent = container.querySelector(".mega-menu-content"); // Container do menu secundário
+    // Cache de elementos
+    const dom = {
+        megaContainers: document.querySelectorAll(".mega-menu-container"),
+        menuToggle: document.querySelector('.menu-toggle'),
+        mainNav: document.querySelector('.main-nav'),
+        navOverlay: document.querySelector('.nav-overlay'),
+        body: document.body
+    };
 
-        // Adiciona evento de mouseenter (passar o mouse) para cada item do menu secundário
-        mainItems.forEach(item => {
+    // Controle do Mega Menu
+    const initMegaMenu = (container) => {
+        const mainItems = container.querySelectorAll(".mega-menu-main-item");
+        const subMenus = container.querySelectorAll(".mega-submenu");
+
+        const isTouchDevice = () => window.matchMedia("(hover: none)").matches;
+
+        const handleHover = (item) => {
+            if(isTouchDevice()) return;
+
             item.addEventListener("mouseenter", function() {
-                // 1. Remove a classe ativa de todos os itens do menu secundário
-                mainItems.forEach(i => i.classList.remove("active-main-item"));
-                
-                // 2. Adiciona a classe ativa ao item atual (destacando-o visualmente)
+                resetActiveItems(container);
                 this.classList.add("active-main-item");
-
-                // 3. Esconde todos os submenus (menu terciário)
-                subMenus.forEach(submenu => submenu.classList.remove("active"));
-
-                // 4. Mostra o submenu correspondente ao item atual
-                const submenuId = this.dataset.submenu; // Obtém o ID do submenu a partir do atributo data-submenu
-                if (submenuId) {
-                    const targetSubmenu = container.querySelector("#" + submenuId);
-                    if (targetSubmenu) {
-                        targetSubmenu.classList.add("active"); // Adiciona classe que torna o submenu visível
-                    }
-                }
+                toggleSubmenu(this.dataset.submenu, true);
             });
-        });
 
-        // Comportamento quando o mouse sai da área do mega menu
-        if (megaMenuContent) {
-            megaMenuContent.addEventListener("mouseleave", function() {
-                // Mantém o último submenu ativo visível enquanto o cursor estiver sobre o mega-menu-content
-                // Isso permite que o usuário navegue para o submenu sem que ele desapareça
-            });
-        }
-        
-        // Esconde todos os submenus quando o mouse sai completamente do container do dropdown
-        container.addEventListener("mouseleave", function() {
-            // Remove destaque visual de todos os itens do menu secundário
-            mainItems.forEach(i => i.classList.remove("active-main-item"));
-            
-            // Esconde todos os submenus (menu terciário)
-            subMenus.forEach(submenu => submenu.classList.remove("active"));
-        });
-    });
+            container.addEventListener("mouseleave", () => resetActiveItems(container));
+        };
 
-    // Script atualizado para o menu overlay
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const navOverlay = document.querySelector('.nav-overlay');
-    const body = document.body;
-    
-    // Abrir/fechar menu principal
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            mainNav.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        });
-    }
-    
-    // Fechar menu ao clicar no overlay
-    if (navOverlay) {
-        navOverlay.addEventListener('click', function() {
-            menuToggle.setAttribute('aria-expanded', 'false');
-            mainNav.classList.remove('active');
-            body.classList.remove('menu-open');
-            closeAllSubmenus();
-        });
-    }
-    
-    // Fechar menu ao clicar em um link (mobile)
-    const navLinks = document.querySelectorAll('.nav-link:not(.dropbtn)');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                closeMenu();
-            }
-        });
-    });
-    
-    // Gerenciar dropdowns no mobile
-    const dropdownButtons = document.querySelectorAll('.dropbtn');
-    dropdownButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
+        const handleTouch = (item) => {
+            item.addEventListener("click", (e) => {
+                if(window.innerWidth > breakpointMobile) return;
                 e.preventDefault();
-                e.stopPropagation();
-                
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !isExpanded);
-                
-                const megaMenu = this.nextElementSibling;
-                if (isExpanded) {
-                    megaMenu.style.maxHeight = '0';
-                } else {
-                    closeAllSubmenus();
-                    megaMenu.style.maxHeight = megaMenu.scrollHeight + 'px';
-                }
-            }
-        });
-    });
-    
-    // Funções auxiliares
-    function closeMenu() {
-        if (menuToggle) {
-            menuToggle.setAttribute('aria-expanded', 'false');
-            mainNav.classList.remove('active');
-            body.classList.remove('menu-open');
-            closeAllSubmenus();
-        }
-    }
-    
-    function closeAllSubmenus() {
-        document.querySelectorAll('.mega-menu-content').forEach(menu => {
-            menu.style.maxHeight = '0';
-        });
-        document.querySelectorAll('.dropbtn').forEach(btn => {
-            btn.setAttribute('aria-expanded', 'false');
-        });
-    }
-    
-    // Fechar menu ao redimensionar para desktop
-    function handleResize() {
-        if (window.innerWidth > 768) {
-            closeMenu();
-        }
-    }
-    
-    window.addEventListener('resize', handleResize);
-});
-function toggleMenu() {
-    const menu = document.querySelector('.mobile-nav');
-    const overlay = document.querySelector('.nav-overlay');
-    const toggle = document.querySelector('.menu-toggle');
-    
-    menu.classList.toggle('active');
-    overlay.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
-    
-    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
-}
+                const isActive = item.classList.contains("active-main-item");
+                resetActiveItems(container);
+                !isActive && item.classList.add("active-main-item");
+                toggleSubmenu(item.dataset.submenu, !isActive);
+            });
+        };
 
-// Fechar ao clicar fora
-document.querySelector('.nav-overlay').addEventListener('click', toggleMenu);
-<script>
-// Controle do estado
-document.querySelector('.hamburger-icon').addEventListener('click', function() {
-  const isExpanded = this.getAttribute('aria-expanded') === 'true';
-  this.setAttribute('aria-expanded', !isExpanded);
+        const resetActiveItems = (container) => {
+            container.querySelectorAll(".active-main-item, .active").forEach(el => {
+                el.classList.remove("active-main-item", "active");
+            });
+        };
+
+        const toggleSubmenu = (submenuId, show) => {
+            const targetSubmenu = submenuId && container.querySelector("#" + submenuId);
+            if(targetSubmenu) {
+                targetSubmenu.style.transition = `opacity ${transitionDuration}ms`;
+                targetSubmenu.classList.toggle("active", show);
+            }
+        };
+
+        mainItems.forEach(item => {
+            handleHover(item);
+            handleTouch(item);
+        });
+    };
+
+    // Controle do Menu Mobile
+    const initMobileMenu = () => {
+        if(!dom.menuToggle) return;
+
+        const toggleMenu = (show) => {
+            const isExpanded = show ?? dom.menuToggle.getAttribute("aria-expanded") === "false";
+            dom.menuToggle.setAttribute("aria-expanded", isExpanded);
+            dom.mainNav.classList.toggle("active", isExpanded);
+            dom.body.classList.toggle("menu-open", isExpanded);
+            dom.navOverlay.classList.toggle("active", isExpanded);
+            
+            if(!isExpanded) closeAllSubmenus();
+        };
+
+        const closeOn = {
+            overlayClick: () => toggleMenu(false),
+            escapeKey: (e) => e.key === "Escape" && toggleMenu(false),
+            resize: () => window.innerWidth > breakpointMobile && toggleMenu(false),
+            linkClick: (e) => window.innerWidth <= breakpointMobile && toggleMenu(false)
+        };
+
+        // Eventos
+        dom.menuToggle.addEventListener("click", () => toggleMenu());
+        dom.navOverlay.addEventListener("click", closeOn.overlayClick);
+        window.addEventListener("resize", closeOn.resize);
+        document.addEventListener("keydown", closeOn.escapeKey);
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", closeOn.linkClick);
+        });
+    };
+
+    // Funções auxiliares
+    const closeAllSubmenus = () => {
+        document.querySelectorAll(".mega-submenu.active").forEach(menu => {
+            menu.classList.remove("active");
+        });
+        document.querySelectorAll(".dropbtn").forEach(btn => {
+            btn.setAttribute("aria-expanded", "false");
+        });
+    };
+
+    // Inicialização
+    dom.megaContainers.forEach(initMegaMenu);
+    initMobileMenu();
+
+    // Garantir fechamento ao recarregar
+    window.addEventListener("beforeunload", () => {
+        dom.body.classList.remove("menu-open");
+        closeAllSubmenus();
+    });
 });
-</script>
