@@ -166,19 +166,8 @@
         </div>
 
         <!-- Menu Mobile melhorado com acessibilidade -->
-     <nav class="mobile-nav" id="mobile-nav">   
-           <!-- Menu Mobile Corrigido -->
-        <div class="nav-overlay" onclick="toggleMenu()"></div>
-        <button class="menu-toggle" 
-                aria-label="Menu principal" 
-                aria-expanded="false" 
-                aria-controls="mobile-nav">
-            <span class="menu-toggle-bar top-bar"></span>
-            <span class="menu-toggle-bar middle-bar"></span>
-            <span class="menu-toggle-bar bottom-bar"></span>
-            <span class="sr-only">Menu</span>
-        </button>
-<button class="hamburger-icon" aria-label="menu-toggle(" aria-expanded="false">
+
+<button class="menu-toggle" aria-label="mMenu principal" aria-expanded="false">
   <svg class="hamburger-svg" width="32" height="32" viewBox="0 0 32 32">
     <!-- Linha Superior -->
     <path class="hamburger-line top" 
@@ -247,10 +236,16 @@
   outline-offset: 2px;
 }
 </style>
+<script>
+// Controle do estado
+document.querySelector('.hamburger-icon').addEventListener('click', function() {
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !isExpanded);
+});
+</script>
         <!-- Overlay Correto -->
        
     </div>
-  </nav>
 </header>
 
 </header>
