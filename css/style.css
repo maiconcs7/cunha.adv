@@ -1,3 +1,26 @@
+@import url('colors.css');
+@import url('components/header.css');
+@import url('components/banner.css');
+@import url('components/cards.css');
+@import url('components/metodologia.css');
+@import url('components/cta.css');
+@import url('components/whatsapp.css');
+@import url('utilities/responsiveness.css');
+
+/* Estilos base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, 
+        var(--color-gradient-1),
+        var(--color-gradient-7));
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 /* Esquema de Cores Atualizado (Preto com Toque Esmeralda) */
 :root {
     --cor-primaria-azul-corporativo: #141414; /* Preto (substituindo Azul Corporativo) */
