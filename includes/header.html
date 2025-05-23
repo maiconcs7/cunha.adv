@@ -226,7 +226,7 @@
 </style>
 <script>
 // Controle do estado
-document.querySelector('.hamburger-icon').addEventListener('click', function() {
+document.querySelector('menu-toggle').addEventListener('click', function() {
   const isExpanded = this.getAttribute('aria-expanded') === 'true';
   this.setAttribute('aria-expanded', !isExpanded);
 });
