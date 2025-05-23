@@ -2,7 +2,8 @@
  * ESTILOS PARA PÁGINA DE FERRAMENTAS - CUNHA ADVOCACIA
  * Padronizado com base na calculadora de juros abusivos
  */
-
+@import url('css/colors.css');
+@import url('css/style.css');
 /* Estilos gerais para a página de ferramentas */
 .ferramentas-container {
     max-width: 800px;
