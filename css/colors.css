@@ -1,135 +1,50 @@
-/* 
- * ARQUIVO CENTRAL DE CORES - CUNHA ADVOCACIA
- * Este arquivo contém todas as variáveis de cores do site para facilitar manutenção e troca de paleta
- */
-
+/* colors.css - Versão Corrigida */
 :root {
-    /* ======== CORES PRIMÁRIAS ======== */
-css
-/* colors.css */
-:root {
-  /* Cores baseadas no footer */
-  --primary-color: #7d8a2e;       /* Verde principal */
-  --secondary-color: #6a7735;     /* Verde escuro */
-  --dark-text: #2c3e50;           /* Texto escuro */
-  --light-text: #566573;          /* Texto claro */
-  --background-light: #f8f9f9;    /* Fundo claro */
-  --border-color: #e9ecef;        /* Bordas */
-  --whatsapp-green: #25D366;      /* Verde WhatsApp */
-  --highlight-bg: #e9f5e1;        /* Destaque verde claro */
-  
-  /* Novas cores do header */
-  --header-bg: #ffffff;           /* Fundo branco */
-  --header-shadow: rgba(0, 0, 0, 0.1); 
-  --nav-link-hover: #7d8a2e;      /* Hover links */
+    /* ======== CORES OFICIAIS DO SITE ======== */
+    /* Baseado no footer e elementos existentes */
+    --color-primary: #7d8a2e;       /* Verde Principal */
+    --color-primary-dark: #6a7735;  /* Verde Escuro */
+    --color-secondary: #2A836B;     /* Verde-Azulado */
+    --color-accent: #803407;        /* Rust (Destaques) */
+    
+    /* Neutros (Harmonizados com footer) */
+    --color-text-primary: #2c3e50;  /* Texto Escuro */
+    --color-text-secondary: #566573;/* Texto Secundário */
+    --color-border: #e9ecef;        /* Bordas */
+    --color-background: #f8f9f9;    /* Fundo Geral */
+    
+    /* Funcionais */
+    --color-whatsapp: #25D366;      /* Verde WhatsApp */
+    --color-success: #28a745;       /* Sucesso */
+    --color-warning: #ffc107;       /* Alerta */
+    --color-error: #dc3545;         /* Erro */
+    
+    /* Header Específico */
+    --header-background: #ffffff;
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    
+    /* ======== PALETA COMPLETA ======== */
+    /* Verde Principal */
+    --color-primary-100: #e9f5e1;
+    --color-primary-300: #aecf8e;
+    --color-primary-500: #7d8a2e;
+    --color-primary-700: #56661f;
+    
+    /* Verde-Azulado */
+    --color-secondary-100: #d6f0eb;
+    --color-secondary-300: #8fc9bf;
+    --color-secondary-500: #2A836B;
+    --color-secondary-700: #1d5c4d;
+    
+    /* Neutros */
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #eeeeee;
+    --neutral-300: #e0e0e0;
+    --neutral-400: #bdbdbd;
+    --neutral-500: #9e9e9e;
+    --neutral-600: #757575;
+    --neutral-700: #616161;
+    --neutral-800: #424242;
+    --neutral-900: #212121;
 }
-    --color-primary-700:  #2A836B; /* Verde-azulado Cor principal - */
-    --color-primary-500:  #2A836B; /* Verde-azulado Para hover/CTAs */
-    --color-primary-300:  #2A836B; /* Verde-azulado  Para destaques suaves -  */
-    --color-primary-100:  #2A836B; /* Verde-azulado  Para fundos sutis -  */
-    
-    /* ======== CORES NEUTRAS ======== */
-    --color-neutral-900: #141414; /* Preto para textos importantes */
-    --color-neutral-800: #333333; /* Quase preto para títulos */
-    --color-neutral-700: #4a4a4a; /* Para títulos secundários */
-    --color-neutral-600: #666666; /* Para textos secundários */
-    --color-neutral-500: #888888; /* Para textos terciários */
-    --color-neutral-400: #aaaaaa; /* Para bordas escuras */
-    --color-neutral-300: #cccccc; /* Para bordas médias */
-    --color-neutral-200: #e6e6e6; /* Para bordas claras e separadores */
-    --color-neutral-100: #f5f5f5; /* Para fundos claros */
-    --color-neutral-50: #fafafa;  /* Para fundos muito claros */
-    
-    /* ======== CORES FUNCIONAIS ======== */
-    --color-success: #28a745; /* Verde para confirmações e sucesso */
-    --color-warning: #ffc107; /* Amarelo para alertas e avisos */
-    --color-error: #dc3545;   /* Vermelho para erros e problemas */
-    --color-info: #17a2b8;    /* Azul para informações */
-    
-    /* ======== CORES DO GRADIENTE (BASEADO NA IMAGEM ENVIADA) ======== */
-    --color-gradient-1:  #F0F0F0; 
-    --color-gradient-2:  #F0F0F0; 
-    --color-gradient-3:  #F0F0F0; 
-    --color-gradient-4:  #F0F0F0; 
-    --color-gradient-5:  #F0F0F0; 
-    --color-gradient-6: #136B69; /* Azul-esverdeado */
-    --color-gradient-7: #024053; /* Azul escuro */
- , 
-       
-    
-    /* ======== CORES DA PALETA FORNECIDA ======== */
-    /* Beige - #CFC4B1 */
-    --color-beige-900: #5c5850; /* Beige muito escuro */
-    --color-beige-700: #8a8374; /* Beige escuro */
-    --color-beige-500: #b7ac99; /* Beige médio */
-    --color-beige-300: #CFC4B1; /* Beige padrão (da paleta) */
-    --color-beige-100: #e7e2d8; /* Beige claro */
-    
-    /* Midnight - #141414 */
-    --color-midnight-900: #000000; /* Preto absoluto */
-    --color-midnight-700: #0a0a0a; /* Quase preto */
-    --color-midnight-500: #141414; /* Midnight padrão (da paleta) */
-    --color-midnight-300: #2a2a2a; /* Cinza muito escuro */
-    --color-midnight-100: #3d3d3d; /* Cinza escuro */
-    
-    /* Olive - #676127 */
-    --color-olive-900: #343213; /* Olive muito escuro */
-    --color-olive-700: #4a4a1c; /* Olive escuro */
-    --color-olive-500: #676127; /* Olive padrão (da paleta) */
-    --color-olive-300: #878432; /* Olive claro */
-    --color-olive-100: #b5b35c; /* Olive muito claro */
-    
-    /* Rust - #803407 */
-    --color-rust-900: #401a03; /* Rust muito escuro */
-    --color-rust-700: #602705; /* Rust escuro */
-    --color-rust-500: #803407; /* Rust padrão (da paleta) */
-    --color-rust-300: #a04409; /* Rust claro */
-    --color-rust-100: #d4753a; /* Rust muito claro */
-    
-    /* Charcoal - #383230 */
-    --color-charcoal-900: #1c1918; /* Charcoal muito escuro */
-    --color-charcoal-700: #2a2624; /* Charcoal escuro */
-    --color-charcoal-500: #383230; /* Charcoal padrão (da paleta) */
-    --color-charcoal-300: #4e4745; /* Charcoal claro */
-    --color-charcoal-100: #7a7270; /* Charcoal muito claro */
-    
-    /* ======== MAPEAMENTO PARA COMPATIBILIDADE COM CÓDIGO EXISTENTE ======== */
-    /* Estas variáveis mantêm compatibilidade com o código existente */
-    --cor-primaria-azul-corporativo: var(--color-primary-700);
-    --cor-hover-primaria: var(--color-primary-500);
-    --cor-secundaria-verde-esmeralda: var(--color-olive-500);
-    --cor-hover-secundaria: var(--color-olive-700);
-    --cor-texto-principal: var(--color-neutral-800);
-    --cor-texto-secundario: var(--color-neutral-600);
-    --cor-texto-claro: var(--color-neutral-50);
-    --cor-borda: var(--color-neutral-300);
-    --cor-borda-sutil: var(--color-neutral-200);
-    --cor-fundo-principal: var(--color-neutral-50);
-    --cor-fundo-secundario: var(--color-neutral-100);
-    --cor-fundo-contraste-escuro: var(--color-charcoal-500); /* Alterado de preto para charcoal */
-    --cor-fundo-contraste-claro: var(--color-beige-300);
-    --cor-sombra-leve: rgba(0, 0, 0, 0.05);
-    --cor-sombra-media: rgba(0, 0, 0, 0.1);
-    --cor-sombra-forte: rgba(0, 0, 0, 0.2);
-    --cor-overlay: rgba(0, 0, 0, 0.7);
-    --cor-sucesso: var(--color-success);
-    --cor-alerta: var(--color-warning);
-    --cor-erro: var(--color-error);
-    --cor-info: var(--color-info);
-}
-
-/* 
- * INSTRUÇÕES PARA TROCA DE PALETA DE CORES
- * 
- * Para alterar a paleta de cores do site:
- * 
- * 1. MÉTODO SIMPLES: Altere apenas as variáveis na seção "CORES DA PALETA FORNECIDA"
- *    - Isso afetará automaticamente todas as áreas que usam essas cores
- * 
- * 2. MÉTODO AVANÇADO: Altere o mapeamento na seção "MAPEAMENTO PARA COMPATIBILIDADE"
- *    - Por exemplo, para mudar a cor primária de vermelho para azul:
- *      --cor-primaria-azul-corporativo: var(--color-info);
- * 
- * 3. MÉTODO COMPLETO: Crie uma nova paleta substituindo todas as variáveis --color-*
- *    - Isso permite uma reformulação completa mantendo a estrutura
- */
