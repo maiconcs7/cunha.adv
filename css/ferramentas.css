@@ -1,6 +1,6 @@
 //* FERRAMENTAS.CSS - CUNHA ADVOCACIA - VERSÃO OTIMIZADA */
 @import url('../css/colors.css');
-
+@import url('../css/style.css')
 /* Variáveis CSS para responsividade */
 :root {
   --breakpoint-mobile: 480px;
