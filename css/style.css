@@ -1,11 +1,11 @@
-@import url('colors.css');
-@import url('components/header.css');
-@import url('components/banner.css');
-@import url('components/cards.css');
-@import url('components/metodologia.css');
-@import url('components/cta.css');
-@import url('components/whatsapp.css');
-@import url('utilities/responsiveness.css');
+@import url('../css/colors.css');
+@import url('../css/components/header.css');
+@import url('../css/components/banner.css');
+@import url('../css/components/cards.css');
+@import url('../css/components/metodologia.css');
+@import url('../css/components/cta.css');
+@import url('../css/components/whatsapp.css');
+@import url('../css/utilities/responsiveness.css');
 
 /* Estilos base */
 body {
