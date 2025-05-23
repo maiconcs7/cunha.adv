@@ -5,184 +5,184 @@
 @import url('css/colors.css');
 @import url('css/style.css');
 /* Estilos gerais para a página de ferramentas */
-.ferramentas-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--cor-sombra-leve);
+/* FERRAMENTAS.CSS - CUNHA ADVOCACIA - VERSÃO OTIMIZADA */
+@import url('../css/colors.css');
+
+/* Variáveis CSS para responsividade */
+:root {
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
+/* Reset Básico */
+.ferramentas-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Principal */
+.ferramentas-container {
+  max-width: min(90%, 1200px);
+  margin: 2rem auto;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Tipografia Responsiva */
 .ferramentas-titulo {
-    font-size: 2.2rem;
-    color: var(--cor-texto-principal);
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--cor-texto-principal);
+  text-align: center;
+  margin-bottom: 1.5em;
+  line-height: 1.2;
 }
 
 .ferramentas-descricao {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--cor-texto-secundario);
-    font-size: 1.1rem;
-    line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  max-width: 70ch;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
 }
 
-/* Grid de ferramentas */
+/* Grid de Ferramentas Adaptativo */
 .ferramentas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
-/* Cartão de ferramenta individual */
+/* Cards Interativos */
 .ferramenta-card {
-    background-color: #fff;
-    border: 1px solid var(--cor-borda);
-    border-radius: 8px;
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
 }
 
 .ferramenta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--cor-sombra-media);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .ferramenta-card h3 {
-    font-size: 1.4rem;
-    color: var(--cor-texto-principal);
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--cor-primaria-azul-corporativo);
+  margin-bottom: 0.75em;
 }
 
 .ferramenta-card p {
-    color: var(--cor-texto-secundario);
-    margin-bottom: 20px;
-    flex-grow: 1;
-    line-height: 1.5;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--cor-texto-secundario);
+  margin-bottom: 1.5em;
+  flex-grow: 1;
 }
 
-/* Botões de ação */
+/* Botões Otimizados */
 .btn-ferramenta {
-    display: inline-block;
-    width: 100%;
-    background-color: var(--cor-primaria-azul-corporativo);
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8em 1.5em;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  border-radius: 8px;
+  transition: 
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-ferramenta:hover {
-    background-color: var(--cor-hover-primaria);
+.btn-ferramenta:active {
+  transform: scale(0.98);
 }
 
-.btn-ferramenta.secundario {
-    background-color: var(--cor-secundaria-verde-esmeralda);
-}
-
-.btn-ferramenta.secundario:hover {
-    background-color: var(--cor-hover-secundaria);
-}
-
-/* Seção de informações adicionais */
+/* Seções de Informação */
 .info-adicional {
-    background-color: var(--cor-fundo-secundario);
-    border-radius: 8px;
-    padding: 25px;
-    margin-top: 40px;
+  background: var(--cor-fundo-secundario);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
 }
 
 .info-adicional h2 {
-    font-size: 1.6rem;
-    color: var(--cor-texto-principal);
-    margin-top: 0;
-    margin-bottom: 20px;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  margin-bottom: 1em;
 }
 
-.info-adicional p {
-    color: var(--cor-texto-secundario);
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.info-adicional a {
-    color: var(--cor-primaria-azul-corporativo);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.info-adicional a:hover {
-    color: var(--cor-hover-primaria);
-    text-decoration: underline;
-}
-
-/* Seção de contato */
+/* Contato Mobile-First */
 .contato-info {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--cor-fundo-secundario);
-    border-radius: 8px;
-    margin-top: 30px;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--cor-fundo-secundario);
+  border-radius: 10px;
+  margin-top: 2rem;
 }
 
-.contato-info p {
-    margin: 0;
-    color: var(--cor-texto-secundario);
-}
-
-.contato-info a {
-    color: var(--cor-primaria-azul-corporativo);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contato-info a:hover {
-    color: var(--cor-hover-primaria);
-    text-decoration: underline;
-}
-
-/* Responsividade */
+/* Media Queries Hierárquicas */
 @media (max-width: 768px) {
-    .ferramentas-container {
-        padding: 20px;
-    }
-    
-    .ferramentas-titulo {
-        font-size: 1.8rem;
-    }
-    
-    .ferramentas-grid {
-        grid-template-columns: 1fr;
-    }
+  .ferramentas-container {
+    margin: 1rem auto;
+    border-radius: 0;
+  }
+  
+  .ferramentas-grid {
+    gap: 1rem;
+  }
+  
+  .ferramenta-card {
+    min-height: auto;
+    padding: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .ferramentas-container {
-        padding: 15px;
-    }
-    
-    .ferramentas-titulo {
-        font-size: 1.6rem;
-    }
-    
-    .ferramenta-card {
-        padding: 20px;
-    }
+  .ferramentas-container {
+    box-shadow: none;
+    padding: 1rem;
+  }
+  
+  .btn-ferramenta {
+    padding: 1em;
+    font-size: 0.95rem;
+  }
+  
+  .info-adicional,
+  .contato-info {
+    padding: 1rem;
+  }
+}
+
+/* Melhorias para Touch Devices */
+@media (hover: none) {
+  .ferramenta-card:hover {
+    transform: none;
+    box-shadow: initial;
+  }
+}
+
+/* Impressão */
+@media print {
+  .ferramentas-container {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  
+  .btn-ferramenta {
+    display: none;
+  }
 }
