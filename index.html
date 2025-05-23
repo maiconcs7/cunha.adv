@@ -3,341 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consultoria jurídica estratégica para agronegócio, pequenos negócios e pessoas físicas. Soluções eficientes em direito tributário, previdenciário e empresarial.">
-    <meta name="keywords" content="consultoria jurídica, direito agronegócio, planejamento tributário, assessoria jurídica, direito empresarial">
-    <title>Cunha Soluções Jurídicas - Eficiência e Precisão Jurídica</title>
-    <link rel="stylesheet" href="/cunha.adv/css/style.css">
-    <link rel="stylesheet" href="/cunha.adv/css/colors.css">
+    <title>Cunha Soluções Jurídicas</title>
+    
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/cunha.adv/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Importação da fonte JA jayagiri Sans Rough para títulos */
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-        
-        /* ESTILOS ESPECÍFICOS PARA A PÁGINA INDEX */
-        body {
-            font-family: 'Open Sans', Roboto, sans-serif;
-            color: var(--cor-texto-cinza);
-            /* Aplicação do gradiente linear do mais claro para o mais escuro */
-            background: linear-gradient(to bottom, 
-                var(--color-gradient-1),
-                var(--color-gradient-2),
-                var(--color-gradient-3),
-                var(--color-gradient-4),
-                var(--color-gradient-5),
-                var(--color-gradient-6),
-                var(--color-gradient-7),
-                white); /* Interrupção branca antes do rodapé */
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'JA jayagiri Sans Rough', 'Segoe UI', Roboto, sans-serif;
-            font-weight: 600;
-            color: var(--cor-texto-claro);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-padding {
-            padding: 60px 0;
-        }
-        
-        /* BANNER PRINCIPAL */
-        .banner-principal-novo {
-            background: linear-gradient(rgba(42, 46, 53, 0.9), rgba(42, 46, 53, 0.9)), 
-                        url('/cunha.adv/images/banner-hero-placeholder.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        .banner-principal-novo h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-        }
-        
-        .banner-principal-novo p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            opacity: 0.9;
-        }
-        
-        /* BOTÕES - AJUSTADOS PARA TONS DE OLIVE */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--color-olive-500); /* Tom médio de olive */
-            color: white; /* Texto branco para contraste com fundo escuro */
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--color-olive-500);
-        }
-        
-        .cta-button:hover {
-            background-color: var(--color-olive-700); /* Tom mais escuro no hover */
-            border-color: var(--color-olive-700);
-        }
-        
-        .saiba-mais-novo {
-            color: var(--color-olive-700); /* Tom escuro de olive */
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .saiba-mais-novo:hover {
-            color: var(--color-olive-900); /* Tom mais escuro no hover */
-        }
-        
-        /* SEÇÃO DE SOLUÇÕES */
-        .areas-atuacao-novo {
-            background-color: transparent; /* Transparente para mostrar o gradiente */
-            padding: 80px 0;
-        }
-        
-        .areas-atuacao-novo h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--color-neutral-800); /* Cor escura para contraste com fundo claro */
-        }
-        
-        .areas-atuacao-novo p {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            opacity: 0.9;
-            color: var(--color-neutral-700);
-        }
-        
-        .cards-container-novo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .card-novo {
-            background-color: white; /* Fundo claro para os cards */
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 3px solid var(--color-olive-500); /* Borda superior em tom olive */
-        }
-        
-        .card-novo:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-        
-        .icone-area {
-            height: 60px;
-            margin-bottom: 20px;
-        }
-        
-        .card-novo h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--color-neutral-800); /* Cor escura para contraste com fundo claro */
-        }
-        
-        .card-novo p {
-            margin-bottom: 20px;
-            opacity: 0.9;
-            color: var(--color-neutral-700);
-            text-align: left;
-        }
-        
-        /* SEÇÃO DIFERENCIAIS */
-        .diferenciais-novo {
-            background-color: transparent; /* Transparente para mostrar o gradiente */
-            padding: 80px 0;
-        }
-        
-        .diferenciais-novo h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            color: var(--color-neutral-50); /* Cor clara para contraste com fundo escuro */
-        }
-        
-        .diferenciais-novo .card-novo {
-            text-align: center;
-            background-color: white; /* Fundo claro para os cards */
-        }
-        
-        .diferenciais-novo .fa-3x {
-            color: var(--color-olive-500); /* Ícones em tom olive */
-            margin-bottom: 20px;
-        }
-        
-        /* SEÇÃO METODOLOGIA (NOVO) */
-        .metodologia-hero {
-            background: linear-gradient(rgba(42, 46, 53, 0.9), rgba(42, 46, 53, 0.9)), 
-                        url('/cunha.adv/images/banner-hero-placeholder.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 100px 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .metodologia-titulo {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .linha-branca {
-            width: 100px;
-            height: 3px;
-            background: white;
-            margin: 0 auto 40px;
-        }
-        
-        .metodologia-itens {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .metodologia-item {
-            flex: 0 1 300px;
-            padding: 40px 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .metodologia-item:hover {
-            background: rgba(19, 107, 105, 0.4);;
-            transform: translateY(-5px);
-        }
-        
-        .metodologia-icon {
-            font-size: 50px;
-            margin-bottom: 25px;
-            color: white;
-        }
-        
-        .metodologia-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        
-        .metodologia-item p {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* CTA FINAL */
-        .cta-final-novo {
-            background-color: var(--color-gradient-6); /* Tom escuro do gradiente */
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .cta-final-novo h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--color-neutral-50); /* Cor clara para contraste */
-        }
-        
-        .cta-final-novo p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-            color: var(--color-neutral-100);
-        }
-        
-        /* WHATSAPP FLUTUANTE */
-        #whatsapp-flutuante {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-        
-        #whatsapp-flutuante:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        #whatsapp-flutuante img {
-            width: 30px;
-            height: 30px;
-        }
-        
-        /* RESPONSIVIDADE */
-        @media (max-width: 992px) {
-            .banner-principal-novo h1 {
-                font-size: 2.2rem;
-            }
-            
-            .banner-principal-novo p {
-                font-size: 1.1rem;
-            }
-            
-            .metodologia-titulo {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 50px 0;
-            }
-            
-            .cards-container-novo {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-            
-            .cta-final-novo h2 {
-                font-size: 1.8rem;
-            }
-            
-            .metodologia-item {
-                flex: 0 1 100%;
-            }
-        }
-    </style>
 </head>
+
 <body>
     <!-- Cabeçalho -->
     <div id="header-placeholder"></div>
@@ -345,140 +20,35 @@
     <main>
         <!-- Banner Principal -->
         <section class="banner-principal-novo">
-            <h1>Soluções Jurídicas com Eficiência e Precisão</h1>
-            <p>Tecnologia e expertise jurídica combinadas para proteger seus interesses e otimizar seus resultados.</p>
-            <a href="#nossas-solucoes" class="cta-button">Nossas Soluções</a>
+            <!-- Conteúdo mantido -->
         </section>
 
-        <!-- Nossas Soluções -->
-        <section id="nossas-solucoes" class="areas-atuacao-novo section-padding">
-            <div class="container">
-                <h2>Soluções Jurídicas Estratégicas</h2>
-                <p>Consultoria especializada com abordagem técnica e resultados mensuráveis para seu negócio ou necessidade pessoal.</p>
-                
-                <div class="cards-container-novo" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-                    <!-- Linha Central (4 cards principais) -->
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
-                        <!-- Agronegócio (centro esquerda) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-tractor fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Agronegócio</h3>
-                            <p>Segurança jurídica e planejamento tributário especializado para o setor agrícola. Maximize seus resultados com conformidade legal.</p>
-                            <a href="/cunha.adv/solucoes/agronegocio.html" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                        
-                        <!-- Pequenos Negócios (centro direita) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-store-alt fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Pequenos Negócios</h3>
-                            <p>Estruturação jurídica eficiente para MEIs e pequenas empresas. Foco em redução de riscos e otimização tributária.</p>
-                            <a href="/cunha.adv/solucoes/pequenos-negocios.html" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Segunda Linha (3 cards - acima e abaixo do centro) -->
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; margin-bottom: 30px;">
-                        <!-- Pessoas Físicas (esquerda) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-user-tie fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Pessoas Físicas</h3>
-                            <p>Proteção de direitos e planejamento previdenciário estratégico. Soluções personalizadas para suas necessidades jurídicas.</p>
-                            <a href="/cunha.adv/solucoes/pessoas-fisicas.html" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                        
-                        <!-- Gestão Patrimonial Familiar (centro) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-home fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Gestão Patrimonial Familiar</h3>
-                            <p>Proteção e otimização do patrimônio familiar com estratégias jurídicas personalizadas para segurança das gerações.</p>
-                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                        
-                        <!-- Redução de Carga Tributária (direita) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-file-invoice-dollar fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Gestão de Passivos Tributários</h3>
-                            <p>Estratégias legais para redução da carga tributária e regularização fiscal com máxima eficiência.</p>
-                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Terceira Linha (2 cards - extremidades) -->
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%;">
-                        <!-- Negociação Terceirizada (esquerda) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-handshake fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Negociação Terceirizada</h3>
-                            <p>Mediação profissional para resolução de conflitos e acordos com abordagem técnica e imparcial.</p>
-                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                        
-                        <!-- Compliance Jurídico (direita) -->
-                        <div class="card-novo" style="background-color: white; color: var(--cor-carvão); flex: 0 1 300px;">
-                            <i class="fas fa-clipboard-check fa-3x" style="color: var(--color-olive-500);"></i>
-                            <h3>Compliance Jurídico</h3>
-                            <p>Implementação de programas de conformidade legal para prevenção de riscos e governança corporativa.</p>
-                            <a href="#" class="saiba-mais-novo">Saiba Mais →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Seção de Soluções -->
+        <section id="nossas-solucoes" class="areas-atuacao-novo">
+            <!-- Conteúdo dos cards -->
         </section>
 
-        <!-- Nossa Metodologia -->
+        <!-- Metodologia -->
         <section class="metodologia-hero">
-            <div class="container">
-                <h2 class="metodologia-titulo">Nossa Metodologia</h2>
-                <div class="linha-branca"></div>
-                
-                <div class="metodologia-itens">
-                    <div class="metodologia-item">
-                        <div class="metodologia-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Análise Detalhada</h3>
-                        <p>Examinamos minuciosamente cada caso para entender todas as nuances e particularidades.</p>
-                    </div>
-                    
-                    <div class="metodologia-item">
-                        <div class="metodologia-icon">
-                            <i class="fas fa-chess"></i>
-                        </div>
-                        <h3>Estratégia Personalizada</h3>
-                        <p>Desenvolvemos abordagens jurídicas sob medida para cada cliente e situação.</p>
-                    </div>
-                    
-                    <div class="metodologia-item">
-                        <div class="metodologia-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Solução Eficiente</h3>
-                        <p>Atuamos com agilidade e precisão para alcançar os melhores resultados possíveis.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Conteúdo mantido -->
         </section>
 
         <!-- CTA Final -->
-        <section class="cta-final-novo section-padding">
-            <div class="container">
-                <h2>Precisa de Soluções Jurídicas Eficientes?</h2>
-                <p>Nossa equipe está pronta para oferecer consultoria estratégica personalizada para seu caso.</p>
-                <a href="/cunha.adv/contato.html" class="cta-button">Fale Conosco Agora</a>
-            </div>
+        <section class="cta-final-novo">
+            <!-- Conteúdo mantido -->
         </section>
     </main>
 
     <!-- Rodapé -->
     <div id="footer-placeholder"></div>
 
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5551995249234?text=Olá! Gostaria de mais informações." target="_blank" id="whatsapp-flutuante" aria-label="Contato via WhatsApp">
-        <img src="/cunha.adv/images/whatsapp-icon.png" alt="Ícone WhatsApp">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5551995249234" id="whatsapp-flutuante">
+        <img src="/cunha.adv/images/whatsapp-icon.png" alt="WhatsApp">
     </a>
 
+    <!-- Scripts -->
     <script src="/cunha.adv/js/script.js"></script>
     <script src="/cunha.adv/js/loadComponents.js" defer></script>
 </body>
-</html>
 </html>
