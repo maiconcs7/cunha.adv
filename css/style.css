@@ -24,7 +24,7 @@ body {
 /* Esquema de Cores Atualizado (Preto com Toque Esmeralda) */
 :root {
     --cor-primaria-azul-corporativo: #141414; /* Preto (substituindo Azul Corporativo) */
-    --cor-secundaria-verde-esmeralda: #676127; /* Verde Esmeralda Queimado como cor secundária/destaque */
+    --cor-secundaria-verde-esmeralda: #2a836b;; /* Verde Esmeralda Queimado como cor secundária/destaque */
     
     --cor-texto-principal: #495057; /* Cinza Grafite para texto principal */
     --cor-texto-secundario: #000000; /* Preto (substituindo Azul Corporativo) para textos de destaque, títulos menores */

@@ -2,8 +2,8 @@
 :root {
     /* ======== CORES OFICIAIS DO SITE ======== */
     /* Baseado no footer e elementos existentes */
-    --color-primary: #7d8a2e;       /* Verde Principal */
-    --color-primary-dark: #6a7735;  /* Verde Escuro */
+    --color-primary: #2a836b;       /* Verde Principal */
+    --color-primary-dark: #2e5e12;  /* Verde Escuro */
     --color-secondary: #2A836B;     /* Verde-Azulado */
     --color-accent: #803407;        /* Rust (Destaques) */
     
@@ -27,8 +27,8 @@
     /* Verde Principal */
     --color-primary-100: #e9f5e1;
     --color-primary-300: #aecf8e;
-    --color-primary-500: #7d8a2e;
-    --color-primary-700: #56661f;
+    --color-primary-500: #2a836b;
+    --color-primary-700: #1a4922;
     
     /* Verde-Azulado */
     --color-secondary-100: #d6f0eb;
