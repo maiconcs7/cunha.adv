@@ -31,7 +31,7 @@
     position: relative;
     font-family: inherit;
 }
-
+.cascata-cta { z-index: 999; }
 /* Área ampliada de percepção do mouse */
 .cascata-menu-btn::before {
     content: '';
@@ -48,6 +48,11 @@
 .cascata-menu-btn:focus,
 .cascata-menu-btn[aria-expanded="true"] {
     color: var(--menu-hover-color);
+}
+
+.cascata-menu-content,
+.cascata-submenu {
+    transition: all 0.3s ease 0.15s; /* Unificar transições */
 }
 
 /* Indicador visual sob o botão */
@@ -155,8 +160,8 @@
 /* Submenu */
 .cascata-submenu {
     position: absolute;
-    top: -10px;
-    left: 100%;
+    top: -5px;
+    left: calc(100% - 15px);
     min-width: 220px;
     background: var(--menu-bg-color);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -166,6 +171,14 @@
     visibility: hidden;
     transition: all 0.3s ease 0.15s;
     z-index: 1001;
+}
+.cascata-submenu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 15px;
+    height: 100%;
 }
 
 /* Responsividade */
@@ -193,7 +206,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height var(--menu-transition-time) ease;
-        padding-left: 20px;
+        padding-left: 30px;
         background-color: rgba(0, 0, 0, 0.02);
     }
     
@@ -208,15 +221,23 @@
 
 /* Adicione este JavaScript antes do </body> */
 <script>
-document.querySelectorAll('.cascata-menu-container').forEach(item => {
+document.querySelectorAll('.cascata-has-submenu').forEach(item => {
     item.addEventListener('click', (e) => {
         if (window.innerWidth <= 991) {
             e.preventDefault();
+            e.stopPropagation(); // Impede propagação para pais
+            const submenu = item.querySelector('.cascata-submenu');
             const isExpanded = item.getAttribute('aria-expanded') === 'true';
-            document.querySelectorAll('.cascata-menu-container').forEach(el => {
-                el.setAttribute('aria-expanded', 'false');
+            
+            // Fecha outros submenus
+            document.querySelectorAll('.cascata-has-submenu').forEach(sub => {
+                if (sub !== item) {
+                    sub.setAttribute('aria-expanded', 'false');
+                }
             });
+            
             item.setAttribute('aria-expanded', !isExpanded);
+            submenu.style.maxHeight = !isExpanded ? '1000px' : '0';
         }
     });
 });
