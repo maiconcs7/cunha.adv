@@ -5,10 +5,15 @@
  */
 
 /* Variáveis de cores - compatíveis com o sistema atual */
-@import url('css/colors.css');
-@import url('css/style.css');
-
-/* Container principal do menu cascata */
+@import url('../css/colors.css');
+@import url('../css/components/header.css');
+@import url('../css/components/banner.css');
+@import url('../css/components/cards.css');
+@import url('../css/components/metodologia.css');
+@import url('../css/components/cta.css');
+@import url('../css/components/whatsapp.css');
+@import url('../css/utilities/responsiveness.css');
+cata */
 .cascata-menu-container {
     position: relative;
     margin: 0;
