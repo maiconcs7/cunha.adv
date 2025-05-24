@@ -1,7 +1,13 @@
 //* FERRAMENTAS.CSS - CUNHA ADVOCACIA - VERSÃO OTIMIZADA */
 @import url('../css/colors.css');
-@import url('../css/style.css')
-/* Variáveis CSS para responsividade */
+@import url('../css/components/header.css');
+@import url('../css/components/banner.css');
+@import url('../css/components/cards.css');
+@import url('../css/components/metodologia.css');
+@import url('../css/components/cta.css');
+@import url('../css/components/whatsapp.css');
+@import url('../css/utilities/responsiveness.css');
+*/
 :root {
   --breakpoint-mobile: 480px;
   --breakpoint-tablet: 768px;
