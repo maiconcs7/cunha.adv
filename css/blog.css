@@ -13,10 +13,17 @@
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
     /* Modified CSS for elegant blog layout */
-    .blog-container {
-        max-width: 1280px;
+ .blog-container {
+        max-width: 1440px; /* Aumentei a largura máxima */
         margin: 3rem auto;
-        padding: 0 2.5rem;
+        padding: 0 clamp(2rem, 5vw, 4rem); /* Padding responsivo */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+   .container-wrapper {
+        background: #fff; /* Cor de fundo se necessário */
+        min-height: 100vh;
     }
 
     .blog-header {
@@ -42,18 +49,20 @@
         line-height: 1.7;
     }
 
-    .article-list {
+.article-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
         gap: 2.5rem;
         margin-top: 3rem;
+        padding: 0 1.5rem; /* Padding interno adicional */
     }
 
     .article-card {
         background: #fff;
-        border-radius: 12px;
+        border-radius: 14px;
+        margin: 0 1rem;
         overflow: hidden;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+       box-shadow: 0 6px 30px rgba(0, 0, 0, 0.07);
         transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         display: flex;
         flex-direction: column;
@@ -189,6 +198,19 @@
         background: rgba(52, 152, 219, 0.15);
     }
 
+/* Media Queries Ajustados */
+    @media (max-width: 1600px) {
+        .blog-container {
+            padding: 0 3.5rem;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .blog-container {
+            padding: 0 2.5rem;
+        }
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .blog-container {
@@ -213,6 +235,7 @@
             padding: 1rem 1.2rem 0;
         }
     }
+
 
     @media (max-width: 480px) {
         .blog-container {
