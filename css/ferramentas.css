@@ -1,0 +1,165 @@
+<style>
+    /* Variáveis para cores e tamanhos */
+    :root {
+        --primary-color: #2A5CAA;
+        --secondary-color: #1E3D6B;
+        --text-color: #333;
+        --background: #f8f9fa;
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+    }
+
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+        background: var(--background);
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+
+    /* Container principal */
+    .tools-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+    }
+
+    /* Grid responsivo */
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* Card de ferramenta */
+    .tool-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        box-shadow: var(--card-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Conteúdo do card */
+    .tool-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .tool-title {
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        margin-bottom: 0.75rem;
+    }
+
+    .tool-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .tool-link {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white !important;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: var(--transition);
+        margin-top: auto;
+        width: fit-content;
+    }
+
+    .tool-link:hover {
+        background: var(--secondary-color);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .tools-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .tools-container {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    /* Título da página */
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+    }
+
+    /* Descrição da página */
+    .page-description {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #666;
+    }
+
+/* Aviso Legal */
+.legal-disclaimer {
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.legal-disclaimer h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* CTA de Contato */
+.contact-promo {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    color: white;
+}
+
+.contact-promo .tool-link {
+    background: white;
+    color: var(--primary-color) !important;
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-promo .tool-link:hover {
+    background: #e6e6e6;
+}
+
+/* Estado Desativado */
+.tool-link--disabled {
+    background: #cccccc !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+</style>
