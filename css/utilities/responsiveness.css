@@ -271,3 +271,21 @@
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 1.5rem;
+    }
+    
+    .form-grid-rd {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions-rd {
+        flex-direction: column;
+    }
+    
+    .cta-button,
+    .button-secondary-rd {
+        flex: 1 1 100%;
+    }
+}
