@@ -5,6 +5,7 @@
 
 /* Importações de componentes e utilitários */
 @import url('colors.css');
+@import url('calculadora.css');
 @import url('components/header/header_styles.css');
 @import url('components/footer/footer_styles.css');
 @import url('components/banner/banner.css');
@@ -256,5 +257,13 @@ li {
     
     .section-lg {
         padding: var(--spacing-lg) 0;
+        
     }
+}
+.pagina-area {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    padding: var(--spacing-md);
+    max-width: var(--container-width);
+    margin: 0 auto;
 }
