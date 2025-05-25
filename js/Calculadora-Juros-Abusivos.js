@@ -1,94 +1,91 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do DOM
     const calcularBtn = document.getElementById('calcularBtn');
     const limparBtn = document.getElementById('limparBtn');
-    const inputs = document.querySelectorAll('input[type="number"]');
+    const resultadoDiv = document.getElementById('resultado');
+    const especialistaBtn = document.getElementById('especialistaBtn');
+    const modal = document.getElementById('modalAbusivo');
+    const fecharModal = document.getElementById('fecharModal');
 
-    // Função para sanitizar inputs
-    function sanitizarInput(valor) {
-        return parseFloat(valor.replace(',', '.')) || 0;
-    }
-
-    // Validar inputs em tempo real
-    inputs.forEach(input => {
-        input.addEventListener('input', function(e) {
-            const valor = e.target.value.replace(/[^0-9.,]/g, '');
-            e.target.value = valor.replace(',', '.');
-        });
-    });
-
-    function calcularTaxaJuros(valorFinanciado, valorParcela, numParcelas) {
-        let taxa = 0.1;
-        const precisao = 0.000001;
-        const maxIteracoes = 100;
-
-        for (let i = 0; i < maxIteracoes; i++) {
-            const f = valorFinanciado * Math.pow(1 + taxa, numParcelas) - 
-                    valorParcela * (Math.pow(1 + taxa, numParcelas) - 1) / taxa;
-            
-            const fPrime = numParcelas * valorFinanciado * Math.pow(1 + taxa, numParcelas - 1) -
-                         valorParcela * ((numParcelas * taxa * Math.pow(1 + taxa, numParcelas) - 
-                         (Math.pow(1 + taxa, numParcelas) - 1)) / Math.pow(taxa, 2);
-            
-            const novaTaxa = taxa - f / fPrime;
-            
-            if (Math.abs(novaTaxa - taxa) < precisao) break;
-            
-            taxa = novaTaxa;
-        }
-        
-        return taxa * 100;
-    }
-
+    // Função para calcular juros
     function calcularJuros() {
-        const valorFinanciado = sanitizarInput(document.getElementById('valorFinanciado').value);
-        const valorParcela = sanitizarInput(document.getElementById('valorParcela').value);
+        // Obter valores
+        const valorFinanciado = parseFloat(document.getElementById('valorFinanciado').value);
+        const valorParcela = parseFloat(document.getElementById('valorParcela').value);
         const numeroParcelas = parseInt(document.getElementById('numeroParcelas').value);
-        const taxaMercado = sanitizarInput(document.getElementById('taxaMercado').value);
-
-        if ([valorFinanciado, valorParcela, numeroParcelas, taxaMercado].some(v => v <= 0)) {
-            alert('Preencha todos os campos com valores válidos e positivos');
+        const taxaMercado = parseFloat(document.getElementById('taxaMercado').value);
+        
+        // Validar
+        if (isNaN(valorFinanciado) || isNaN(valorParcela) || isNaN(numeroParcelas) || isNaN(taxaMercado)) {
+            alert('Por favor, preencha todos os campos corretamente.');
             return;
         }
-
-        const taxaMensal = calcularTaxaJuros(valorFinanciado, valorParcela, numeroParcelas);
+        
+        // Cálculos
+        const totalPagar = valorParcela * numeroParcelas;
+        const jurosTotais = totalPagar - valorFinanciado;
+        
+        // Calcular taxa mensal aproximada
+        let taxaMensal = 0;
+        if (valorFinanciado > 0 && numeroParcelas > 0) {
+            const razao = totalPagar / valorFinanciado;
+            taxaMensal = (Math.pow(razao, 1/numeroParcelas) - 1) * 100;
+        }
+        
+        // Calcular taxa anual
         const taxaAnual = (Math.pow(1 + taxaMensal/100, 12) - 1) * 100;
+        
+        // Verificar se é abusivo
         const isAbusivo = taxaMensal > (taxaMercado * 2);
-
-        atualizarResultados({
-            totalPagar: valorParcela * numeroParcelas,
-            jurosTotais: (valorParcela * numeroParcelas) - valorFinanciado,
-            taxaMensal,
-            taxaAnual,
-            isAbusivo
-        });
-    }
-
-    function atualizarResultados({totalPagar, jurosTotais, taxaMensal, taxaAnual, isAbusivo}) {
-        const formatarMoeda = valor => `R$ ${valor.toFixed(2).replace('.', ',')}`;
-        const formatarPorcentagem = valor => `${valor.toFixed(2).replace('.', ',')}%`;
-
-        document.getElementById('totalPagar').textContent = formatarMoeda(totalPagar);
-        document.getElementById('jurosTotais').textContent = formatarMoeda(jurosTotais);
-        document.getElementById('taxaMensal').textContent = formatarPorcentagem(taxaMensal);
-        document.getElementById('taxaAnual').textContent = formatarPorcentagem(taxaAnual);
-
+        
+        // Mostrar resultados
+        document.getElementById('totalPagar').textContent = 'R$ ' + totalPagar.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        document.getElementById('jurosTotais').textContent = 'R$ ' + jurosTotais.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        document.getElementById('taxaMensal').textContent = taxaMensal.toFixed(2).replace('.', ',') + '%';
+        document.getElementById('taxaAnual').textContent = taxaAnual.toFixed(2).replace('.', ',') + '%';
+        
         const situacaoElement = document.getElementById('situacao');
-        situacaoElement.textContent = isAbusivo ? 'JUROS ABUSIVOS' : 'Dentro do esperado';
-        situacaoElement.className = `result-value ${isAbusivo ? 'text-danger' : 'text-success'}`;
-
-        document.getElementById('especialistaBtn').style.display = isAbusivo ? 'block' : 'none';
-        document.getElementById('modalAbusivo').style.display = isAbusivo ? 'flex' : 'none';
+        if (isAbusivo) {
+            situacaoElement.textContent = 'JUROS ABUSIVOS';
+            situacaoElement.className = 'result-value text-danger';
+            especialistaBtn.style.display = 'block';
+            modal.style.display = 'flex';
+        } else {
+            situacaoElement.textContent = 'Dentro do esperado';
+            situacaoElement.className = 'result-value text-success';
+            especialistaBtn.style.display = 'none';
+        }
+        
+        resultadoDiv.style.display = 'block';
     }
 
+    // Função para limpar campos
     function limparCampos() {
-        document.querySelectorAll('input').forEach(input => input.value = '');
-        document.getElementById('resultado').style.display = 'none';
-        document.querySelectorAll('.result-value').forEach(el => {
-            el.textContent = '-';
-            el.className = 'result-value';
-        });
+        // Resetar inputs
+        document.getElementById('valorFinanciado').value = '';
+        document.getElementById('valorParcela').value = '';
+        document.getElementById('numeroParcelas').value = '';
+        document.getElementById('taxaMercado').value = '';
+        
+        // Resetar resultados
+        document.getElementById('totalPagar').textContent = 'R$ 0,00';
+        document.getElementById('jurosTotais').textContent = 'R$ 0,00';
+        document.getElementById('taxaMensal').textContent = '0%';
+        document.getElementById('taxaAnual').textContent = '0%';
+        document.getElementById('situacao').textContent = '-';
+        document.getElementById('situacao').className = 'result-value';
+        
+        // Esconder elementos
+        resultadoDiv.style.display = 'none';
+        especialistaBtn.style.display = 'none';
+        modal.style.display = 'none';
     }
 
+    // Event Listeners
     calcularBtn.addEventListener('click', calcularJuros);
     limparBtn.addEventListener('click', limparCampos);
+    
+    // Fechar modal
+    fecharModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => e.target === modal && (modal.style.display = 'none'));
 });
