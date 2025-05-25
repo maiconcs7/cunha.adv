@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ferramentas úteis, direito trabalhista, recisão, previdenciário e mais.">
     <meta name="keywords" content="calculo jurídico, direito trabalho, caculadoras jurídicas,  Cunha Soluções Jurídicas">
     <title>Ferramentas - Cunha Soluções Jurídicas</title>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="/cunha.adv/img/favicon.ico" type="image/x-icon">
     
@@ -18,8 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Principal com Importações Modulares -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/cunha.adv/css/style.css">
+    <link rel="stylesheet" href="/cunha.adv/css/ferramentas.css">
     
     <!-- Scripts -->
     <script src="/cunha.adv/js/script.js" defer></script>
@@ -27,49 +28,69 @@
     <script src="/cunha.adv/js/megaMenu_cascata.js" defer></script>
 </head>
 
-   
 <body>
     <div id="header-placeholder"></div>
     
     <main class="pagina-area">
-        <div class="ferramentas-container">
-            <h1 class="ferramentas-titulo">Ferramentas Úteis</h1>
+        <div class="tools-container">
+            <h1 class="page-title">Ferramentas Úteis</h1>
             
-            <p class="ferramentas-descricao">Explore nossas ferramentas online desenvolvidas para auxiliar você em questões jurídicas e de planejamento.</p>
+            <p class="page-description">Explore nossas ferramentas online desenvolvidas para auxiliar você em questões jurídicas e de planejamento.</p>
             
-            <div class="ferramentas-grid">
-                <div class="ferramenta-card">
-                    <h3>Calculadora de Rescisão Trabalhista</h3>
-                    <p>Estime os valores a receber em caso de rescisão do contrato de trabalho. Simples e rápido.</p>
-                    <a href="/cunha.adv/ferramentas/calculadora-rescisao.html" class="btn-ferramenta">Acessar Calculadora</a>
-                </div>
-                
-                <div class="ferramenta-card">
-                    <h3>Calculadora de Juros Abusivos</h3>
-                    <p>Verifique se você está pagando juros abusivos em empréstimos, financiamentos ou cartão de crédito.</p>
-                    <a href="/cunha.adv/ferramentas/calculadora-juros-abusivos.html" class="btn-ferramenta">Acessar Calculadora</a>
-                </div>
-                
-                <div class="ferramenta-card">
-                    <h3>Calculadora de Aposentadoria</h3>
-                    <p>Planeje seu futuro! Nossa calculadora de aposentadoria está em desenvolvimento e em breve estará disponível aqui.</p>
-                    <a href="/cunha.adv/ferramentas/calculadora-aposentadoria.html" class="btn-ferramenta secundario">Ver Página (Em Breve)</a>
-                </div>
+            <div class="tools-grid">
+                <!-- Calculadora de Rescisão -->
+                <article class="tool-card">
+                    <i class="tool-icon fas fa-calculator"></i>
+                    <h3 class="tool-title">Calculadora de Rescisão Trabalhista</h3>
+                    <p class="tool-description">Estime os valores a receber em caso de rescisão do contrato de trabalho. Simples e rápido.</p>
+                    <a href="/cunha.adv/ferramentas/calculadora-rescisao.html" class="tool-link">
+                        Acessar Calculadora
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Calculadora de Juros -->
+                <article class="tool-card">
+                    <i class="tool-icon fas fa-money-bill-wave"></i>
+                    <h3 class="tool-title">Calculadora de Juros Abusivos</h3>
+                    <p class="tool-description">Verifique se você está pagando juros abusivos em empréstimos, financiamentos ou cartão de crédito.</p>
+                    <a href="/cunha.adv/ferramentas/calculadora-juros-abusivos.html" class="tool-link">
+                        Acessar Calculadora
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Calculadora de Aposentadoria -->
+                <article class="tool-card">
+                    <i class="tool-icon fas fa-user-clock"></i>
+                    <h3 class="tool-title">Calculadora de Aposentadoria</h3>
+                    <p class="tool-description">Planeje seu futuro! Nossa calculadora de aposentadoria está em desenvolvimento e em breve estará disponível aqui.</p>
+                    <a href="/cunha.adv/ferramentas/calculadora-aposentadoria.html" class="tool-link tool-link--disabled">
+                        Em Breve
+                        <i class="fas fa-clock"></i>
+                    </a>
+                </article>
             </div>
-            
-            <div class="info-adicional">
+
+            <!-- Seção de Aviso Legal -->
+            <div class="legal-disclaimer">
                 <h2>Sobre Nossas Ferramentas</h2>
-                <p>As ferramentas disponibilizadas pela Cunha Soluções Jurídicas são desenvolvidas para auxiliar em cálculos e análises preliminares. Os resultados obtidos são estimativas e não substituem uma análise jurídica completa.</p>
-                <p>Para casos específicos, recomendamos sempre a consulta com um de nossos especialistas, que poderá avaliar sua situação de forma personalizada e oferecer as melhores soluções.</p>
+                <p>As ferramentas disponibilizadas são desenvolvidas para auxiliar em cálculos e análises preliminares. Os resultados obtidos são estimativas e não substituem uma análise jurídica completa.</p>
+                <p>Para casos específicos, recomendamos sempre a consulta com um de nossos especialistas.</p>
             </div>
-            
-            <div class="contato-info">
-                <p>Precisa de assistência especializada? <a href="/cunha.adv/contato.html">Fale conosco</a> para uma consultoria completa.</p>
+
+            <!-- CTA de Contato -->
+            <div class="contact-promo">
+                <p>Precisa de assistência especializada? 
+                    <a href="/cunha.adv/contato.html" class="tool-link">
+                        Fale conosco
+                        <i class="fas fa-comments"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </main>
     
     <div id="footer-placeholder"></div>
-   
 </body>
 </html>
