@@ -46,9 +46,16 @@
                     <input type="number" id="numeroParcelas" placeholder="Ex: 24" min="1">
                 </div>
                 
-                <div class="form-group-rd">
-                    <label for="taxaMercado">Taxa Média de Mercado (% ao mês)</label>
-                    <input type="number" id="taxaMercado" placeholder="Ex: 2.5" step="0.01" min="0">
+              <div class="form-group-rd">
+                      <label for="taxaMercado">Taxa Média de Mercado (% ao mês)</label>
+                        <input type="number" 
+                               id="taxaMercado" 
+                               placeholder="Ex: 2.5" 
+                               step="0.01" 
+                               min="0"
+                               inputmode="decimal"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46">
+                            <small class="aviso-resultado-rd">Digite apenas números (ex: 2.5 para 2.5%)</small>
                     <small class="aviso-resultado-rd">Consulte as taxas médias no site do Banco Central</small>
                 </div>
             </div>
