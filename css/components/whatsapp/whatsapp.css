@@ -1,0 +1,154 @@
+/* 
+ * Estilos do Componente WhatsApp
+ * Site Cunha Advocacia
+ */
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 100;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float i {
+    font-size: 1.75rem;
+}
+
+/* Widget de WhatsApp */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 300px;
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+}
+
+.whatsapp-widget.active {
+    display: block;
+}
+
+.whatsapp-header {
+    background: #075E54;
+    color: white;
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: var(--spacing-md);
+}
+
+.whatsapp-title {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 2px;
+}
+
+.whatsapp-status {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+}
+
+.whatsapp-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.whatsapp-body {
+    padding: var(--spacing-md);
+}
+
+.whatsapp-message {
+    background: #DCF8C6;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.whatsapp-message::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #DCF8C6;
+}
+
+.whatsapp-input {
+    display: flex;
+    align-items: center;
+    background: #F0F0F0;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.whatsapp-input input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+}
+
+.whatsapp-send {
+    background: #25D366;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .whatsapp-widget {
+        width: calc(100% - 2rem);
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        right: 1rem;
+        bottom: 1rem;
+    }
+}

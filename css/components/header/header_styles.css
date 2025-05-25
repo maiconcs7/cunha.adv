@@ -1,0 +1,233 @@
+/* 
+ * Estilos do Cabeçalho
+ * Site Cunha Advocacia
+ */
+
+/* Estrutura principal do cabeçalho */
+.site-header {
+    background-color: var(--header-bg);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+/* Logotipo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo-transition {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo-transition {
+    transform: scale(1.05);
+}
+
+/* Navegação principal */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 var(--spacing-sm);
+    position: relative;
+}
+
+.nav-link {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.link-text {
+    position: relative;
+}
+
+.nav-link[data-page-name].active .link-text::after,
+.nav-link:hover .link-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:not(:hover) .link-text::after {
+    transform: scaleX(0);
+}
+
+/* Overlay para navegação mobile */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-base);
+}
+
+/* CTA no cabeçalho */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cta-button-header {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.cta-button-header:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.cta-icon {
+    margin-right: var(--spacing-sm);
+}
+
+.cta-text {
+    font-size: var(--font-size-sm);
+}
+
+/* Menu toggle para mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    margin-left: var(--spacing-md);
+    z-index: 1000;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        padding: 80px var(--spacing-lg) var(--spacing-lg);
+        z-index: 999;
+        box-shadow: var(--shadow);
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .nav-list.active {
+        right: 0;
+    }
+    
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-item {
+        margin: var(--spacing-sm) 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .header-actions {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-transition {
+        height: 40px;
+    }
+    
+    .cta-text {
+        display: none;
+    }
+    
+    .cta-button-header {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .cta-icon {
+        margin-right: 0;
+    }
+    
+    .header-container {
+        padding: var(--spacing-sm) 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-transition {
+        height: 35px;
+    }
+}

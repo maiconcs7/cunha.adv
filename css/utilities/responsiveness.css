@@ -1,0 +1,273 @@
+/* 
+ * Estilos de Responsividade
+ * Site Cunha Advocacia
+ */
+
+/* Utilitários de responsividade */
+
+/* Esconder em telas pequenas */
+@media (max-width: 576px) {
+    .hide-xs {
+        display: none !important;
+    }
+}
+
+/* Esconder em telas médias */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hide-sm {
+        display: none !important;
+    }
+}
+
+/* Esconder em telas grandes */
+@media (min-width: 769px) and (max-width: 992px) {
+    .hide-md {
+        display: none !important;
+    }
+}
+
+/* Esconder em telas extra grandes */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .hide-lg {
+        display: none !important;
+    }
+}
+
+/* Esconder em telas gigantes */
+@media (min-width: 1201px) {
+    .hide-xl {
+        display: none !important;
+    }
+}
+
+/* Mostrar apenas em telas pequenas */
+.show-xs {
+    display: none !important;
+}
+
+@media (max-width: 576px) {
+    .show-xs {
+        display: block !important;
+    }
+}
+
+/* Mostrar apenas em telas médias */
+.show-sm {
+    display: none !important;
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .show-sm {
+        display: block !important;
+    }
+}
+
+/* Mostrar apenas em telas grandes */
+.show-md {
+    display: none !important;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .show-md {
+        display: block !important;
+    }
+}
+
+/* Mostrar apenas em telas extra grandes */
+.show-lg {
+    display: none !important;
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .show-lg {
+        display: block !important;
+    }
+}
+
+/* Mostrar apenas em telas gigantes */
+.show-xl {
+    display: none !important;
+}
+
+@media (min-width: 1201px) {
+    .show-xl {
+        display: block !important;
+    }
+}
+
+/* Ajustes de texto responsivos */
+@media (max-width: 576px) {
+    .text-center-xs {
+        text-align: center !important;
+    }
+    
+    .text-left-xs {
+        text-align: left !important;
+    }
+    
+    .text-right-xs {
+        text-align: right !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .text-center-sm {
+        text-align: center !important;
+    }
+    
+    .text-left-sm {
+        text-align: left !important;
+    }
+    
+    .text-right-sm {
+        text-align: right !important;
+    }
+}
+
+/* Ajustes de margens responsivos */
+@media (max-width: 576px) {
+    .m-0-xs {
+        margin: 0 !important;
+    }
+    
+    .mt-0-xs {
+        margin-top: 0 !important;
+    }
+    
+    .mb-0-xs {
+        margin-bottom: 0 !important;
+    }
+    
+    .ml-0-xs {
+        margin-left: 0 !important;
+    }
+    
+    .mr-0-xs {
+        margin-right: 0 !important;
+    }
+}
+
+/* Ajustes de padding responsivos */
+@media (max-width: 576px) {
+    .p-0-xs {
+        padding: 0 !important;
+    }
+    
+    .pt-0-xs {
+        padding-top: 0 !important;
+    }
+    
+    .pb-0-xs {
+        padding-bottom: 0 !important;
+    }
+    
+    .pl-0-xs {
+        padding-left: 0 !important;
+    }
+    
+    .pr-0-xs {
+        padding-right: 0 !important;
+    }
+}
+
+/* Ajustes de flexbox responsivos */
+@media (max-width: 576px) {
+    .flex-column-xs {
+        flex-direction: column !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .flex-column-sm {
+        flex-direction: column !important;
+    }
+}
+
+/* Ajustes de ordem responsivos */
+@media (max-width: 576px) {
+    .order-1-xs {
+        order: 1 !important;
+    }
+    
+    .order-2-xs {
+        order: 2 !important;
+    }
+}
+
+/* Ajustes de largura responsivos */
+.w-100 {
+    width: 100% !important;
+}
+
+.w-75 {
+    width: 75% !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.w-25 {
+    width: 25% !important;
+}
+
+@media (max-width: 576px) {
+    .w-100-xs {
+        width: 100% !important;
+    }
+}
+
+/* Ajustes de altura responsivos */
+.h-100 {
+    height: 100% !important;
+}
+
+.h-75 {
+    height: 75% !important;
+}
+
+.h-50 {
+    height: 50% !important;
+}
+
+.h-25 {
+    height: 25% !important;
+}
+
+/* Ajustes de grid responsivos */
+.grid-1, .grid-2, .grid-3, .grid-4 {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-1 {
+    grid-template-columns: 1fr;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 992px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-4, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}

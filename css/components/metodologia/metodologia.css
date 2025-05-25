@@ -1,0 +1,145 @@
+/* 
+ * Estilos do Componente Metodologia
+ * Site Cunha Advocacia
+ */
+
+.metodologia-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-color);
+}
+
+.metodologia-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.metodologia-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.metodologia-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.metodologia-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metodologia-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.metodologia-step {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.metodologia-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    opacity: 0.2;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.step-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.step-description {
+    color: var(--gray-color);
+    line-height: 1.6;
+}
+
+/* Variantes de cores */
+.metodologia-step.primary .step-number {
+    background-color: var(--primary-color);
+}
+
+.metodologia-step.primary .step-icon {
+    color: var(--primary-color);
+}
+
+.metodologia-step.secondary .step-number {
+    background-color: var(--secondary-color);
+}
+
+.metodologia-step.secondary .step-icon {
+    color: var(--secondary-color);
+}
+
+.metodologia-step.info .step-number {
+    background-color: var(--info-color);
+}
+
+.metodologia-step.info .step-icon {
+    color: var(--info-color);
+}
+
+.metodologia-step.success .step-number {
+    background-color: var(--success-color);
+}
+
+.metodologia-step.success .step-icon {
+    color: var(--success-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .metodologia-title {
+        font-size: 1.75rem;
+    }
+    
+    .metodologia-subtitle {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 576px) {
+    .metodologia-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .metodologia-steps {
+        grid-template-columns: 1fr;
+    }
+}

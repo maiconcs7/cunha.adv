@@ -1,0 +1,343 @@
+/* 
+ * Estilos do Rodapé Premium
+ * Site Cunha Advocacia
+ */
+
+/* VARIÁVEIS DE CORES */
+:root {
+    --footer-bg: #1a2a3a;
+    --footer-text: #e0e0e0;
+    --footer-accent: #2a836b;
+    --footer-border: rgba(255,255,255,0.1);
+    --footer-hover: #ffffff;
+}
+
+/* ESTRUTURA PRINCIPAL */
+.premium-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    padding: 4rem 0 0;
+    position: relative;
+    line-height: 1.6;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--footer-border);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* ESTILOS DAS COLUNAS */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.3s;
+}
+
+.footer-logo-link:hover {
+    opacity: 0.9;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-mission {
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.footer-title {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--footer-accent);
+}
+
+/* LINKS DO RODAPÉ */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-link {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.footer-link:hover {
+    color: var(--footer-hover);
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.link-icon {
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--footer-accent);
+}
+
+/* CONTATOS */
+.footer-contact {
+    margin-top: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-icon {
+    margin-right: 1rem;
+    color: var(--footer-accent);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-link {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--footer-accent);
+}
+
+/* NEWSLETTER */
+.newsletter-box {
+    margin-bottom: 2rem;
+}
+
+.newsletter-box p {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.newsletter-form {
+    position: relative;
+}
+
+.input-group {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.newsletter-btn {
+    background: var(--footer-accent);
+    color: white;
+    border: none;
+    padding: 0 1.2rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-btn:hover {
+    background: #1f6b56; /* Tom mais escuro de #2a836b */
+}
+
+.feedback-msg {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* REDES SOCIAIS */
+.social-media {
+    margin-top: 2rem;
+}
+
+.social-title {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: var(--footer-accent);
+    transform: translateY(-3px);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(139, 172, 157, 0.4);
+    z-index: 100;
+    transition: all 0.3s;
+    display: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(139, 172, 157, 0.5);
+}
+
+/* LINKS JURÍDICOS */
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.legal-link {
+    color: var(--footer-text);
+    text-decoration: none;
+    opacity: 0.7;
+    font-size: 0.85rem;
+    transition: opacity 0.3s;
+}
+
+.legal-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.separator {
+    opacity: 0.5;
+}
+
+/* CRÉDITOS */
+.developer-credit {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.8rem;
+}
+
+.developer-credit a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.developer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-brand {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 0 1.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+    
+    .whatsapp-float {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-brand {
+        grid-column: span 1;
+    }
+}

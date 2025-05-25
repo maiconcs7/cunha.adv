@@ -1,0 +1,143 @@
+/* 
+ * Estilos do Componente Cards
+ * Site Cunha Advocacia
+ */
+
+.cards-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-color);
+}
+
+.cards-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cards-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cards-subtitle {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--gray-color);
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-text {
+    color: var(--gray-color);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    transition: var(--transition-base);
+    margin-top: auto;
+}
+
+.card-link:hover {
+    color: var(--primary-dark);
+}
+
+.card-link-icon {
+    margin-left: var(--spacing-xs);
+    transition: var(--transition-base);
+}
+
+.card-link:hover .card-link-icon {
+    transform: translateX(3px);
+}
+
+/* Variantes de cards */
+.card-primary {
+    border-top: 4px solid var(--primary-color);
+}
+
+.card-secondary {
+    border-top: 4px solid var(--secondary-color);
+}
+
+.card-info {
+    border-top: 4px solid var(--info-color);
+}
+
+.card-success {
+    border-top: 4px solid var(--success-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .cards-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cards-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
