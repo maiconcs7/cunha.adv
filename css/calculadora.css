@@ -1,0 +1,73 @@
+
+ <style>
+    @import url('colors.css');
+    @import url('style.css');
+    @import url('components/header/header_styles.css');
+    @import url('components/footer/footer_styles.css');
+    @import url('components/banner/banner.css');
+    @import url('components/cards/cards.css');
+    @import url('components/metodologia/metodologia.css');
+    @import url('components/cta/cta.css');
+    @import url('components/whatsapp/whatsapp.css');
+    @import url('utilities/responsiveness.css');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+/* Estilos adaptados para combinar com a calculadora de juros abusivos */
+      /* Calculator Container */
+.calculator-container {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+}
+
+.calculator-container h1 {
+    color: var(--color-primary-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: var(--text-xxl);
+}
+
+/* Form Sections */
+.form-section-rd {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form-grid-rd {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.form-group-rd label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.form-group-rd input,
+.form-group-rd select {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-time);
+}
+
+/* Resultado */
+.resultado-rescisao-rd {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--color-bg-light);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-primary);
+}
+
+.aviso-resultado-rd {
+    color: var(--color-text-light);
+    margin-top: 1.5rem;
+    font-style: italic;
+}
