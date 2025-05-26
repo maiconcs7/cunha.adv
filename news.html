@@ -29,126 +29,93 @@
         <!-- O cabeçalho será carregado dinamicamente via JavaScript -->
     </div>
     
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Específico - Cunha Advogados</title>
     <style>
-        /* Reset de estilos */
+        /* Reset e Estilos Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Estilos do container principal */
-        .form-page-container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
+        body {
+            background: #f8f9fa;
         }
 
-        /* Estilização do cabeçalho do formulário */
-        .custom-form-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .custom-form-header h1 {
-            color: #2c5f2d;
-            font-size: 2.2em;
-            margin-bottom: 10px;
-        }
-
-        /* Container do formulário */
+        /* Container Principal */
         .form-container {
-            position: relative;
-            height: 1300px;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Estilos Específicos do Formulário */
+        #mg61hd {
+            background: white;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Estilização do iframe */
-        .custom-form-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            margin-top: -60px; /* Ajuste para remover espaço superior */
+        /* Override do Google Forms */
+        .ss-form-container > *:not(#mg61hd),
+        .ss-header,
+        .ss-footer,
+        .ss-top-header,
+        .freebirdFormviewerViewFooterEmbedded {
+            display: none !important;
         }
 
-        /* Override dos estilos do Google Forms */
-        .ss-form-container {
-            background: transparent !important;
-            padding: 20px !important;
-        }
-
-        .ss-q-title {
-            color: #2c5f2d !important;
-            font-size: 1.1em !important;
-            font-weight: 500 !important;
-            margin-bottom: 8px !important;
-        }
-
-        .ss-form-entry input[type="text"],
-        .ss-form-entry textarea,
-        .ss-form-entry select {
+        #mg61hd {
             width: 100% !important;
-            padding: 12px !important;
-            border: 1px solid #ddd !important;
-            border-radius: 4px !important;
-            margin: 8px 0 !important;
-            background: #fff !important;
-        }
-
-        /* Estilização do botão de envio */
-        .jfk-button-action {
-            background-color: #2c5f2d !important;
             border: none !important;
-            padding: 14px 30px !important;
-            border-radius: 4px !important;
-            text-transform: uppercase !important;
-            font-weight: 600 !important;
-            transition: all 0.3s ease !important;
-            width: 100% !important;
-            margin-top: 20px !important;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .form-container {
-                height: 1400px;
-            }
-            
-            .ss-form-entry input[type="text"],
-            .ss-form-entry textarea {
-                font-size: 16px !important;
-            }
+            padding: 0 !important;
+            margin: 0 !important;
         }
     </style>
 </head>
 <body>
-    <div class="form-page-container">
-        <div class="custom-form-header">
-            <h1>Receba Nossas Atualizações</h1>
-            <p>Assine nossa newsletter para receber artigos e novidades jurídicas</p>
-        </div>
-
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPYqApDgsqrrWLFnBxH-MgqNZtOBNHr10d9OjnU42iu9sIUw/viewform??embedded=true&headers=false&chrome=false"
-                    class="custom-form-iframe"
-                    loading="lazy">
-            </iframe>
-        </div>
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPYqApDgsqrrWLFnBxH-MgqNZtOBNHr10d9OjnU42iu9sIUw/viewform?embedded=true&headers=false&chrome=false&rm=minimal"
+                id="custom-form"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                style="width: 100%; height: 100vh; border: none;">
+            Carregando…
+        </iframe>
     </div>
 
-    <!-- Script para ajuste automático de altura -->
+    <!-- Script de Ajuste -->
     <script>
         window.addEventListener('message', function(e) {
-            if(e.origin.indexOf('google.com') > -1) {
-                const iframe = document.querySelector('.custom-form-iframe');
-                const newHeight = e.data.height + 100; // Margem adicional
-                iframe.style.height = newHeight + 'px';
+            const iframe = document.getElementById('custom-form');
+            if(e.data.height) {
+                iframe.style.height = e.data.height + 'px';
             }
-        }, false);
-    </script>   
+        });
+
+        // Forçar estilos após o carregamento
+        setTimeout(() => {
+            const iframeDoc = document.getElementById('custom-form').contentDocument;
+            if(iframeDoc) {
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                    body { padding: 20px !important; }
+                    #mg61hd { display: block !important; }
+                    *:not(#mg61hd) { display: none !important; }
+                `;
+                iframeDoc.head.appendChild(style);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
         <!-- CTA -->
         <section class="cta-section">
             <div class="cta-container">
