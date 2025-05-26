@@ -29,91 +29,42 @@
         <!-- O cabeçalho será carregado dinamicamente via JavaScript -->
     </div>
     
- 
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Específico - Cunha Advogados</title>
+    <!-- Mantenha todo o head existente -->
     <style>
-        /* Reset e Estilos Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #f8f9fa;
-        }
-
-        /* Container Principal */
-        .form-container {
-            max-width: 1483px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        /* Estilos Específicos do Formulário */
-        #mg61hd {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        /* Override do Google Forms */
-        .ss-form-container > *:not(#mg61hd),
-        .ss-header,
-        .ss-footer,
-        .ss-top-header,
-        .freebirdFormviewerViewFooterEmbedded {
-            display: none !important;
-        }
-
-        #mg61hd {
-            width: 100% !important;
-            border: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
+    /* Adicione estas regras ao seu CSS existente */
+    .form-container {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .form-iframe {
+        height: 1450px; /* Ajuste fino conforme necessário */
+        margin-top: 0 !important;
+    }
     </style>
 </head>
 <body>
+    <!-- Seção do Formulário Corrigida -->
     <div class="form-container">
-        <iframe https://docs.google.com/forms/d/e/1FAIpQLSe0hDVonyDUnrRsCmyTGfdlA4nhN81wrFhhCQAhA3NomYWiag/viewform??embedded=true&headers=false&chrome=false&rm=minimal"
-                id="custom-form"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                style="width: 100%; height: 100vh; border: none;">
-            
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdDc3Yq6Vp6lAXxJ5X9gV7y7Q4wH6mY7Zv0Qm9WQ/viewform?embedded=true&headers=false&chrome=false&rm=minimal" 
+            class="form-iframe"
+            loading="lazy"
+            style="width: 100%; border: none;">
         </iframe>
     </div>
 
-    <!-- Script de Ajuste -->
+    <!-- Script de Ajuste Automático -->
     <script>
-        window.addEventListener('message', function(e) {
-            const iframe = document.getElementById('custom-form');
-            if(e.data.height) {
-                iframe.style.height = e.data.height + 'px';
-            }
-        });
-
-        // Forçar estilos após o carregamento
-        setTimeout(() => {
-            const iframeDoc = document.getElementById('custom-form').contentDocument;
-            if(iframeDoc) {
-                const style = iframeDoc.createElement('style');
-                style.textContent = `
-                    body { padding: 20px !important; }
-                    #mg61hd { display: block !important; }
-                    *:not(#mg61hd) { display: none !important; }
-                `;
-                iframeDoc.head.appendChild(style);
-            }
-        }, 2000);
+    window.addEventListener('message', function(e) {
+        if(e.origin.indexOf('google.com') > -1) {
+            const iframe = document.querySelector('.form-iframe');
+            iframe.style.height = e.data.height + 200 + 'px';
+        }
+    });
     </script>
+
 
         <!-- CTA -->
         <section class="cta-section">
