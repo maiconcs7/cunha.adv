@@ -13,152 +13,28 @@
                 <span class="sr-only">Página Inicial</span>
             </a>
         </div>
+</header>
+<header class="header" id="header">
+    <div class="header-container">
 
-        <!-- Navegação Principal com indicador de página ativa -->
+        <!-- Menu Desktop -->
         <nav class="main-nav" aria-label="Navegação principal">
-            <div class="nav-overlay"></div>
             <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/cunha.adv/index.html" 
-                       class="nav-link" 
-                       data-page-name="index.html">
-                       <span class="link-text">Início</span>
-                    </a>
-                </li>
-                
-            
-            <!-- CTA Animado -->
-            <li class="cascata-menu-item">
-                <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
-                   class="cascata-cta" 
-                   target="_blank">
-                    <i class="fas fa-gavel" aria-hidden="true"></i>
-                    Fale com um especialista
-                </a>
-            </li>
-        </ul>
-    </div>
-</li>
-                     <li class="nav-item">
-                    <a href="/cunha.adv/blog/index.html" 
-                       class="nav-link" 
-                       data-page-name="blog/index.html">
-                       <span class="link-text">Areas de atuação</span>
-                    </a>
-                </li>
-                     <li class="nav-item">
-                    <a href="/cunha.adv/blog/index.html" 
-                       class="nav-link" 
-                       data-page-name="blog/index.html">
-                       <span class="link-text">soluções</span>
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a href="/cunha.adv/blog/index.html" 
-                       class="nav-link" 
-                       data-page-name="blog/index.html">
-                       <span class="link-text">Blog</span>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="/cunha.adv/ferramentas/index.html" 
-                       class="nav-link" 
-                       data-page-name="ferramentas/index.html">
-                       <span class="link-text">Ferramentas</span>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="/cunha.adv/contato.html" 
-                       class="nav-link" 
-                       data-page-name="contato.html">
-                       <span class="link-text">Contato</span>
-                    </a>
-                </li>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="areas-de-atuacao.html" class="nav-link">Áreas de Atuação</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
             </ul>
         </nav>
-    <!-- Menu Mobile melhorado com acessibilidade -->
 
-<button class="menu-toggle" aria-label="mMenu principal" aria-expanded="false">
-  <svg class="hamburger-svg" width="32" height="32" viewBox="0 0 32 32">
-    <!-- Linha Superior -->
-    <path class="hamburger-line top" 
-          d="M6 10 L26 10"
-          stroke="#2c3e50"
-          stroke-width="2"
-          stroke-linecap="round"/>
-          
-    <!-- Linha do Meio -->
-    <path class="hamburger-line middle" 
-          d="M6 16 L26 16"
-          stroke="#2c3e50"
-          stroke-width="2"
-          stroke-linecap="round"/>
-          
-    <!-- Linha Inferior -->
-    <path class="hamburger-line bottom" 
-          d="M6 22 L26 22"
-          stroke="#2c3e50"
-          stroke-width="2"
-          stroke-linecap="round"/>
-  </svg>
-</button>
+        <!-- Menu Mobile -->
+        <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+            <span class="menu-icon"></span>
+        </button>
+    </div>
+</header>
 
-<style>
-.hamburger-icon {
-  background: none;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.hamburger-svg {
-  display: block;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hamburger-line {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
-}
-
-/* Estado Ativo (X) */
-.hamburger-icon[aria-expanded="true"] .top {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.hamburger-icon[aria-expanded="true"] .middle {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.hamburger-icon[aria-expanded="true"] .bottom {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Hover e Foco */
-.hamburger-icon:hover .hamburger-line,
-.hamburger-icon:focus .hamburger-line {
-  stroke: #7d8a2e;
-}
-
-.hamburger-icon:focus {
-  outline: 2px solid #7d8a2e;
-  outline-offset: 2px;
-}
-</style>
-<script>
-// Controle do estado
-document.querySelector('menu-toggle').addEventListener('click', function() {
-  const isExpanded = this.getAttribute('aria-expanded') === 'true';
-  this.setAttribute('aria-expanded', !isExpanded);
-});
-</script>
-        <!-- CTA Principal - Mantido o WhatsApp mas com estilo melhorado -->
-        <div class="header-actions">
+ <header <div class="header-actions">
             <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
                class="cta-button-header whatsapp-cta" 
                target="_blank"
@@ -167,11 +43,7 @@ document.querySelector('menu-toggle').addEventListener('click', function() {
                 <span class="cta-text">Fale com um Especialista</span>
             </a>
         </div>      
-    </div>
-</header>
-
-</header>
-
+     </header>
 <!-- Adicione estas linhas no head do seu HTML -->
 <link rel="stylesheet" href="/css/header_styles.css">
 <link rel="stylesheet" href="css/colors.css">
