@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cunha Soluções Jurídicas - Advocacia Especializada</title>
+    <meta name="description" content="Escritório de advocacia especializado em soluções jurídicas para agronegócio, pequenos negócios e pessoas físicas.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/cunha.adv/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal com Importações Modulares -->
+    <link rel="stylesheet" href="/cunha.adv/css/style.css">
+    
+    <!-- Scripts -->
+    <script src="/cunha.adv/js/script.js" defer></script>
+    <script src="/cunha.adv/js/loadComponents.js" defer></script>
+    <script src="/cunha.adv/js/megaMenu_cascata.js" defer></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div id="header-placeholder">
+        <!-- O cabeçalho será carregado dinamicamente via JavaScript -->
+    </div>
+    
+<!-- CSS Customizado -->
+<style>
+.form-integrado {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #2c5f2d;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    position: relative;
+    height: 1300px; /* Ajuste conforme necessário */
+    overflow: hidden;
+}
+
+.form-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+/* Override do estilo padrão do Google Forms */
+.ss-form-container {
+    background: transparent !important;
+    font-family: 'Arial', sans-serif !important;
+}
+
+.ss-q-title {
+    color: #2c5f2d !important;
+    font-size: 1.1em !important;
+    font-weight: 500 !important;
+}
+
+.ss-form-entry input[type="text"],
+.ss-form-entry textarea {
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    padding: 12px !important;
+    margin: 8px 0 !important;
+}
+
+.ss-form-entry .ss-choice-item {
+    margin: 12px 0 !important;
+}
+
+.ss-send-email option {
+    padding: 8px !important;
+}
+
+/* Botão de Envio Customizado */
+.jfk-button-action {
+    background-color: #2c5f2d !important;
+    border: none !important;
+    padding: 14px 30px !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.jfk-button-action:hover {
+    background-color: #1e401f !important;
+    transform: translateY(-1px) !important;
+}
+</style>
+
+<!-- HTML do Formulário -->
+<div class="form-integrado">
+    <div class="form-header">
+        <h2>Análise de Elegibilidade para Lastro</h2>
+        <p>Preencha os dados abaixo para uma avaliação preliminar</p>
+    </div>
+    <!-- aqui ta o link da planilha -->
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDc3Yq6Vp6lAXxJ5X9gV7y7Q4wH6mY7Zv0Qm9WQ/viewform?embedded=true" 
+                class="form-iframe"
+                loading="lazy">
+            Carregando…
+        </iframe>
+    </div>
+</div>
+<div class="cookie-consent">
+    <p>Ao enviar, você concorda com nossa <a href="/politica-privacidade">Política de Privacidade</a></p>
+</div>
+       
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Pronto para resolver suas questões jurídicas?</h2>
+                <p class="cta-text">Entre em contato conosco hoje mesmo para uma consulta inicial e descubra como podemos ajudar a proteger seus interesses e potencializar seus negócios.</p>
+                <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp cta-button-icon"></i>
+                    Fale com um Especialista
+                </a>
+            </div>
+        </section>
+    </main>
+    <div class="cookie-consent">
+    <p>Ao enviar, você concorda com nossa <a href="/cunha.adv/politica-de-privacidade.html" class="legal-link">Política de Privacidade</a>
+</div>
+    <!-- Rodapé -->
+    <div id="footer-placeholder">
+        <!-- O rodapé será carregado dinamicamente via JavaScript -->
+    </div>
+    
+    <!-- WhatsApp Flutuante (visível apenas em mobile) -->
+    <a href="https://wa.me/5551995249234" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+
+// Ajuste automático de altura
+ <script 
+window.addEventListener('message', function(e) {
+    if(e.origin.indexOf('google.com') > -1) {
+        var height = e.data.height;
+        document.querySelector('.form-iframe').style.height = height + 'px';
+    }
+}, false);
+ <script/>
+</html>
