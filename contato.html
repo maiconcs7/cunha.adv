@@ -6,63 +6,139 @@
     <meta name="description" content="Entre em contato com a Cunha Soluções Jurídicas para agendar uma consulta ou tirar suas dúvidas sobre direito do agronegócio, tributário, previdenciário e mais.">
     <meta name="keywords" content="contato advogado, consultoria jurídica, agendar consulta jurídica, Cunha Soluções Jurídicas contato">
     <title>Contato - Cunha Soluções Jurídicas</title>
+      <!-- Favicon -->
+    <link rel="shortcut icon" href="/cunha.adv/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal com Importações Modulares -->
     <link rel="stylesheet" href="/cunha.adv/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="/cunha.adv/js/script.js" defer></script>
+    <script src="/cunha.adv/js/loadComponents.js" defer></script>
+    <script src="/cunha.adv/js/megaMenu_cascata.js" defer></script>
+</head>
+
+    <!-- Cabeçalho -->
+    <div id="header-placeholder">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Específico - Cunha Advogados</title>
+    <style>
+        /* Reset e Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fa;
+        }
+
+        /* Container Principal */
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Estilos Específicos do Formulário */
+        #mg61hd {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Override do Google Forms */
+        .ss-form-container > *:not(#mg61hd),
+        .ss-header,
+        .ss-footer,
+        .ss-top-header,
+        .freebirdFormviewerViewFooterEmbedded {
+            display: none !important;
+        }
+
+        #mg61hd {
+            width: 100% !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+
+
+
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe0hDVonyDUnrRsCmyTGfdlA4nhN81wrFhhCQAhA3NomYWiag/viewform?embedded=true&headers=false&chrome=false&rm=minimal"
+                id="custom-form"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                style="width: 100%; height: 100vh; border: none;">
+        </iframe>
+    </div>
 
-    <main>
-        <section class="pagina-contato">
-            <div class="container">
-                <h1>Entre em Contato</h1>
-                <p>Preencha o formulário abaixo ou fale conosco diretamente pelo WhatsApp.</p>
+    <!-- Script de Ajuste -->
+    <script>
+        window.addEventListener('message', function(e) {
+            const iframe = document.getElementById('custom-form');
+            if(e.data.height) {
+                iframe.style.height = e.data.height + 'px';
+            }
+        });
 
-                <form id="form-contato-inteligente" class="form-contato">
-                    <label for="nome-contato">Nome Completo:</label>
-                    <input type="text" id="nome-contato" name="nome-contato" required>
-
-                    <label for="whatsapp-contato">WhatsApp:</label>
-                    <input type="tel" id="whatsapp-contato" name="whatsapp-contato" placeholder="(XX) XXXXX-XXXX" required>
-
-                    <label for="email-contato">E-mail:</label>
-                    <input type="email" id="email-contato" name="email-contato" required>
-
-                    <label for="tipo-demanda">Tipo de Demanda:</label>
-                    <select id="tipo-demanda" name="tipo-demanda" required>
-                        <option value="" disabled selected>Selecione a área de atuação</option>
-                        <option value="direito-tributario">Direito Tributário</option>
-                        <option value="direito-rural">Direito Rural</option>
-                        <option value="direito-previdenciario">Direito Previdenciário</option>
-                        <option value="direito-empresarial">Direito Empresarial</option>
-                        <option value="direito-consumidor">Direito do Consumidor</option>
-                        <option value="direito-trabalhista">Direito Trabalhista</option>
-                        <option value="outra">Outra</option>
-                    </select>
-
-                    <fieldset id="questionario-segmentacao" style="margin-top: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
-                        <legend>Questionário Rápido (Opcional)</legend>
-                        <div id="pergunta-produtor-rural" style="display: none; margin-bottom:10px;">
-                            <label>Você é produtor rural?</label><br>
-                            <input type="radio" id="produtor-sim" name="produtor-rural" value="sim"> <label for="produtor-sim" class="radio-label">Sim</label>
-                            <input type="radio" id="produtor-nao" name="produtor-rural" value="nao"> <label for="produtor-nao" class="radio-label">Não</label>
-                        </div>
-                        <!-- Outras perguntas podem ser adicionadas aqui baseadas na demanda -->
-                    </fieldset>
-
-                    <label for="mensagem-contato">Sua Mensagem (Opcional):</label>
-                    <textarea id="mensagem-contato" name="mensagem-contato" rows="5"></textarea>
-
-                    <button type="submit" class="cta-button">Enviar Contato</button>
-                </form>
+        // Forçar estilos após o carregamento
+        setTimeout(() => {
+            const iframeDoc = document.getElementById('custom-form').contentDocument;
+            if(iframeDoc) {
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                    body { padding: 20px !important; }
+                    #mg61hd { display: block !important; }
+                    *:not(#mg61hd) { display: none !important; }
+                `;
+                iframeDoc.head.appendChild(style);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Pronto para resolver suas questões jurídicas?</h2>
+                <p class="cta-text">Entre em contato conosco hoje mesmo para uma consulta inicial e descubra como podemos ajudar a proteger seus interesses e potencializar seus negócios.</p>
+                <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp cta-button-icon"></i>
+                    Fale com um Especialista
+                </a>
             </div>
         </section>
     </main>
+    <!-- Rodapé -->
+    <div id="footer-placeholder">
+        <!-- O rodapé será carregado dinamicamente via JavaScript -->
+    </div>
+    
+    <!-- WhatsApp Flutuante (visível apenas em mobile) -->
+    <a href="https://wa.me/5551995249234" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
 
     <div id="footer-placeholder"></div>
-
-
-
 
     <script src="js/script.js"></script>
 <script src="/cunha.adv/js/loadComponents.js" defer></script>
