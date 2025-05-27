@@ -289,3 +289,49 @@
         flex: 1 1 100%;
     }
 }
+* Estado inicial do menu */
+.main-nav {
+    display: none;
+}
+
+/* Estado ativo */
+.main-nav.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+}
+
+/* Animação do ícone */
+.hamburger-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #2c5f2d;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #2c5f2d;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active .hamburger-icon {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger-icon::before {
+    transform: rotate(90deg) translateX(6px);
+}
+
+.menu-toggle.active .hamburger-icon::after {
+    opacity: 0;
+}
