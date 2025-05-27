@@ -62,3 +62,9 @@
     display: block;
   }
 }
+
+/* Menu Toggle Button */
+header {
+    position: relative;
+    z-index: 1000;
+}
