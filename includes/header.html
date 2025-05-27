@@ -1,56 +1,72 @@
-<!-- Cabeçalho Premium para Escritório Jurídico -->
+<!-- Cabeçalho Simples para Escritório Jurídico -->
 <header class="site-header">
     <!-- Container principal com layout flexível e sombra sutil -->
     <div class="container header-container">
-        
         <!-- Logotipo com efeito hover e transição suave -->
         <div class="logo-container">
             <a href="/cunha.adv/index.html" class="logo-link">
                 <img src="/cunha.adv/img/logo_reformulada/logo_cunha_atualizada.png" 
                      alt="Cunha Soluções Jurídicas - Advocacia Especializada" 
-                     id="logo"
+                     id="logo" 
                      class="logo-transition">
                 <span class="sr-only">Página Inicial</span>
             </a>
         </div>
-</header>
-<header class="header" id="header">
-    <div class="header-container">
-
-        <!-- Menu Desktop -->
+        
+        <!-- Navegação Principal com links simples -->
         <nav class="main-nav" aria-label="Navegação principal">
+            <div class="nav-overlay"></div>
             <ul class="nav-list">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
-                <li><a href="areas-de-atuacao.html" class="nav-link">Áreas de Atuação</a></li>
-                <li><a href="contato.html" class="nav-link">Contato</a></li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/index.html" class="nav-link" data-page-name="index.html">
+                        <span class="link-text">Início</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/solucoes/index.html" class="nav-link" data-page-name="solucoes">
+                        <span class="link-text">Soluções</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/areas/index.html" class="nav-link" data-page-name="areas">
+                        <span class="link-text">Áreas de Atuação</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/blog/index.html" class="nav-link" data-page-name="blog">
+                        <span class="link-text">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/ferramentas/index.html" class="nav-link" data-page-name="ferramentas">
+                        <span class="link-text">Ferramentas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/cunha.adv/contato.html" class="nav-link" data-page-name="contato.html">
+                        <span class="link-text">Contato</span>
+                    </a>
+                </li>
             </ul>
         </nav>
-
-        <!-- Menu Mobile -->
-        <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
-            <span class="menu-icon"></span>
-        </button>
-    </div>
-</header>
-
- <header <div class="header-actions">
+        
+        <!-- CTA no cabeçalho -->
+        <div class="header-actions">
             <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." 
-               class="cta-button-header whatsapp-cta" 
-               target="_blank"
-               aria-label="Fale conosco pelo WhatsApp">
-                <i class="fab fa-whatsapp cta-icon" aria-hidden="true"></i>
+               class="cta-button-header" 
+               target="_blank">
+                <i class="fab fa-whatsapp cta-icon"></i>
                 <span class="cta-text">Fale com um Especialista</span>
             </a>
-        </div>      
-     </header>
-<!-- Adicione estas linhas no head do seu HTML -->
-<link rel="stylesheet" href="/css/header_styles.css">
-<link rel="stylesheet" href="css/colors.css">
-<!-- CSS do Menu Cascata -->
-<link rel="stylesheet" href="css/megaMenu_cascata.css">
-<!-- JavaScript do Menu Cascata -->
-<script src="js/megaMenu_cascata.js"></script>
-
-<!-- <script src="/cunha.adv/js/megaMenu.js" defer></script>-->
-
+            
+            <!-- Botão do menu hambúrguer para mobile -->
+            <button class="menu-toggle" aria-expanded="false" aria-label="Menu principal">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script src="../js/hamburger.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="/cunha.adv/js/loadComponents.js" defer></script>
+</header>
