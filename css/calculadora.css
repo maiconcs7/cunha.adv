@@ -119,3 +119,18 @@
     align-items: center;
     justify-content: center;
 }
+.input-group input[type="text"], 
+.input-group input[type="number"],
+.input-group select {
+    border: 2px solid var(--cor-primaria) !important;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    box-shadow: 0 0 0 3px rgba(44,95,45,0.15);
+    outline: 2px solid transparent;
+}
