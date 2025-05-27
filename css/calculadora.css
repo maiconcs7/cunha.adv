@@ -144,7 +144,9 @@
         }
 
         metodologia-section {
+          
             --largura-base: min(600px, 80vw);
+            max-width: 800px;
             margin-left: calc(50% - var(--largura-base));
             margin-right: calc(50% - var(--largura-base));
             width: calc(var(--largura-base) * 2);
