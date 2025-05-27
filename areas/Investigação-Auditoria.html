@@ -20,130 +20,158 @@
 </head>
 <body>
     <!-- Header dinâmico -->
-    <div id="header-placeholder"></div>
-
+   <!-- Cabeçalho -->
+    <div id="header-placeholder">
+        <!-- O cabeçalho será carregado dinamicamente via JavaScript -->
+    </div>
+    
+    <!-- Conteúdo Principal -->
     <main>
         <!-- Banner Principal -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Investigação e Auditoria Jurídica Preventiva</h1>
-                    <p class="hero-text">Proteção empresarial através da análise estratégica de riscos legais e financeiros</p>
-                    <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." 
-                       class="cta-button" 
-                       target="_blank"
-                       aria-label="Agendar consulta via WhatsApp">
-                        <i class="fas fa-calendar-check"></i>
+        <section class="banner-section">
+            <div class="banner-container">
+                <div class="banner-content">
+                    <h1 class="banner-title">Soluções Jurídicas Integradas para Seus Desafios</h1>
+                    <p class="banner-subtitle">Advocacia especializada em agronegócio, pequenos negócios e pessoas físicas, com foco em resultados e atendimento personalizado.</p>
+                    <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." class="banner-cta" target="_blank">
+                        <i class="fas fa-calendar-check banner-cta-icon"></i>
                         Agende uma Consulta
                     </a>
                 </div>
-                <div class="hero-image">
-                    <img src="/cunha.adv/img/auditoria-banner.webp" 
-                         alt="Equipe analisando documentos jurídicos" 
-                         class="hero-img"
-                         loading="lazy">
+                <div class="banner-image">
+                    <img src="./img/R.jpg" alt="Advocacia especializada" class="banner-img">
                 </div>
             </div>
         </section>
-
-        <!-- Serviços -->
-        <section class="cards-section">
-            <div class="section-container">
-                <h2 class="section-title">Nossos Serviços de Auditoria</h2>
+        
+   <!-- Serviços -->
+        <section class="cards-section"  id="Serviços">
+            <div class="cards-container">
+                <h2 class="cards-title">Serviços Especificos</h2>
+                <p class="cards-subtitle">Não apenas resolvemos problemas - asseguramos conformidade, detectamos irregularidades, previnimos fraudes, coletamos evidências robustas e mitigamos riscos, fortalecendo integridade organizacional.</p>
                 
                 <div class="cards-grid">
                     <!-- Due Diligence -->
-                    <article class="card card--audit">
-                        <div class="card-icon">
-                            <i class="fas fa-search-dollar" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="card-title">Due Diligence Corporativa</h3>
-                        <ul class="card-list">
+                    <div class="card card-primary">
+                        <img src="../img/blog_destaques/franquia_contrato_negocios.jpg" alt="Agronegócio" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Due Diligence Corporativa</h3>
+                            <p class="card-text">A Due Diligence Corporativa é a análise crítica que desvenda o DNA de um negócio antes de fusões, aquisições ou investimentos. Funciona como uma "radiografia detalhada", expondo dívidas ocultas, litígios judiciais, brechas contratuais e irregularidades regulatórias. Sem ela, você assume riscos como herdar passivos milionários ou conflitos societários. Nosso trabalho transforma incógnitas em certezas estratégicas, permitindo que você negocie com vantagem, ajuste preços ou até desista de um mau negócio. É a diferença entre entrar em um jogo de azar e tomar decisões com controle total das cartas na mesa.</p>
+                                <ul class="card-list">
                             <li>Verificação de compliance</li>
                             <li>Análise de lastros financeiros</li>
                             <li>Auditoria de contratos rurais</li>
-                        </ul>
-                    </article>
-
-                    <!-- Investigação Patrimonial -->
-                    <article class="card card--audit">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                </ul>
+                            <a href="/cunha.adv/index.html" class="card-link">
+                                Saiba mais <i class="fas fa-arrow-right card-link-icon"></i>
+                            </a>
                         </div>
-                        <h3 class="card-title">Investigação Patrimonial</h3>
-                        <ul class="card-list">
+                    </div>
+                    
+                    <!-- Investigação Patrimonial -->
+                    <div class="card card-secondary">
+                        <img src="../img/blog_destaques/franquia_contrato_negocios.jpg" alt="Pequenos Negócios" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Investigação Patrimonial/h3>
+                            <p class="card-text">A Investigação Patrimonial é essencial para expor bens ocultos em fraudes, divórcios ou recuperações de crédito, funcionando como um "raio-X financeiro" que revela imóveis não declarados, contas offshore e estruturas societárias camufladas. Sem ela, você perde leverage em disputas e assume riscos econômicos. Nosso trabalho transforma suspeitas em mapas patrimoniai nitidos, garantindo que nenhum ativo escape à análise e fortalecendo sua posição em negociações ou ações judiciais. </p>
+                                <ul class="card-list">
                             <li>Rastreamento de ativos</li>
                             <li>Validação de garantias</li>
                             <li>Due diligence pré-execução</li>
-                        </ul>
-                    </article>
-
-                    <!-- Forensic Digital -->
-                    <article class="card card--audit">
-                        <div class="card-icon">
-                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                                </ul>
+                            <a href="/cunha.adv/index.html" class="card-link">
+                                Saiba mais <i class="fas fa-arrow-right card-link-icon"></i>
+                            </a>
                         </div>
-                        <h3 class="card-title">Forensic Digital</h3>
-                        <ul class="card-list">
+                    </div>
+                    
+                     <!-- Forensic Digital -->
+                    <div class="card card-info">
+                        <img src="../img/blog_destaques/franquia_contrato_negocios.jpg" alt="Pessoas Físicas" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Forensic Digital</h3>
+                            <p class="card-text"> A Forensic Digital é indispensável para investigar rastros digitais ocultos em crimes cibernéticos, fraudes ou vazamentos de dados, atuando como uma "lupa tecnológica" que recupera mensagens apagadas, identifica acessos ilícitos e valida juridicamente as provas. Sem ela, informações cruciais podem ser perdidas ou manipuladas, colocando sua empresa em risco financeiro e reputacional. Nosso trabalho transforma dados complexos em evidências sólidas, protegendo seus interesses e fortalecendo sua defesa em disputas legais, garantindo que a verdade técnica seja traduzida em segurança jurídica.</p>
+                               <ul class="card-list">
                             <li>Perícia em fraudes eletrônicas</li>
                             <li>Recuperação de provas digitais</li>
                             <li>Proteção de dados estratégicos</li>
-                        </ul>
-                    </article>
+                                </ul>
+                            <a href="/cunha.adv/index.html" class="card-link">
+                                Saiba mais <i class="fas fa-arrow-right card-link-icon"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Metodologia -->
-        <section class="process-section">
-            <div class="section-container">
-                <h2 class="section-title">Metodologia de Atuação</h2>
-                <p class="section-subtitle">Processo estruturado para resultados eficientes e transparentes</p>
+        
+        <!-- Nossa Metodologia -->
+        <section class="metodologia-section">
+            <div class="metodologia-container">
+                <div class="metodologia-header">
+                    <h2 class="metodologia-title">Metodologia de Atuação</h2>
+                    <p class="metodologia-subtitle">Processo estruturado para resultados eficientes e transparentes</p>
+                </div>
                 
-                <div class="process-steps">
-                    <div class="process-card">
-                        <div class="process-number">1</div>
-                        <i class="fas fa-search process-icon"></i>
-                        <h3 class="process-title">Diagnóstico Personalizado</h3>
-                        <p class="process-text">Análise 360º das operações e identificação de vulnerabilidades</p>
+                <div class="metodologia-steps">
+                    <!-- Etapa 1 -->
+                    <div class="metodologia-step primary">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-comments step-icon"></i>
+                        <h3 class="step-title">Consulta Inicial</h3>
+                        <p class="step-description">Realizamos uma análise detalhada do seu caso para entender suas necessidades e objetivos específicos.</p>
                     </div>
                     
-                    <div class="process-card">
-                        <div class="process-number">2</div>
-                        <i class="fas fa-file-contract process-icon"></i>
-                        <h3 class="process-title">Investigação Estratégica</h3>
-                        <p class="process-text">Cross-check documental e entrevistas com stakeholders</p>
+                    <!-- Etapa 2 -->
+                    <div class="metodologia-step secondary">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-search step-icon"></i>
+                        <h3 class="step-title">Diagnóstico Personalizado</h3>
+                        <p class="step-description">Análise 360º das operações e identificação de vulnerabilidades</p>
                     </div>
                     
-                    <div class="process-card">
-                        <div class="process-number">3</div>
-                        <i class="fas fa-chart-bar process-icon"></i>
-                        <h3 class="process-title">Relatório Executivo</h3>
-                        <p class="process-text">Plano de ação com protocolos de compliance personalizados</p>
+                    <!-- Etapa 3 -->
+                    <div class="metodologia-step info">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-tasks step-icon"></i>
+                        <h3 class="step-title">Investigação Estratégica</h3>
+                        <p class="step-description">Cross-check documental e entrevistas com stakeholders</p>
+                    </div>
+                    
+                    <!-- Etapa 4 -->
+                    <div class="metodologia-step success">
+                        <div class="step-number">4</div>
+                        <i class="fas fa-chart-line step-icon"></i>
+                        <h3 class="step-title">Relatório Executivo</h3>
+                        <p class="step-description">Plano de ação com protocolos de compliance personalizados</p>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- CTA -->
-        <section class="cta-section cta--dark">
-            <div class="section-container">
+        <section class="cta-section">
+            <div class="cta-container">
                 <h2 class="cta-title">Proteção Jurídica Preventiva</h2>
                 <p class="cta-text">Garanta a segurança jurídica do seu negócio com nossos serviços especializados</p>
-                <a href="/cunha.adv/contato.html" class="cta-button">
-                    <i class="fas fa-comments"></i>
+                <a href="https://wa.me/5551995249234?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista." class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp cta-button-icon"></i>
                     Fale com um Especialista
                 </a>
             </div>
         </section>
     </main>
-
-    <!-- Footer dinâmico -->
-    <div id="footer-placeholder"></div>
-
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5551995249234" class="whatsapp-float" aria-label="Conversar pelo WhatsApp">
+    
+    <!-- Rodapé -->
+    <div id="footer-placeholder">
+        <!-- O rodapé será carregado dinamicamente via JavaScript -->
+    </div>
+    
+    <!-- WhatsApp Flutuante (visível apenas em mobile) -->
+    <a href="https://wa.me/5551995249234" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <script src="../js/script.js"></script>
+    <script src="/cunha.adv/js/loadComponents.js" defer></script>
 </body>
 </html>
