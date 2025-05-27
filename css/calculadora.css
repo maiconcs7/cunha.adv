@@ -135,7 +135,52 @@
     box-shadow: 0 0 0 3px rgba(44,95,45,0.15);
     outline: 2px solid transparent;
 }
-.metodologia-section {
-    margin-left: calc(50% - 600px); /* Centraliza com base na largura */
-    margin-right: calc(50% - 600px);
-}
+
+    /* Estilos Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        metodologia-section {
+            --largura-base: min(600px, 80vw);
+            margin-left: calc(50% - var(--largura-base));
+            margin-right: calc(50% - var(--largura-base));
+            width: calc(var(--largura-base) * 2);
+            padding: 2rem;
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            
+            /* Garante que não ultrapasse a largura da tela */
+            max-width: 100%;
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            metodologia-section {
+                --largura-base: min(500px, 85vw);
+                padding: 1.5rem;
+            }
+        }
+
+        /* Mobile Grande */
+        @media (max-width: 768px) {
+            metodologia-section {
+                --largura-base: 90vw;
+                margin-left: 5vw;
+                margin-right: 5vw;
+                width: auto;
+                padding: 1rem;
+            }
+        }
+
+        /* Mobile Pequeno */
+        @media (max-width: 480px) {
+            section {
+                margin-left: 2vw;
+                margin-right: 2vw;
+                border-radius: 8px;
+            }
+        }
