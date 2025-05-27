@@ -269,10 +269,14 @@ li {
 }
 /* Auditoria Específica */
 .hero-auditoria {
-    background: linear-gradient(rgba(113, 212, 115, 0.9), rgba(38, 197, 91, 0.8)), 
+    background: linear-gradient(rgba(113, 212, 115, 0.7), 
+                rgba(38, 197, 91, 0.6)), 
                 url('../img/auditoria-banner.jpg') center/cover;
     color: white;
-    padding: 100px 40px;
+    padding: 120px 20px; /* Reduzi o padding lateral */
+    min-height: 70vh; /* Altura mínima relativa */
+    display: flex;
+    align-items: center;
 }
 
 .card-audit {
