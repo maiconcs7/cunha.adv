@@ -269,7 +269,7 @@ li {
 }
 /* Auditoria Específica */
 .hero-auditoria {
-    background: linear-gradient(rgba(44,95,45,0.9), rgba(44,95,45,0.8)), 
+    background: linear-gradient(rgba(113, 212, 115, 0.9), rgba(38, 197, 91, 0.8)), 
                 url('../img/auditoria-banner.jpg') center/cover;
     color: white;
     padding: 100px 40px;
@@ -304,5 +304,5 @@ li {
 }
 
 .dark-cta {
-    background: #1a401f;
+    background: #b8ddbd;
 }
