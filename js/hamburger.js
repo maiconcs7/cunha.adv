@@ -1,26 +1,9 @@
-/**
- * Scripts do Menu Hamburger
- * Site Cunha Advocacia
- */
+const navMenu = document.querySelector('.main-nav') // Ou seletor correto do seu menu
+const menuToggle = document.querySelector('.menu-toggle')
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Controle do menu hamburger
-    const menuToggle = document.querySelector('.menu-toggle');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            // Aqui você pode adicionar lógica para mostrar/esconder o menu mobile
-            const navList = document.querySelector('.nav-list');
-            if (navList) {
-                if (!isExpanded) {
-                    navList.classList.add('active');
-                } else {
-                    navList.classList.remove('active');
-                }
-            }
-        });
-    }
-});
+menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
+    menuToggle.setAttribute('aria-expanded', !isExpanded)
+    navMenu.classList.toggle('active') // Classe que controla a visibilidade
+    menuToggle.classList.toggle('active')
+})
