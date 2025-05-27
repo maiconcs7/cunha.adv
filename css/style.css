@@ -272,11 +272,11 @@ li {
     background: linear-gradient(rgba(44,95,45,0.9), rgba(44,95,45,0.8)), 
                 url('../img/auditoria-banner.jpg') center/cover;
     color: white;
-    padding: 100px 20px;
+    padding: 100px 40px;
 }
 
 .card-audit {
-    border-left: 4px solid #2c5f2d;
+    border-left: 4px solid  var(--primary-color);
     transition: transform 0.3s ease;
 }
 
